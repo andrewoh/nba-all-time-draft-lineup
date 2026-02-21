@@ -1,0 +1,2 @@
+ALTER TABLE "DraftSession" ADD COLUMN "userName" TEXT;
+ALTER TABLE "Run" ADD COLUMN "userName" TEXT;

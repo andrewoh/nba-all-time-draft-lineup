@@ -1,0 +1,68 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model DraftSession {
+  id              String      @id @default(cuid())
+  cookieToken     String      @unique
+  userName        String?
+  groupCode       String?
+  seed            String?
+  drawSequenceJson String
+  remainingTeamsJson String
+  currentDrawIndex Int        @default(0)
+  lineupJson      String      @default("{}")
+  chosenPlayersJson String    @default("[]")
+  drawStartedAt   DateTime    @default(now())
+  status          String      @default("DRAFTING")
+  runId           String?     @unique
+  run             Run?        @relation(fields: [runId], references: [id])
+  createdAt       DateTime    @default(now())
+  updatedAt       DateTime    @updatedAt
+
+  @@index([groupCode])
+}
+
+model Run {
+  id                String        @id @default(cuid())
+  shareCode         String        @unique
+  userName          String?
+  groupCode         String?
+  seed              String?
+  teamScore         Float
+  usedFallbackStats Boolean       @default(false)
+  lineupJson        String
+  contributionsJson String
+  createdAt         DateTime      @default(now())
+  picks             RunPick[]
+  draftSession      DraftSession?
+
+  @@index([groupCode])
+  @@index([createdAt])
+}
+
+model RunPick {
+  id           String     @id @default(cuid())
+  runId        String
+  run          Run        @relation(fields: [runId], references: [id], onDelete: Cascade)
+  slot         String
+  playerName   String
+  teamAbbr     String
+  teamName     String
+  bpm          Float
+  ws48         Float
+  vorp         Float
+  epm          Float
+  usedFallback Boolean    @default(false)
+  isPenalty    Boolean    @default(false)
+  contribution Float
+  createdAt    DateTime   @default(now())
+
+  @@unique([runId, slot])
+  @@index([runId])
+}

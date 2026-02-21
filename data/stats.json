@@ -1,0 +1,9434 @@
+{
+  "Asa Newell|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Asa Newell|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Asa Newell|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Buddy Hield|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Buddy Hield|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Buddy Hield|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Caleb Houstan|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Caleb Houstan|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Caleb Houstan|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Christian Koloko|2025-26": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Christian Koloko|2024-25": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Christian Koloko|2023-24": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "CJ McCollum|2025-26": {
+    "bpm": 1.3,
+    "ws48": 0.102,
+    "vorp": 1.2,
+    "epm": 1.65
+  },
+  "CJ McCollum|2024-25": {
+    "bpm": 1.3,
+    "ws48": 0.102,
+    "vorp": 1.2,
+    "epm": 1.65
+  },
+  "CJ McCollum|2023-24": {
+    "bpm": 1.3,
+    "ws48": 0.102,
+    "vorp": 1.2,
+    "epm": 1.65
+  },
+  "Corey Kispert|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Corey Kispert|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Corey Kispert|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Dyson Daniels|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Dyson Daniels|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Dyson Daniels|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Gabe Vincent|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Gabe Vincent|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Gabe Vincent|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Jalen Johnson|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Jalen Johnson|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Jalen Johnson|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Jock Landale|2025-26": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Jock Landale|2024-25": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Jock Landale|2023-24": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Jonathan Kuminga|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Jonathan Kuminga|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Jonathan Kuminga|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Keaton Wallace|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Keaton Wallace|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Keaton Wallace|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Mouhamed Gueye|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Mouhamed Gueye|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Mouhamed Gueye|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Nickeil Alexander-Walker|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Nickeil Alexander-Walker|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Nickeil Alexander-Walker|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Onyeka Okongwu|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Onyeka Okongwu|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Onyeka Okongwu|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "RayJ Dennis|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "RayJ Dennis|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "RayJ Dennis|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Zaccharie Risacher|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Zaccharie Risacher|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Zaccharie Risacher|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Amari Williams|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Amari Williams|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Amari Williams|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Baylor Scheierman|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Baylor Scheierman|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Baylor Scheierman|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Dalano Banton|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Dalano Banton|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Dalano Banton|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Derrick White|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Derrick White|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Derrick White|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Hugo Gonzalez|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Hugo Gonzalez|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Hugo Gonzalez|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Jaylen Brown|2025-26": {
+    "bpm": 3.4,
+    "ws48": 0.154,
+    "vorp": 3,
+    "epm": 4.26
+  },
+  "Jaylen Brown|2024-25": {
+    "bpm": 3.4,
+    "ws48": 0.154,
+    "vorp": 3,
+    "epm": 4.26
+  },
+  "Jaylen Brown|2023-24": {
+    "bpm": 3.4,
+    "ws48": 0.154,
+    "vorp": 3,
+    "epm": 4.26
+  },
+  "Jayson Tatum|2025-26": {
+    "bpm": 6.8,
+    "ws48": 0.202,
+    "vorp": 5.4,
+    "epm": 8.28
+  },
+  "Jayson Tatum|2024-25": {
+    "bpm": 6.8,
+    "ws48": 0.202,
+    "vorp": 5.4,
+    "epm": 8.28
+  },
+  "Jayson Tatum|2023-24": {
+    "bpm": 6.8,
+    "ws48": 0.202,
+    "vorp": 5.4,
+    "epm": 8.28
+  },
+  "John Tonje|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "John Tonje|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "John Tonje|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Jordan Walsh|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Jordan Walsh|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Jordan Walsh|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Luka Garza|2025-26": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Luka Garza|2024-25": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Luka Garza|2023-24": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Max Shulga|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Max Shulga|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Max Shulga|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Neemias Queta|2025-26": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Neemias Queta|2024-25": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Neemias Queta|2023-24": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Nikola Vucevic|2025-26": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Nikola Vucevic|2024-25": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Nikola Vucevic|2023-24": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Payton Pritchard|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Payton Pritchard|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Payton Pritchard|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Ron Harper Jr.|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Ron Harper Jr.|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Ron Harper Jr.|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Sam Hauser|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Sam Hauser|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Sam Hauser|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Chaney Johnson|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Chaney Johnson|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Chaney Johnson|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Danny Wolf|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Danny Wolf|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Danny Wolf|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Day'Ron Sharpe|2025-26": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Day'Ron Sharpe|2024-25": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Day'Ron Sharpe|2023-24": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Drake Powell|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Drake Powell|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Drake Powell|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "E.J. Liddell|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "E.J. Liddell|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "E.J. Liddell|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Egor Demin|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Egor Demin|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Egor Demin|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Hunter Tyson|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Hunter Tyson|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Hunter Tyson|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Jalen Wilson|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Jalen Wilson|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Jalen Wilson|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Michael Porter Jr.|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Michael Porter Jr.|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Michael Porter Jr.|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Nic Claxton|2025-26": {
+    "bpm": 2.3,
+    "ws48": 0.154,
+    "vorp": 1.7,
+    "epm": 2.75
+  },
+  "Nic Claxton|2024-25": {
+    "bpm": 2.3,
+    "ws48": 0.154,
+    "vorp": 1.7,
+    "epm": 2.75
+  },
+  "Nic Claxton|2023-24": {
+    "bpm": 2.3,
+    "ws48": 0.154,
+    "vorp": 1.7,
+    "epm": 2.75
+  },
+  "Noah Clowney|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Noah Clowney|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Noah Clowney|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Nolan Traore|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Nolan Traore|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Nolan Traore|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Ochai Agbaji|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Ochai Agbaji|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Ochai Agbaji|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Terance Mann|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Terance Mann|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Terance Mann|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Tyson Etienne|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Tyson Etienne|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Tyson Etienne|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Ziaire Williams|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Ziaire Williams|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Ziaire Williams|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Antonio Reeves|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Antonio Reeves|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Antonio Reeves|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Brandon Miller|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.083,
+    "vorp": 0.8,
+    "epm": 0.86
+  },
+  "Brandon Miller|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.083,
+    "vorp": 0.8,
+    "epm": 0.86
+  },
+  "Brandon Miller|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.083,
+    "vorp": 0.8,
+    "epm": 0.86
+  },
+  "Coby White|2025-26": {
+    "bpm": 1.1,
+    "ws48": 0.101,
+    "vorp": 1.1,
+    "epm": 1.43
+  },
+  "Coby White|2024-25": {
+    "bpm": 1.1,
+    "ws48": 0.101,
+    "vorp": 1.1,
+    "epm": 1.43
+  },
+  "Coby White|2023-24": {
+    "bpm": 1.1,
+    "ws48": 0.101,
+    "vorp": 1.1,
+    "epm": 1.43
+  },
+  "Grant Williams|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Grant Williams|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Grant Williams|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Josh Green|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Josh Green|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Josh Green|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Kon Knueppel|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Kon Knueppel|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Kon Knueppel|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "LaMelo Ball|2025-26": {
+    "bpm": 2.8,
+    "ws48": 0.125,
+    "vorp": 1.8,
+    "epm": 3.24
+  },
+  "LaMelo Ball|2024-25": {
+    "bpm": 2.8,
+    "ws48": 0.125,
+    "vorp": 1.8,
+    "epm": 3.24
+  },
+  "LaMelo Ball|2023-24": {
+    "bpm": 2.8,
+    "ws48": 0.125,
+    "vorp": 1.8,
+    "epm": 3.24
+  },
+  "Liam McNeeley|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Liam McNeeley|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Liam McNeeley|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Malaki Branham|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Malaki Branham|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Malaki Branham|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Miles Bridges|2025-26": {
+    "bpm": 1.4,
+    "ws48": 0.104,
+    "vorp": 1.2,
+    "epm": 1.74
+  },
+  "Miles Bridges|2024-25": {
+    "bpm": 1.4,
+    "ws48": 0.104,
+    "vorp": 1.2,
+    "epm": 1.74
+  },
+  "Miles Bridges|2023-24": {
+    "bpm": 1.4,
+    "ws48": 0.104,
+    "vorp": 1.2,
+    "epm": 1.74
+  },
+  "Moussa Diabate|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Moussa Diabate|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Moussa Diabate|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Pat Connaughton|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Pat Connaughton|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Pat Connaughton|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "PJ Hall|2025-26": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "PJ Hall|2024-25": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "PJ Hall|2023-24": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Ryan Kalkbrenner|2025-26": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Ryan Kalkbrenner|2024-25": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Ryan Kalkbrenner|2023-24": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Sion James|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Sion James|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Sion James|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Tidjane Salaun|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Tidjane Salaun|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Tidjane Salaun|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Tosan Evbuomwan|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Tosan Evbuomwan|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Tosan Evbuomwan|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Tre Mann|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Tre Mann|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Tre Mann|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Xavier Tillman|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Xavier Tillman|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Xavier Tillman|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Anfernee Simons|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.089,
+    "vorp": 0.9,
+    "epm": 1.08
+  },
+  "Anfernee Simons|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.089,
+    "vorp": 0.9,
+    "epm": 1.08
+  },
+  "Anfernee Simons|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.089,
+    "vorp": 0.9,
+    "epm": 1.08
+  },
+  "Collin Sexton|2025-26": {
+    "bpm": 0.7,
+    "ws48": 0.094,
+    "vorp": 0.8,
+    "epm": 0.95
+  },
+  "Collin Sexton|2024-25": {
+    "bpm": 0.7,
+    "ws48": 0.094,
+    "vorp": 0.8,
+    "epm": 0.95
+  },
+  "Collin Sexton|2023-24": {
+    "bpm": 0.7,
+    "ws48": 0.094,
+    "vorp": 0.8,
+    "epm": 0.95
+  },
+  "Guerschon Yabusele|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Guerschon Yabusele|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Guerschon Yabusele|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Isaac Okoro|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Isaac Okoro|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Isaac Okoro|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Jaden Ivey|2025-26": {
+    "bpm": 0.1,
+    "ws48": 0.074,
+    "vorp": 0.4,
+    "epm": 0.25
+  },
+  "Jaden Ivey|2024-25": {
+    "bpm": 0.1,
+    "ws48": 0.074,
+    "vorp": 0.4,
+    "epm": 0.25
+  },
+  "Jaden Ivey|2023-24": {
+    "bpm": 0.1,
+    "ws48": 0.074,
+    "vorp": 0.4,
+    "epm": 0.25
+  },
+  "Jalen Smith|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Jalen Smith|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Jalen Smith|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Josh Giddey|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Josh Giddey|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Josh Giddey|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Lachlan Olbrich|2025-26": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Lachlan Olbrich|2024-25": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Lachlan Olbrich|2023-24": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Leonard Miller|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Leonard Miller|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Leonard Miller|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Mac McClung|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Mac McClung|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Mac McClung|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Matas Buzelis|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Matas Buzelis|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Matas Buzelis|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Nick Richards|2025-26": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Nick Richards|2024-25": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Nick Richards|2023-24": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Noa Essengue|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Noa Essengue|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Noa Essengue|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Patrick Williams|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Patrick Williams|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Patrick Williams|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Rob Dillingham|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Rob Dillingham|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Rob Dillingham|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Tre Jones|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Tre Jones|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Tre Jones|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Yuki Kawamura|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Yuki Kawamura|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Yuki Kawamura|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Zach Collins|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Zach Collins|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Zach Collins|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Craig Porter Jr.|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Craig Porter Jr.|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Craig Porter Jr.|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Darius Brown|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Darius Brown|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Darius Brown|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Dean Wade|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Dean Wade|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Dean Wade|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Dennis Schroder|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Dennis Schroder|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Dennis Schroder|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Donovan Mitchell|2025-26": {
+    "bpm": 5.1,
+    "ws48": 0.167,
+    "vorp": 4.1,
+    "epm": 6.23
+  },
+  "Donovan Mitchell|2024-25": {
+    "bpm": 5.1,
+    "ws48": 0.167,
+    "vorp": 4.1,
+    "epm": 6.23
+  },
+  "Donovan Mitchell|2023-24": {
+    "bpm": 5.1,
+    "ws48": 0.167,
+    "vorp": 4.1,
+    "epm": 6.23
+  },
+  "Emanuel Miller|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Emanuel Miller|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Emanuel Miller|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Evan Mobley|2025-26": {
+    "bpm": 3.4,
+    "ws48": 0.175,
+    "vorp": 2.9,
+    "epm": 4.22
+  },
+  "Evan Mobley|2024-25": {
+    "bpm": 3.4,
+    "ws48": 0.175,
+    "vorp": 2.9,
+    "epm": 4.22
+  },
+  "Evan Mobley|2023-24": {
+    "bpm": 3.4,
+    "ws48": 0.175,
+    "vorp": 2.9,
+    "epm": 4.22
+  },
+  "James Harden|2025-26": {
+    "bpm": 2.9,
+    "ws48": 0.141,
+    "vorp": 2.4,
+    "epm": 3.57
+  },
+  "James Harden|2024-25": {
+    "bpm": 2.9,
+    "ws48": 0.141,
+    "vorp": 2.4,
+    "epm": 3.57
+  },
+  "James Harden|2023-24": {
+    "bpm": 2.9,
+    "ws48": 0.141,
+    "vorp": 2.4,
+    "epm": 3.57
+  },
+  "Jarrett Allen|2025-26": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Jarrett Allen|2024-25": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Jarrett Allen|2023-24": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Jaylon Tyson|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Jaylon Tyson|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Jaylon Tyson|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Keon Ellis|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Keon Ellis|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Keon Ellis|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Larry Nance Jr.|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Larry Nance Jr.|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Larry Nance Jr.|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Max Strus|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Max Strus|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Max Strus|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Nae'Qwan Tomlin|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Nae'Qwan Tomlin|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Nae'Qwan Tomlin|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Riley Minix|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Riley Minix|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Riley Minix|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Sam Merrill|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Sam Merrill|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Sam Merrill|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Thomas Bryant|2025-26": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Thomas Bryant|2024-25": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Thomas Bryant|2023-24": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Tristan Enaruna|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Tristan Enaruna|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Tristan Enaruna|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Tyrese Proctor|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Tyrese Proctor|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Tyrese Proctor|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "AJ Johnson|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "AJ Johnson|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "AJ Johnson|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Brandon Williams|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Brandon Williams|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Brandon Williams|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Caleb Martin|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Caleb Martin|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Caleb Martin|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Cooper Flagg|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Cooper Flagg|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Cooper Flagg|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Daniel Gafford|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Daniel Gafford|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Daniel Gafford|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Dereck Lively II|2025-26": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Dereck Lively II|2024-25": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Dereck Lively II|2023-24": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Dwight Powell|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Dwight Powell|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Dwight Powell|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Khris Middleton|2025-26": {
+    "bpm": 2.1,
+    "ws48": 0.122,
+    "vorp": 1.5,
+    "epm": 2.49
+  },
+  "Khris Middleton|2024-25": {
+    "bpm": 2.1,
+    "ws48": 0.122,
+    "vorp": 1.5,
+    "epm": 2.49
+  },
+  "Khris Middleton|2023-24": {
+    "bpm": 2.1,
+    "ws48": 0.122,
+    "vorp": 1.5,
+    "epm": 2.49
+  },
+  "Klay Thompson|2025-26": {
+    "bpm": 0.5,
+    "ws48": 0.084,
+    "vorp": 0.6,
+    "epm": 0.69
+  },
+  "Klay Thompson|2024-25": {
+    "bpm": 0.5,
+    "ws48": 0.084,
+    "vorp": 0.6,
+    "epm": 0.69
+  },
+  "Klay Thompson|2023-24": {
+    "bpm": 0.5,
+    "ws48": 0.084,
+    "vorp": 0.6,
+    "epm": 0.69
+  },
+  "Kyrie Irving|2025-26": {
+    "bpm": 3.8,
+    "ws48": 0.161,
+    "vorp": 2.7,
+    "epm": 4.5
+  },
+  "Kyrie Irving|2024-25": {
+    "bpm": 3.8,
+    "ws48": 0.161,
+    "vorp": 2.7,
+    "epm": 4.5
+  },
+  "Kyrie Irving|2023-24": {
+    "bpm": 3.8,
+    "ws48": 0.161,
+    "vorp": 2.7,
+    "epm": 4.5
+  },
+  "Marvin Bagley III|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Marvin Bagley III|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Marvin Bagley III|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Max Christie|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Max Christie|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Max Christie|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Miles Kelly|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Miles Kelly|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Miles Kelly|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Moussa Cisse|2025-26": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Moussa Cisse|2024-25": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Moussa Cisse|2023-24": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Naji Marshall|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Naji Marshall|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Naji Marshall|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "P.J. Washington|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "P.J. Washington|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "P.J. Washington|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Ryan Nembhard|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Ryan Nembhard|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Ryan Nembhard|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Tyus Jones|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Tyus Jones|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Tyus Jones|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Aaron Gordon|2025-26": {
+    "bpm": 1.8,
+    "ws48": 0.138,
+    "vorp": 1.6,
+    "epm": 2.26
+  },
+  "Aaron Gordon|2024-25": {
+    "bpm": 1.8,
+    "ws48": 0.138,
+    "vorp": 1.6,
+    "epm": 2.26
+  },
+  "Aaron Gordon|2023-24": {
+    "bpm": 1.8,
+    "ws48": 0.138,
+    "vorp": 1.6,
+    "epm": 2.26
+  },
+  "Bruce Brown|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Bruce Brown|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Bruce Brown|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Cameron Johnson|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Cameron Johnson|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Cameron Johnson|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Christian Braun|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Christian Braun|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Christian Braun|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Curtis Jones|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Curtis Jones|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Curtis Jones|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "DaRon Holmes II|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "DaRon Holmes II|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "DaRon Holmes II|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Jalen Pickett|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Jalen Pickett|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Jalen Pickett|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Jamal Murray|2025-26": {
+    "bpm": 3.3,
+    "ws48": 0.148,
+    "vorp": 2.6,
+    "epm": 4.01
+  },
+  "Jamal Murray|2024-25": {
+    "bpm": 3.3,
+    "ws48": 0.148,
+    "vorp": 2.6,
+    "epm": 4.01
+  },
+  "Jamal Murray|2023-24": {
+    "bpm": 3.3,
+    "ws48": 0.148,
+    "vorp": 2.6,
+    "epm": 4.01
+  },
+  "Jonas Valanciunas|2025-26": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Jonas Valanciunas|2024-25": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Jonas Valanciunas|2023-24": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Julian Strawther|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Julian Strawther|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Julian Strawther|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "KJ Simpson|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "KJ Simpson|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "KJ Simpson|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Nikola Jokic|2025-26": {
+    "bpm": 11.3,
+    "ws48": 0.305,
+    "vorp": 8.7,
+    "epm": 13.65
+  },
+  "Nikola Jokic|2024-25": {
+    "bpm": 11.3,
+    "ws48": 0.305,
+    "vorp": 8.7,
+    "epm": 13.65
+  },
+  "Nikola Jokic|2023-24": {
+    "bpm": 11.3,
+    "ws48": 0.305,
+    "vorp": 8.7,
+    "epm": 13.65
+  },
+  "Peyton Watson|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Peyton Watson|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Peyton Watson|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Spencer Jones|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Spencer Jones|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Spencer Jones|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Tamar Bates|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Tamar Bates|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Tamar Bates|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Tim Hardaway Jr.|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Tim Hardaway Jr.|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Tim Hardaway Jr.|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Zeke Nnaji|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Zeke Nnaji|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Zeke Nnaji|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Ausar Thompson|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Ausar Thompson|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Ausar Thompson|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Bobi Klintman|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Bobi Klintman|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Bobi Klintman|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Cade Cunningham|2025-26": {
+    "bpm": 1.7,
+    "ws48": 0.099,
+    "vorp": 1.4,
+    "epm": 2.09
+  },
+  "Cade Cunningham|2024-25": {
+    "bpm": 1.7,
+    "ws48": 0.099,
+    "vorp": 1.4,
+    "epm": 2.09
+  },
+  "Cade Cunningham|2023-24": {
+    "bpm": 1.7,
+    "ws48": 0.099,
+    "vorp": 1.4,
+    "epm": 2.09
+  },
+  "Caris LeVert|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Caris LeVert|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Caris LeVert|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Chaz Lanier|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Chaz Lanier|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Chaz Lanier|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Daniss Jenkins|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Daniss Jenkins|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Daniss Jenkins|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Dario Saric|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Dario Saric|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Dario Saric|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Duncan Robinson|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Duncan Robinson|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Duncan Robinson|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Isaac Jones|2025-26": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Isaac Jones|2024-25": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Isaac Jones|2023-24": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Isaiah Stewart|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Isaiah Stewart|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Isaiah Stewart|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Jalen Duren|2025-26": {
+    "bpm": 1.1,
+    "ws48": 0.121,
+    "vorp": 1,
+    "epm": 1.39
+  },
+  "Jalen Duren|2024-25": {
+    "bpm": 1.1,
+    "ws48": 0.121,
+    "vorp": 1,
+    "epm": 1.39
+  },
+  "Jalen Duren|2023-24": {
+    "bpm": 1.1,
+    "ws48": 0.121,
+    "vorp": 1,
+    "epm": 1.39
+  },
+  "Javonte Green|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Javonte Green|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Javonte Green|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Kevin Huerter|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Kevin Huerter|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Kevin Huerter|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Marcus Sasser|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Marcus Sasser|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Marcus Sasser|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Paul Reed|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Paul Reed|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Paul Reed|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Ronald Holland II|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Ronald Holland II|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Ronald Holland II|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Tobias Harris|2025-26": {
+    "bpm": 1.2,
+    "ws48": 0.108,
+    "vorp": 1.1,
+    "epm": 1.52
+  },
+  "Tobias Harris|2024-25": {
+    "bpm": 1.2,
+    "ws48": 0.108,
+    "vorp": 1.1,
+    "epm": 1.52
+  },
+  "Tobias Harris|2023-24": {
+    "bpm": 1.2,
+    "ws48": 0.108,
+    "vorp": 1.1,
+    "epm": 1.52
+  },
+  "Tolu Smith|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Tolu Smith|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Tolu Smith|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Wendell Moore Jr.|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Wendell Moore Jr.|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Wendell Moore Jr.|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Al Horford|2025-26": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Al Horford|2024-25": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Al Horford|2023-24": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Brandin Podziemski|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Brandin Podziemski|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Brandin Podziemski|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "De'Anthony Melton|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "De'Anthony Melton|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "De'Anthony Melton|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Draymond Green|2025-26": {
+    "bpm": 3.8,
+    "ws48": 0.162,
+    "vorp": 2.4,
+    "epm": 4.38
+  },
+  "Draymond Green|2024-25": {
+    "bpm": 3.8,
+    "ws48": 0.162,
+    "vorp": 2.4,
+    "epm": 4.38
+  },
+  "Draymond Green|2023-24": {
+    "bpm": 3.8,
+    "ws48": 0.162,
+    "vorp": 2.4,
+    "epm": 4.38
+  },
+  "Gary Payton II|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Gary Payton II|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Gary Payton II|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Gui Santos|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Gui Santos|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Gui Santos|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Jimmy Butler III|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Jimmy Butler III|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Jimmy Butler III|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Kristaps Porzingis|2025-26": {
+    "bpm": 4.9,
+    "ws48": 0.219,
+    "vorp": 4,
+    "epm": 6.01
+  },
+  "Kristaps Porzingis|2024-25": {
+    "bpm": 4.9,
+    "ws48": 0.219,
+    "vorp": 4,
+    "epm": 6.01
+  },
+  "Kristaps Porzingis|2023-24": {
+    "bpm": 4.9,
+    "ws48": 0.219,
+    "vorp": 4,
+    "epm": 6.01
+  },
+  "LJ Cryer|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "LJ Cryer|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "LJ Cryer|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Malevy Leons|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Malevy Leons|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Malevy Leons|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Moses Moody|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Moses Moody|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Moses Moody|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Nate Williams|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Nate Williams|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Nate Williams|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Pat Spencer|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Pat Spencer|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Pat Spencer|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Quinten Post|2025-26": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Quinten Post|2024-25": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Quinten Post|2023-24": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Seth Curry|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Seth Curry|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Seth Curry|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Stephen Curry|2025-26": {
+    "bpm": 7.4,
+    "ws48": 0.219,
+    "vorp": 5.5,
+    "epm": 8.86
+  },
+  "Stephen Curry|2024-25": {
+    "bpm": 7.4,
+    "ws48": 0.219,
+    "vorp": 5.5,
+    "epm": 8.86
+  },
+  "Stephen Curry|2023-24": {
+    "bpm": 7.4,
+    "ws48": 0.219,
+    "vorp": 5.5,
+    "epm": 8.86
+  },
+  "Will Richard|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Will Richard|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Will Richard|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Aaron Holiday|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Aaron Holiday|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Aaron Holiday|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Alperen Sengun|2025-26": {
+    "bpm": 4.3,
+    "ws48": 0.176,
+    "vorp": 3.2,
+    "epm": 5.15
+  },
+  "Alperen Sengun|2024-25": {
+    "bpm": 4.3,
+    "ws48": 0.176,
+    "vorp": 3.2,
+    "epm": 5.15
+  },
+  "Alperen Sengun|2023-24": {
+    "bpm": 4.3,
+    "ws48": 0.176,
+    "vorp": 3.2,
+    "epm": 5.15
+  },
+  "Amen Thompson|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Amen Thompson|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Amen Thompson|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Clint Capela|2025-26": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Clint Capela|2024-25": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Clint Capela|2023-24": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Dorian Finney-Smith|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Dorian Finney-Smith|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Dorian Finney-Smith|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Fred VanVleet|2025-26": {
+    "bpm": 2.5,
+    "ws48": 0.127,
+    "vorp": 2,
+    "epm": 3.05
+  },
+  "Fred VanVleet|2024-25": {
+    "bpm": 2.5,
+    "ws48": 0.127,
+    "vorp": 2,
+    "epm": 3.05
+  },
+  "Fred VanVleet|2023-24": {
+    "bpm": 2.5,
+    "ws48": 0.127,
+    "vorp": 2,
+    "epm": 3.05
+  },
+  "Isaiah Crawford|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Isaiah Crawford|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Isaiah Crawford|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Jabari Smith Jr.|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Jabari Smith Jr.|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Jabari Smith Jr.|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Jae'Sean Tate|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Jae'Sean Tate|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Jae'Sean Tate|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "JD Davison|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "JD Davison|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "JD Davison|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Jeff Green|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Jeff Green|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Jeff Green|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Josh Okogie|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Josh Okogie|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Josh Okogie|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Kevin Durant|2025-26": {
+    "bpm": 5.7,
+    "ws48": 0.205,
+    "vorp": 4.9,
+    "epm": 7.09
+  },
+  "Kevin Durant|2024-25": {
+    "bpm": 5.7,
+    "ws48": 0.205,
+    "vorp": 4.9,
+    "epm": 7.09
+  },
+  "Kevin Durant|2023-24": {
+    "bpm": 5.7,
+    "ws48": 0.205,
+    "vorp": 4.9,
+    "epm": 7.09
+  },
+  "Reed Sheppard|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Reed Sheppard|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Reed Sheppard|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Steven Adams|2025-26": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Steven Adams|2024-25": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Steven Adams|2023-24": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Tari Eason|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Tari Eason|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Tari Eason|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Tristen Newton|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Tristen Newton|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Tristen Newton|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Aaron Nesmith|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Aaron Nesmith|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Aaron Nesmith|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Andrew Nembhard|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Andrew Nembhard|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Andrew Nembhard|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Ben Sheppard|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Ben Sheppard|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Ben Sheppard|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Ethan Thompson|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Ethan Thompson|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Ethan Thompson|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Ivica Zubac|2025-26": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Ivica Zubac|2024-25": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Ivica Zubac|2023-24": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Jarace Walker|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Jarace Walker|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Jarace Walker|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Jay Huff|2025-26": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Jay Huff|2024-25": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Jay Huff|2023-24": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Johnny Furphy|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Johnny Furphy|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Johnny Furphy|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Kam Jones|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Kam Jones|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Kam Jones|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Kobe Brown|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Kobe Brown|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Kobe Brown|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Micah Potter|2025-26": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Micah Potter|2024-25": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Micah Potter|2023-24": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Obi Toppin|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Obi Toppin|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Obi Toppin|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Pascal Siakam|2025-26": {
+    "bpm": 2.9,
+    "ws48": 0.137,
+    "vorp": 2.4,
+    "epm": 3.57
+  },
+  "Pascal Siakam|2024-25": {
+    "bpm": 2.9,
+    "ws48": 0.137,
+    "vorp": 2.4,
+    "epm": 3.57
+  },
+  "Pascal Siakam|2023-24": {
+    "bpm": 2.9,
+    "ws48": 0.137,
+    "vorp": 2.4,
+    "epm": 3.57
+  },
+  "Quenton Jackson|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Quenton Jackson|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Quenton Jackson|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "T.J. McConnell|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "T.J. McConnell|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "T.J. McConnell|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Taelon Peter|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Taelon Peter|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Taelon Peter|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Tyrese Haliburton|2025-26": {
+    "bpm": 7,
+    "ws48": 0.211,
+    "vorp": 5.8,
+    "epm": 8.62
+  },
+  "Tyrese Haliburton|2024-25": {
+    "bpm": 7,
+    "ws48": 0.211,
+    "vorp": 5.8,
+    "epm": 8.62
+  },
+  "Tyrese Haliburton|2023-24": {
+    "bpm": 7,
+    "ws48": 0.211,
+    "vorp": 5.8,
+    "epm": 8.62
+  },
+  "Bennedict Mathurin|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Bennedict Mathurin|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Bennedict Mathurin|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Bogdan Bogdanovic|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Bogdan Bogdanovic|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Bogdan Bogdanovic|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Bradley Beal|2025-26": {
+    "bpm": 1.8,
+    "ws48": 0.117,
+    "vorp": 1.3,
+    "epm": 2.14
+  },
+  "Bradley Beal|2024-25": {
+    "bpm": 1.8,
+    "ws48": 0.117,
+    "vorp": 1.3,
+    "epm": 2.14
+  },
+  "Bradley Beal|2023-24": {
+    "bpm": 1.8,
+    "ws48": 0.117,
+    "vorp": 1.3,
+    "epm": 2.14
+  },
+  "Brook Lopez|2025-26": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Brook Lopez|2024-25": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Brook Lopez|2023-24": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Cam Christie|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Cam Christie|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Cam Christie|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Darius Garland|2025-26": {
+    "bpm": 3.1,
+    "ws48": 0.131,
+    "vorp": 2,
+    "epm": 3.59
+  },
+  "Darius Garland|2024-25": {
+    "bpm": 3.1,
+    "ws48": 0.131,
+    "vorp": 2,
+    "epm": 3.59
+  },
+  "Darius Garland|2023-24": {
+    "bpm": 3.1,
+    "ws48": 0.131,
+    "vorp": 2,
+    "epm": 3.59
+  },
+  "Derrick Jones Jr.|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Derrick Jones Jr.|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Derrick Jones Jr.|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Isaiah Jackson|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Isaiah Jackson|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Isaiah Jackson|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "John Collins|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "John Collins|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "John Collins|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Jordan Miller|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Jordan Miller|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Jordan Miller|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Kawhi Leonard|2025-26": {
+    "bpm": 5,
+    "ws48": 0.201,
+    "vorp": 4.3,
+    "epm": 6.22
+  },
+  "Kawhi Leonard|2024-25": {
+    "bpm": 5,
+    "ws48": 0.201,
+    "vorp": 4.3,
+    "epm": 6.22
+  },
+  "Kawhi Leonard|2023-24": {
+    "bpm": 5,
+    "ws48": 0.201,
+    "vorp": 4.3,
+    "epm": 6.22
+  },
+  "Kobe Sanders|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Kobe Sanders|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Kobe Sanders|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Kris Dunn|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Kris Dunn|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Kris Dunn|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Nicolas Batum|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Nicolas Batum|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Nicolas Batum|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Norchad Omier|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Norchad Omier|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Norchad Omier|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "TyTy Washington Jr.|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "TyTy Washington Jr.|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "TyTy Washington Jr.|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Yanic Konan Niederhauser|2025-26": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Yanic Konan Niederhauser|2024-25": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Yanic Konan Niederhauser|2023-24": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Adou Thiero|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Adou Thiero|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Adou Thiero|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Austin Reaves|2025-26": {
+    "bpm": 2,
+    "ws48": 0.129,
+    "vorp": 1.7,
+    "epm": 2.48
+  },
+  "Austin Reaves|2024-25": {
+    "bpm": 2,
+    "ws48": 0.129,
+    "vorp": 1.7,
+    "epm": 2.48
+  },
+  "Austin Reaves|2023-24": {
+    "bpm": 2,
+    "ws48": 0.129,
+    "vorp": 1.7,
+    "epm": 2.48
+  },
+  "Bronny James|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Bronny James|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Bronny James|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Chris Manon|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Chris Manon|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Chris Manon|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Dalton Knecht|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Dalton Knecht|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Dalton Knecht|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Deandre Ayton|2025-26": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Deandre Ayton|2024-25": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Deandre Ayton|2023-24": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Drew Timme|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Drew Timme|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Drew Timme|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Jake LaRavia|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Jake LaRavia|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Jake LaRavia|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Jarred Vanderbilt|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Jarred Vanderbilt|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Jarred Vanderbilt|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Jaxson Hayes|2025-26": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Jaxson Hayes|2024-25": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Jaxson Hayes|2023-24": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Kobe Bufkin|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Kobe Bufkin|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Kobe Bufkin|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "LeBron James|2025-26": {
+    "bpm": 6.2,
+    "ws48": 0.188,
+    "vorp": 5.1,
+    "epm": 7.62
+  },
+  "LeBron James|2024-25": {
+    "bpm": 6.2,
+    "ws48": 0.188,
+    "vorp": 5.1,
+    "epm": 7.62
+  },
+  "LeBron James|2023-24": {
+    "bpm": 6.2,
+    "ws48": 0.188,
+    "vorp": 5.1,
+    "epm": 7.62
+  },
+  "Luka Doncic|2025-26": {
+    "bpm": 9.1,
+    "ws48": 0.224,
+    "vorp": 7.2,
+    "epm": 11.07
+  },
+  "Luka Doncic|2024-25": {
+    "bpm": 9.1,
+    "ws48": 0.224,
+    "vorp": 7.2,
+    "epm": 11.07
+  },
+  "Luka Doncic|2023-24": {
+    "bpm": 9.1,
+    "ws48": 0.224,
+    "vorp": 7.2,
+    "epm": 11.07
+  },
+  "Luke Kennard|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Luke Kennard|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Luke Kennard|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Marcus Smart|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Marcus Smart|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Marcus Smart|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Maxi Kleber|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Maxi Kleber|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Maxi Kleber|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Nick Smith Jr.|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Nick Smith Jr.|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Nick Smith Jr.|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Rui Hachimura|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Rui Hachimura|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Rui Hachimura|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Brandon Clarke|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Brandon Clarke|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Brandon Clarke|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Cam Spencer|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Cam Spencer|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Cam Spencer|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Cedric Coward|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Cedric Coward|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Cedric Coward|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "GG Jackson|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "GG Jackson|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "GG Jackson|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Ja Morant|2025-26": {
+    "bpm": 4.2,
+    "ws48": 0.156,
+    "vorp": 3.4,
+    "epm": 5.14
+  },
+  "Ja Morant|2024-25": {
+    "bpm": 4.2,
+    "ws48": 0.156,
+    "vorp": 3.4,
+    "epm": 5.14
+  },
+  "Ja Morant|2023-24": {
+    "bpm": 4.2,
+    "ws48": 0.156,
+    "vorp": 3.4,
+    "epm": 5.14
+  },
+  "Jahmai Mashack|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Jahmai Mashack|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Jahmai Mashack|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Javon Small|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Javon Small|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Javon Small|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Jaylen Wells|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Jaylen Wells|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Jaylen Wells|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Kentavious Caldwell-Pope|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Kentavious Caldwell-Pope|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Kentavious Caldwell-Pope|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Kyle Anderson|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Kyle Anderson|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Kyle Anderson|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Lawson Lovering|2025-26": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Lawson Lovering|2024-25": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Lawson Lovering|2023-24": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Olivier-Maxence Prosper|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Olivier-Maxence Prosper|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Olivier-Maxence Prosper|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Santi Aldama|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Santi Aldama|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Santi Aldama|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Scotty Pippen Jr.|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Scotty Pippen Jr.|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Scotty Pippen Jr.|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Taylor Hendricks|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Taylor Hendricks|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Taylor Hendricks|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Ty Jerome|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Ty Jerome|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Ty Jerome|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Walter Clayton Jr.|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Walter Clayton Jr.|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Walter Clayton Jr.|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Zach Edey|2025-26": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Zach Edey|2024-25": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Zach Edey|2023-24": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Andrew Wiggins|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Andrew Wiggins|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Andrew Wiggins|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Bam Adebayo|2025-26": {
+    "bpm": 3.9,
+    "ws48": 0.171,
+    "vorp": 3.3,
+    "epm": 4.83
+  },
+  "Bam Adebayo|2024-25": {
+    "bpm": 3.9,
+    "ws48": 0.171,
+    "vorp": 3.3,
+    "epm": 4.83
+  },
+  "Bam Adebayo|2023-24": {
+    "bpm": 3.9,
+    "ws48": 0.171,
+    "vorp": 3.3,
+    "epm": 4.83
+  },
+  "Davion Mitchell|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Davion Mitchell|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Davion Mitchell|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Dru Smith|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Dru Smith|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Dru Smith|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Jahmir Young|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Jahmir Young|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Jahmir Young|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Jaime Jaquez Jr.|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Jaime Jaquez Jr.|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Jaime Jaquez Jr.|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Kasparas Jakucionis|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Kasparas Jakucionis|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Kasparas Jakucionis|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Kel'el Ware|2025-26": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Kel'el Ware|2024-25": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Kel'el Ware|2023-24": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Keshad Johnson|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Keshad Johnson|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Keshad Johnson|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Myron Gardner|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Myron Gardner|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Myron Gardner|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Nikola Jovic|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Nikola Jovic|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Nikola Jovic|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Norman Powell|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Norman Powell|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Norman Powell|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Pelle Larsson|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Pelle Larsson|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Pelle Larsson|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Simone Fontecchio|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Simone Fontecchio|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Simone Fontecchio|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Terry Rozier|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Terry Rozier|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Terry Rozier|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Trevor Keels|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Trevor Keels|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Trevor Keels|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Tyler Herro|2025-26": {
+    "bpm": 1,
+    "ws48": 0.092,
+    "vorp": 1.1,
+    "epm": 1.34
+  },
+  "Tyler Herro|2024-25": {
+    "bpm": 1,
+    "ws48": 0.092,
+    "vorp": 1.1,
+    "epm": 1.34
+  },
+  "Tyler Herro|2023-24": {
+    "bpm": 1,
+    "ws48": 0.092,
+    "vorp": 1.1,
+    "epm": 1.34
+  },
+  "Vladislav Goldin|2025-26": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Vladislav Goldin|2024-25": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Vladislav Goldin|2023-24": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "AJ Green|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "AJ Green|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "AJ Green|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Alex Antetokounmpo|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Alex Antetokounmpo|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Alex Antetokounmpo|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Andre Jackson Jr.|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Andre Jackson Jr.|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Andre Jackson Jr.|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Bobby Portis|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Bobby Portis|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Bobby Portis|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Cam Thomas|2025-26": {
+    "bpm": -0.4,
+    "ws48": 0.072,
+    "vorp": 0.2,
+    "epm": -0.28
+  },
+  "Cam Thomas|2024-25": {
+    "bpm": -0.4,
+    "ws48": 0.072,
+    "vorp": 0.2,
+    "epm": -0.28
+  },
+  "Cam Thomas|2023-24": {
+    "bpm": -0.4,
+    "ws48": 0.072,
+    "vorp": 0.2,
+    "epm": -0.28
+  },
+  "Gary Harris|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Gary Harris|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Gary Harris|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Gary Trent Jr.|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Gary Trent Jr.|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Gary Trent Jr.|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Giannis Antetokounmpo|2025-26": {
+    "bpm": 9.4,
+    "ws48": 0.271,
+    "vorp": 7.1,
+    "epm": 11.3
+  },
+  "Giannis Antetokounmpo|2024-25": {
+    "bpm": 9.4,
+    "ws48": 0.271,
+    "vorp": 7.1,
+    "epm": 11.3
+  },
+  "Giannis Antetokounmpo|2023-24": {
+    "bpm": 9.4,
+    "ws48": 0.271,
+    "vorp": 7.1,
+    "epm": 11.3
+  },
+  "Jericho Sims|2025-26": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Jericho Sims|2024-25": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Jericho Sims|2023-24": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Kevin Porter Jr.|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Kevin Porter Jr.|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Kevin Porter Jr.|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Kyle Kuzma|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.086,
+    "vorp": 0.9,
+    "epm": 0.9
+  },
+  "Kyle Kuzma|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.086,
+    "vorp": 0.9,
+    "epm": 0.9
+  },
+  "Kyle Kuzma|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.086,
+    "vorp": 0.9,
+    "epm": 0.9
+  },
+  "Myles Turner|2025-26": {
+    "bpm": 2.6,
+    "ws48": 0.148,
+    "vorp": 2.1,
+    "epm": 3.18
+  },
+  "Myles Turner|2024-25": {
+    "bpm": 2.6,
+    "ws48": 0.148,
+    "vorp": 2.1,
+    "epm": 3.18
+  },
+  "Myles Turner|2023-24": {
+    "bpm": 2.6,
+    "ws48": 0.148,
+    "vorp": 2.1,
+    "epm": 3.18
+  },
+  "Ousmane Dieng|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Ousmane Dieng|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Ousmane Dieng|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Pete Nance|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Pete Nance|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Pete Nance|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Ryan Rollins|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Ryan Rollins|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Ryan Rollins|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Taurean Prince|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Taurean Prince|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Taurean Prince|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Thanasis Antetokounmpo|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Thanasis Antetokounmpo|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Thanasis Antetokounmpo|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Anthony Edwards|2025-26": {
+    "bpm": 3.6,
+    "ws48": 0.151,
+    "vorp": 3.1,
+    "epm": 4.48
+  },
+  "Anthony Edwards|2024-25": {
+    "bpm": 3.6,
+    "ws48": 0.151,
+    "vorp": 3.1,
+    "epm": 4.48
+  },
+  "Anthony Edwards|2023-24": {
+    "bpm": 3.6,
+    "ws48": 0.151,
+    "vorp": 3.1,
+    "epm": 4.48
+  },
+  "Ayo Dosunmu|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Ayo Dosunmu|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Ayo Dosunmu|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Bones Hyland|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Bones Hyland|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Bones Hyland|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Donte DiVincenzo|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Donte DiVincenzo|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Donte DiVincenzo|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Enrique Freeman|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Enrique Freeman|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Enrique Freeman|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Jaden McDaniels|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Jaden McDaniels|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Jaden McDaniels|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Jaylen Clark|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Jaylen Clark|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Jaylen Clark|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Joan Beringer|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Joan Beringer|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Joan Beringer|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Joe Ingles|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Joe Ingles|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Joe Ingles|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Julian Phillips|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Julian Phillips|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Julian Phillips|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Julius Randle|2025-26": {
+    "bpm": 2.2,
+    "ws48": 0.115,
+    "vorp": 1.9,
+    "epm": 2.74
+  },
+  "Julius Randle|2024-25": {
+    "bpm": 2.2,
+    "ws48": 0.115,
+    "vorp": 1.9,
+    "epm": 2.74
+  },
+  "Julius Randle|2023-24": {
+    "bpm": 2.2,
+    "ws48": 0.115,
+    "vorp": 1.9,
+    "epm": 2.74
+  },
+  "Mike Conley|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Mike Conley|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Mike Conley|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Naz Reid|2025-26": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Naz Reid|2024-25": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Naz Reid|2023-24": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Rocco Zikarsky|2025-26": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Rocco Zikarsky|2024-25": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Rocco Zikarsky|2023-24": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Rudy Gobert|2025-26": {
+    "bpm": 3.5,
+    "ws48": 0.214,
+    "vorp": 3.8,
+    "epm": 4.67
+  },
+  "Rudy Gobert|2024-25": {
+    "bpm": 3.5,
+    "ws48": 0.214,
+    "vorp": 3.8,
+    "epm": 4.67
+  },
+  "Rudy Gobert|2023-24": {
+    "bpm": 3.5,
+    "ws48": 0.214,
+    "vorp": 3.8,
+    "epm": 4.67
+  },
+  "Terrence Shannon Jr.|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Terrence Shannon Jr.|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Terrence Shannon Jr.|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Bryce McGowens|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Bryce McGowens|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Bryce McGowens|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "DeAndre Jordan|2025-26": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "DeAndre Jordan|2024-25": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "DeAndre Jordan|2023-24": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Dejounte Murray|2025-26": {
+    "bpm": 2,
+    "ws48": 0.112,
+    "vorp": 1.9,
+    "epm": 2.56
+  },
+  "Dejounte Murray|2024-25": {
+    "bpm": 2,
+    "ws48": 0.112,
+    "vorp": 1.9,
+    "epm": 2.56
+  },
+  "Dejounte Murray|2023-24": {
+    "bpm": 2,
+    "ws48": 0.112,
+    "vorp": 1.9,
+    "epm": 2.56
+  },
+  "Derik Queen|2025-26": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Derik Queen|2024-25": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Derik Queen|2023-24": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Herbert Jones|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Herbert Jones|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Herbert Jones|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Hunter Dickinson|2025-26": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Hunter Dickinson|2024-25": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Hunter Dickinson|2023-24": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Jeremiah Fears|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Jeremiah Fears|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Jeremiah Fears|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Jordan Hawkins|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Jordan Hawkins|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Jordan Hawkins|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Jordan Poole|2025-26": {
+    "bpm": -1.8,
+    "ws48": 0.041,
+    "vorp": -0.5,
+    "epm": -1.82
+  },
+  "Jordan Poole|2024-25": {
+    "bpm": -1.8,
+    "ws48": 0.041,
+    "vorp": -0.5,
+    "epm": -1.82
+  },
+  "Jordan Poole|2023-24": {
+    "bpm": -1.8,
+    "ws48": 0.041,
+    "vorp": -0.5,
+    "epm": -1.82
+  },
+  "Karlo Matkovic|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Karlo Matkovic|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Karlo Matkovic|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Kevon Looney|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Kevon Looney|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Kevon Looney|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Micah Peavy|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Micah Peavy|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Micah Peavy|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Saddiq Bey|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Saddiq Bey|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Saddiq Bey|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Trey Alexander|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Trey Alexander|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Trey Alexander|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Trey Murphy III|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Trey Murphy III|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Trey Murphy III|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Yves Missi|2025-26": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Yves Missi|2024-25": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Yves Missi|2023-24": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Zion Williamson|2025-26": {
+    "bpm": 4.7,
+    "ws48": 0.189,
+    "vorp": 3.6,
+    "epm": 5.67
+  },
+  "Zion Williamson|2024-25": {
+    "bpm": 4.7,
+    "ws48": 0.189,
+    "vorp": 3.6,
+    "epm": 5.67
+  },
+  "Zion Williamson|2023-24": {
+    "bpm": 4.7,
+    "ws48": 0.189,
+    "vorp": 3.6,
+    "epm": 5.67
+  },
+  "Ariel Hukporti|2025-26": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Ariel Hukporti|2024-25": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Ariel Hukporti|2023-24": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Dillon Jones|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Dillon Jones|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Dillon Jones|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Jalen Brunson|2025-26": {
+    "bpm": 5.6,
+    "ws48": 0.193,
+    "vorp": 4.8,
+    "epm": 6.96
+  },
+  "Jalen Brunson|2024-25": {
+    "bpm": 5.6,
+    "ws48": 0.193,
+    "vorp": 4.8,
+    "epm": 6.96
+  },
+  "Jalen Brunson|2023-24": {
+    "bpm": 5.6,
+    "ws48": 0.193,
+    "vorp": 4.8,
+    "epm": 6.96
+  },
+  "Jeremy Sochan|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Jeremy Sochan|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Jeremy Sochan|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Jordan Clarkson|2025-26": {
+    "bpm": 0,
+    "ws48": 0.074,
+    "vorp": 0.2,
+    "epm": 0.08
+  },
+  "Jordan Clarkson|2024-25": {
+    "bpm": 0,
+    "ws48": 0.074,
+    "vorp": 0.2,
+    "epm": 0.08
+  },
+  "Jordan Clarkson|2023-24": {
+    "bpm": 0,
+    "ws48": 0.074,
+    "vorp": 0.2,
+    "epm": 0.08
+  },
+  "Jose Alvarado|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Jose Alvarado|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Jose Alvarado|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Josh Hart|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Josh Hart|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Josh Hart|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Karl-Anthony Towns|2025-26": {
+    "bpm": 3.1,
+    "ws48": 0.166,
+    "vorp": 2.6,
+    "epm": 3.83
+  },
+  "Karl-Anthony Towns|2024-25": {
+    "bpm": 3.1,
+    "ws48": 0.166,
+    "vorp": 2.6,
+    "epm": 3.83
+  },
+  "Karl-Anthony Towns|2023-24": {
+    "bpm": 3.1,
+    "ws48": 0.166,
+    "vorp": 2.6,
+    "epm": 3.83
+  },
+  "Kevin McCullar Jr.|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Kevin McCullar Jr.|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Kevin McCullar Jr.|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Landry Shamet|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Landry Shamet|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Landry Shamet|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Mikal Bridges|2025-26": {
+    "bpm": 1.5,
+    "ws48": 0.098,
+    "vorp": 1.3,
+    "epm": 1.87
+  },
+  "Mikal Bridges|2024-25": {
+    "bpm": 1.5,
+    "ws48": 0.098,
+    "vorp": 1.3,
+    "epm": 1.87
+  },
+  "Mikal Bridges|2023-24": {
+    "bpm": 1.5,
+    "ws48": 0.098,
+    "vorp": 1.3,
+    "epm": 1.87
+  },
+  "Miles McBride|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Miles McBride|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Miles McBride|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Mitchell Robinson|2025-26": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Mitchell Robinson|2024-25": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Mitchell Robinson|2023-24": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Mohamed Diawara|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Mohamed Diawara|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Mohamed Diawara|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "OG Anunoby|2025-26": {
+    "bpm": 2.4,
+    "ws48": 0.139,
+    "vorp": 2,
+    "epm": 2.96
+  },
+  "OG Anunoby|2024-25": {
+    "bpm": 2.4,
+    "ws48": 0.139,
+    "vorp": 2,
+    "epm": 2.96
+  },
+  "OG Anunoby|2023-24": {
+    "bpm": 2.4,
+    "ws48": 0.139,
+    "vorp": 2,
+    "epm": 2.96
+  },
+  "Pacome Dadiet|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Pacome Dadiet|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Pacome Dadiet|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Trey Jemison III|2025-26": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Trey Jemison III|2024-25": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Trey Jemison III|2023-24": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Tyler Kolek|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Tyler Kolek|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Tyler Kolek|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Aaron Wiggins|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Aaron Wiggins|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Aaron Wiggins|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Ajay Mitchell|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Ajay Mitchell|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Ajay Mitchell|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Alex Caruso|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Alex Caruso|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Alex Caruso|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Branden Carlson|2025-26": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Branden Carlson|2024-25": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Branden Carlson|2023-24": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Brooks Barnhizer|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Brooks Barnhizer|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Brooks Barnhizer|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Buddy Boeheim|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Buddy Boeheim|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Buddy Boeheim|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Cason Wallace|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Cason Wallace|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Cason Wallace|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Chet Holmgren|2025-26": {
+    "bpm": 4.8,
+    "ws48": 0.206,
+    "vorp": 3.9,
+    "epm": 5.88
+  },
+  "Chet Holmgren|2024-25": {
+    "bpm": 4.8,
+    "ws48": 0.206,
+    "vorp": 3.9,
+    "epm": 5.88
+  },
+  "Chet Holmgren|2023-24": {
+    "bpm": 4.8,
+    "ws48": 0.206,
+    "vorp": 3.9,
+    "epm": 5.88
+  },
+  "Isaiah Hartenstein|2025-26": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Isaiah Hartenstein|2024-25": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Isaiah Hartenstein|2023-24": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Isaiah Joe|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Isaiah Joe|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Isaiah Joe|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Jalen Williams|2025-26": {
+    "bpm": 4.4,
+    "ws48": 0.182,
+    "vorp": 3.5,
+    "epm": 5.36
+  },
+  "Jalen Williams|2024-25": {
+    "bpm": 4.4,
+    "ws48": 0.182,
+    "vorp": 3.5,
+    "epm": 5.36
+  },
+  "Jalen Williams|2023-24": {
+    "bpm": 4.4,
+    "ws48": 0.182,
+    "vorp": 3.5,
+    "epm": 5.36
+  },
+  "Jared McCain|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Jared McCain|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Jared McCain|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Jaylin Williams|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Jaylin Williams|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Jaylin Williams|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Kenrich Williams|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Kenrich Williams|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Kenrich Williams|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Luguentz Dort|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Luguentz Dort|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Luguentz Dort|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Nikola Topic|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Nikola Topic|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Nikola Topic|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Shai Gilgeous-Alexander|2025-26": {
+    "bpm": 8.9,
+    "ws48": 0.262,
+    "vorp": 7,
+    "epm": 10.81
+  },
+  "Shai Gilgeous-Alexander|2024-25": {
+    "bpm": 8.9,
+    "ws48": 0.262,
+    "vorp": 7,
+    "epm": 10.81
+  },
+  "Shai Gilgeous-Alexander|2023-24": {
+    "bpm": 8.9,
+    "ws48": 0.262,
+    "vorp": 7,
+    "epm": 10.81
+  },
+  "Thomas Sorber|2025-26": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Thomas Sorber|2024-25": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Thomas Sorber|2023-24": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Alex Morales|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Alex Morales|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Alex Morales|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Anthony Black|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Anthony Black|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Anthony Black|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Colin Castleton|2025-26": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Colin Castleton|2024-25": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Colin Castleton|2023-24": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Desmond Bane|2025-26": {
+    "bpm": 3.7,
+    "ws48": 0.164,
+    "vorp": 2.9,
+    "epm": 4.49
+  },
+  "Desmond Bane|2024-25": {
+    "bpm": 3.7,
+    "ws48": 0.164,
+    "vorp": 2.9,
+    "epm": 4.49
+  },
+  "Desmond Bane|2023-24": {
+    "bpm": 3.7,
+    "ws48": 0.164,
+    "vorp": 2.9,
+    "epm": 4.49
+  },
+  "Franz Wagner|2025-26": {
+    "bpm": 2.7,
+    "ws48": 0.132,
+    "vorp": 2.2,
+    "epm": 3.31
+  },
+  "Franz Wagner|2024-25": {
+    "bpm": 2.7,
+    "ws48": 0.132,
+    "vorp": 2.2,
+    "epm": 3.31
+  },
+  "Franz Wagner|2023-24": {
+    "bpm": 2.7,
+    "ws48": 0.132,
+    "vorp": 2.2,
+    "epm": 3.31
+  },
+  "Goga Bitadze|2025-26": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Goga Bitadze|2024-25": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Goga Bitadze|2023-24": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Jalen Suggs|2025-26": {
+    "bpm": 1.6,
+    "ws48": 0.116,
+    "vorp": 1.4,
+    "epm": 2
+  },
+  "Jalen Suggs|2024-25": {
+    "bpm": 1.6,
+    "ws48": 0.116,
+    "vorp": 1.4,
+    "epm": 2
+  },
+  "Jalen Suggs|2023-24": {
+    "bpm": 1.6,
+    "ws48": 0.116,
+    "vorp": 1.4,
+    "epm": 2
+  },
+  "Jamal Cain|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Jamal Cain|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Jamal Cain|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Jase Richardson|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Jase Richardson|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Jase Richardson|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Jett Howard|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Jett Howard|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Jett Howard|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Jevon Carter|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Jevon Carter|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Jevon Carter|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Jonathan Isaac|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Jonathan Isaac|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Jonathan Isaac|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Moritz Wagner|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Moritz Wagner|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Moritz Wagner|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Noah Penda|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Noah Penda|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Noah Penda|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Paolo Banchero|2025-26": {
+    "bpm": 1.9,
+    "ws48": 0.108,
+    "vorp": 2,
+    "epm": 2.51
+  },
+  "Paolo Banchero|2024-25": {
+    "bpm": 1.9,
+    "ws48": 0.108,
+    "vorp": 2,
+    "epm": 2.51
+  },
+  "Paolo Banchero|2023-24": {
+    "bpm": 1.9,
+    "ws48": 0.108,
+    "vorp": 2,
+    "epm": 2.51
+  },
+  "Tristan da Silva|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Tristan da Silva|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Tristan da Silva|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Wendell Carter Jr.|2025-26": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Wendell Carter Jr.|2024-25": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Wendell Carter Jr.|2023-24": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Adem Bona|2025-26": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Adem Bona|2024-25": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Adem Bona|2023-24": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Andre Drummond|2025-26": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Andre Drummond|2024-25": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Andre Drummond|2023-24": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Cameron Payne|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Cameron Payne|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Cameron Payne|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Charles Bassey|2025-26": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Charles Bassey|2024-25": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Charles Bassey|2023-24": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Dalen Terry|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Dalen Terry|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Dalen Terry|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Dominick Barlow|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Dominick Barlow|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Dominick Barlow|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Jabari Walker|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Jabari Walker|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Jabari Walker|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Joel Embiid|2025-26": {
+    "bpm": 10.2,
+    "ws48": 0.288,
+    "vorp": 7.8,
+    "epm": 12.3
+  },
+  "Joel Embiid|2024-25": {
+    "bpm": 10.2,
+    "ws48": 0.288,
+    "vorp": 7.8,
+    "epm": 12.3
+  },
+  "Joel Embiid|2023-24": {
+    "bpm": 10.2,
+    "ws48": 0.288,
+    "vorp": 7.8,
+    "epm": 12.3
+  },
+  "Johni Broome|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Johni Broome|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Johni Broome|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Justin Edwards|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Justin Edwards|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Justin Edwards|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Kelly Oubre Jr.|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Kelly Oubre Jr.|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Kelly Oubre Jr.|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Kyle Lowry|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Kyle Lowry|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Kyle Lowry|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "MarJon Beauchamp|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "MarJon Beauchamp|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "MarJon Beauchamp|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Paul George|2025-26": {
+    "bpm": 3.2,
+    "ws48": 0.152,
+    "vorp": 2.8,
+    "epm": 4
+  },
+  "Paul George|2024-25": {
+    "bpm": 3.2,
+    "ws48": 0.152,
+    "vorp": 2.8,
+    "epm": 4
+  },
+  "Paul George|2023-24": {
+    "bpm": 3.2,
+    "ws48": 0.152,
+    "vorp": 2.8,
+    "epm": 4
+  },
+  "Quentin Grimes|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Quentin Grimes|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Quentin Grimes|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Trendon Watford|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Trendon Watford|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Trendon Watford|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Tyrese Martin|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Tyrese Martin|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Tyrese Martin|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Tyrese Maxey|2025-26": {
+    "bpm": 3.5,
+    "ws48": 0.141,
+    "vorp": 2.9,
+    "epm": 4.31
+  },
+  "Tyrese Maxey|2024-25": {
+    "bpm": 3.5,
+    "ws48": 0.141,
+    "vorp": 2.9,
+    "epm": 4.31
+  },
+  "Tyrese Maxey|2023-24": {
+    "bpm": 3.5,
+    "ws48": 0.141,
+    "vorp": 2.9,
+    "epm": 4.31
+  },
+  "VJ Edgecombe|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "VJ Edgecombe|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "VJ Edgecombe|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Amir Coffey|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Amir Coffey|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Amir Coffey|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Cole Anthony|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Cole Anthony|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Cole Anthony|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Collin Gillespie|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Collin Gillespie|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Collin Gillespie|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Devin Booker|2025-26": {
+    "bpm": 4.3,
+    "ws48": 0.169,
+    "vorp": 3.7,
+    "epm": 5.35
+  },
+  "Devin Booker|2024-25": {
+    "bpm": 4.3,
+    "ws48": 0.169,
+    "vorp": 3.7,
+    "epm": 5.35
+  },
+  "Devin Booker|2023-24": {
+    "bpm": 4.3,
+    "ws48": 0.169,
+    "vorp": 3.7,
+    "epm": 5.35
+  },
+  "Dillon Brooks|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Dillon Brooks|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Dillon Brooks|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Grayson Allen|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Grayson Allen|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Grayson Allen|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Haywood Highsmith|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Haywood Highsmith|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Haywood Highsmith|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Isaiah Livers|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Isaiah Livers|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Isaiah Livers|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Jalen Green|2025-26": {
+    "bpm": -0.6,
+    "ws48": 0.068,
+    "vorp": 0.1,
+    "epm": -0.5
+  },
+  "Jalen Green|2024-25": {
+    "bpm": -0.6,
+    "ws48": 0.068,
+    "vorp": 0.1,
+    "epm": -0.5
+  },
+  "Jalen Green|2023-24": {
+    "bpm": -0.6,
+    "ws48": 0.068,
+    "vorp": 0.1,
+    "epm": -0.5
+  },
+  "Jamaree Bouyea|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Jamaree Bouyea|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Jamaree Bouyea|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Jordan Goodwin|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Jordan Goodwin|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Jordan Goodwin|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Khaman Maluach|2025-26": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Khaman Maluach|2024-25": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Khaman Maluach|2023-24": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Koby Brea|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Koby Brea|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Koby Brea|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Mark Williams|2025-26": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Mark Williams|2024-25": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Mark Williams|2023-24": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Oso Ighodaro|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Oso Ighodaro|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Oso Ighodaro|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Rasheer Fleming|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Rasheer Fleming|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Rasheer Fleming|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Royce O'Neale|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Royce O'Neale|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Royce O'Neale|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Ryan Dunn|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Ryan Dunn|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Ryan Dunn|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Blake Wesley|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Blake Wesley|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Blake Wesley|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Caleb Love|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Caleb Love|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Caleb Love|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Damian Lillard|2025-26": {
+    "bpm": 4,
+    "ws48": 0.143,
+    "vorp": 3.2,
+    "epm": 4.88
+  },
+  "Damian Lillard|2024-25": {
+    "bpm": 4,
+    "ws48": 0.143,
+    "vorp": 3.2,
+    "epm": 4.88
+  },
+  "Damian Lillard|2023-24": {
+    "bpm": 4,
+    "ws48": 0.143,
+    "vorp": 3.2,
+    "epm": 4.88
+  },
+  "Deni Avdija|2025-26": {
+    "bpm": 1.4,
+    "ws48": 0.101,
+    "vorp": 1.1,
+    "epm": 1.7
+  },
+  "Deni Avdija|2024-25": {
+    "bpm": 1.4,
+    "ws48": 0.101,
+    "vorp": 1.1,
+    "epm": 1.7
+  },
+  "Deni Avdija|2023-24": {
+    "bpm": 1.4,
+    "ws48": 0.101,
+    "vorp": 1.1,
+    "epm": 1.7
+  },
+  "Donovan Clingan|2025-26": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Donovan Clingan|2024-25": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Donovan Clingan|2023-24": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Javonte Cooke|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Javonte Cooke|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Javonte Cooke|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Jerami Grant|2025-26": {
+    "bpm": 0.9,
+    "ws48": 0.097,
+    "vorp": 0.8,
+    "epm": 1.13
+  },
+  "Jerami Grant|2024-25": {
+    "bpm": 0.9,
+    "ws48": 0.097,
+    "vorp": 0.8,
+    "epm": 1.13
+  },
+  "Jerami Grant|2023-24": {
+    "bpm": 0.9,
+    "ws48": 0.097,
+    "vorp": 0.8,
+    "epm": 1.13
+  },
+  "Jrue Holiday|2025-26": {
+    "bpm": 2.8,
+    "ws48": 0.147,
+    "vorp": 2.2,
+    "epm": 3.4
+  },
+  "Jrue Holiday|2024-25": {
+    "bpm": 2.8,
+    "ws48": 0.147,
+    "vorp": 2.2,
+    "epm": 3.4
+  },
+  "Jrue Holiday|2023-24": {
+    "bpm": 2.8,
+    "ws48": 0.147,
+    "vorp": 2.2,
+    "epm": 3.4
+  },
+  "Kris Murray|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Kris Murray|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Kris Murray|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Matisse Thybulle|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Matisse Thybulle|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Matisse Thybulle|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Rayan Rupert|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Rayan Rupert|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Rayan Rupert|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Robert Williams III|2025-26": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Robert Williams III|2024-25": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Robert Williams III|2023-24": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Scoot Henderson|2025-26": {
+    "bpm": -1.2,
+    "ws48": 0.055,
+    "vorp": -0.1,
+    "epm": -1.12
+  },
+  "Scoot Henderson|2024-25": {
+    "bpm": -1.2,
+    "ws48": 0.055,
+    "vorp": -0.1,
+    "epm": -1.12
+  },
+  "Scoot Henderson|2023-24": {
+    "bpm": -1.2,
+    "ws48": 0.055,
+    "vorp": -0.1,
+    "epm": -1.12
+  },
+  "Shaedon Sharpe|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Shaedon Sharpe|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Shaedon Sharpe|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Sidy Cissoko|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Sidy Cissoko|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Sidy Cissoko|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Toumani Camara|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Toumani Camara|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Toumani Camara|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Vit Krejci|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Vit Krejci|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Vit Krejci|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Yang Hansen|2025-26": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Yang Hansen|2024-25": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Yang Hansen|2023-24": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Daeqwon Plowden|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Daeqwon Plowden|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Daeqwon Plowden|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "De'Andre Hunter|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "De'Andre Hunter|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "De'Andre Hunter|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "DeMar DeRozan|2025-26": {
+    "bpm": 1.9,
+    "ws48": 0.111,
+    "vorp": 1.5,
+    "epm": 2.31
+  },
+  "DeMar DeRozan|2024-25": {
+    "bpm": 1.9,
+    "ws48": 0.111,
+    "vorp": 1.5,
+    "epm": 2.31
+  },
+  "DeMar DeRozan|2023-24": {
+    "bpm": 1.9,
+    "ws48": 0.111,
+    "vorp": 1.5,
+    "epm": 2.31
+  },
+  "Devin Carter|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Devin Carter|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Devin Carter|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Domantas Sabonis|2025-26": {
+    "bpm": 6,
+    "ws48": 0.224,
+    "vorp": 5.4,
+    "epm": 7.56
+  },
+  "Domantas Sabonis|2024-25": {
+    "bpm": 6,
+    "ws48": 0.224,
+    "vorp": 5.4,
+    "epm": 7.56
+  },
+  "Domantas Sabonis|2023-24": {
+    "bpm": 6,
+    "ws48": 0.224,
+    "vorp": 5.4,
+    "epm": 7.56
+  },
+  "Doug McDermott|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Doug McDermott|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Doug McDermott|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Drew Eubanks|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Drew Eubanks|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Drew Eubanks|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Dylan Cardwell|2025-26": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Dylan Cardwell|2024-25": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Dylan Cardwell|2023-24": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Isaiah Stevens|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Isaiah Stevens|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Isaiah Stevens|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Keegan Murray|2025-26": {
+    "bpm": 1.5,
+    "ws48": 0.112,
+    "vorp": 1.3,
+    "epm": 1.87
+  },
+  "Keegan Murray|2024-25": {
+    "bpm": 1.5,
+    "ws48": 0.112,
+    "vorp": 1.3,
+    "epm": 1.87
+  },
+  "Keegan Murray|2023-24": {
+    "bpm": 1.5,
+    "ws48": 0.112,
+    "vorp": 1.3,
+    "epm": 1.87
+  },
+  "Malik Monk|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Malik Monk|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Malik Monk|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Maxime Raynaud|2025-26": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Maxime Raynaud|2024-25": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Maxime Raynaud|2023-24": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Nique Clifford|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Nique Clifford|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Nique Clifford|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Precious Achiuwa|2025-26": {
+    "bpm": 0.7,
+    "ws48": 0.102,
+    "vorp": 0.8,
+    "epm": 0.6
+  },
+  "Precious Achiuwa|2024-25": {
+    "bpm": 0.7,
+    "ws48": 0.102,
+    "vorp": 0.8,
+    "epm": 0.6
+  },
+  "Precious Achiuwa|2023-24": {
+    "bpm": 0.7,
+    "ws48": 0.102,
+    "vorp": 0.8,
+    "epm": 0.6
+  },
+  "Russell Westbrook|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Russell Westbrook|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Russell Westbrook|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Zach LaVine|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.097,
+    "vorp": 0.7,
+    "epm": 1
+  },
+  "Zach LaVine|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.097,
+    "vorp": 0.7,
+    "epm": 1
+  },
+  "Zach LaVine|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.097,
+    "vorp": 0.7,
+    "epm": 1
+  },
+  "Bismack Biyombo|2025-26": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Bismack Biyombo|2024-25": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Bismack Biyombo|2023-24": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Carter Bryant|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Carter Bryant|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Carter Bryant|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "David Jones Garcia|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "David Jones Garcia|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "David Jones Garcia|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "De'Aaron Fox|2025-26": {
+    "bpm": 4.1,
+    "ws48": 0.163,
+    "vorp": 3.4,
+    "epm": 5.05
+  },
+  "De'Aaron Fox|2024-25": {
+    "bpm": 4.1,
+    "ws48": 0.163,
+    "vorp": 3.4,
+    "epm": 5.05
+  },
+  "De'Aaron Fox|2023-24": {
+    "bpm": 4.1,
+    "ws48": 0.163,
+    "vorp": 3.4,
+    "epm": 5.05
+  },
+  "Devin Vassell|2025-26": {
+    "bpm": 1.2,
+    "ws48": 0.098,
+    "vorp": 1,
+    "epm": 1.48
+  },
+  "Devin Vassell|2024-25": {
+    "bpm": 1.2,
+    "ws48": 0.098,
+    "vorp": 1,
+    "epm": 1.48
+  },
+  "Devin Vassell|2023-24": {
+    "bpm": 1.2,
+    "ws48": 0.098,
+    "vorp": 1,
+    "epm": 1.48
+  },
+  "Dylan Harper|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Dylan Harper|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Dylan Harper|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Harrison Barnes|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Harrison Barnes|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Harrison Barnes|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Harrison Ingram|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Harrison Ingram|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Harrison Ingram|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Jordan McLaughlin|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Jordan McLaughlin|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Jordan McLaughlin|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Julian Champagnie|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Julian Champagnie|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Julian Champagnie|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Keldon Johnson|2025-26": {
+    "bpm": 0.3,
+    "ws48": 0.081,
+    "vorp": 0.5,
+    "epm": 0.47
+  },
+  "Keldon Johnson|2024-25": {
+    "bpm": 0.3,
+    "ws48": 0.081,
+    "vorp": 0.5,
+    "epm": 0.47
+  },
+  "Keldon Johnson|2023-24": {
+    "bpm": 0.3,
+    "ws48": 0.081,
+    "vorp": 0.5,
+    "epm": 0.47
+  },
+  "Kelly Olynyk|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Kelly Olynyk|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Kelly Olynyk|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Lindy Waters III|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Lindy Waters III|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Lindy Waters III|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Luke Kornet|2025-26": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Luke Kornet|2024-25": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Luke Kornet|2023-24": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Mason Plumlee|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Mason Plumlee|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Mason Plumlee|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Stanley Umude|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Stanley Umude|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Stanley Umude|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Stephon Castle|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Stephon Castle|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Stephon Castle|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Victor Wembanyama|2025-26": {
+    "bpm": 5.3,
+    "ws48": 0.192,
+    "vorp": 4.2,
+    "epm": 6.45
+  },
+  "Victor Wembanyama|2024-25": {
+    "bpm": 5.3,
+    "ws48": 0.192,
+    "vorp": 4.2,
+    "epm": 6.45
+  },
+  "Victor Wembanyama|2023-24": {
+    "bpm": 5.3,
+    "ws48": 0.192,
+    "vorp": 4.2,
+    "epm": 6.45
+  },
+  "A.J. Lawson|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "A.J. Lawson|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "A.J. Lawson|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Alijah Martin|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Alijah Martin|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Alijah Martin|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Brandon Ingram|2025-26": {
+    "bpm": 2.5,
+    "ws48": 0.126,
+    "vorp": 2.1,
+    "epm": 3.09
+  },
+  "Brandon Ingram|2024-25": {
+    "bpm": 2.5,
+    "ws48": 0.126,
+    "vorp": 2.1,
+    "epm": 3.09
+  },
+  "Brandon Ingram|2023-24": {
+    "bpm": 2.5,
+    "ws48": 0.126,
+    "vorp": 2.1,
+    "epm": 3.09
+  },
+  "Chucky Hepburn|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Chucky Hepburn|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Chucky Hepburn|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Collin Murray-Boyles|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Collin Murray-Boyles|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Collin Murray-Boyles|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Garrett Temple|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Garrett Temple|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Garrett Temple|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Gradey Dick|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Gradey Dick|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Gradey Dick|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Immanuel Quickley|2025-26": {
+    "bpm": 1.9,
+    "ws48": 0.113,
+    "vorp": 1.5,
+    "epm": 2.31
+  },
+  "Immanuel Quickley|2024-25": {
+    "bpm": 1.9,
+    "ws48": 0.113,
+    "vorp": 1.5,
+    "epm": 2.31
+  },
+  "Immanuel Quickley|2023-24": {
+    "bpm": 1.9,
+    "ws48": 0.113,
+    "vorp": 1.5,
+    "epm": 2.31
+  },
+  "Ja'Kobe Walter|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Ja'Kobe Walter|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Ja'Kobe Walter|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Jakob Poeltl|2025-26": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Jakob Poeltl|2024-25": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Jakob Poeltl|2023-24": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Jamal Shead|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Jamal Shead|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Jamal Shead|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Jamison Battle|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Jamison Battle|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Jamison Battle|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Jonathan Mogbo|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Jonathan Mogbo|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Jonathan Mogbo|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "RJ Barrett|2025-26": {
+    "bpm": 0.2,
+    "ws48": 0.083,
+    "vorp": 0.4,
+    "epm": 0.34
+  },
+  "RJ Barrett|2024-25": {
+    "bpm": 0.2,
+    "ws48": 0.083,
+    "vorp": 0.4,
+    "epm": 0.34
+  },
+  "RJ Barrett|2023-24": {
+    "bpm": 0.2,
+    "ws48": 0.083,
+    "vorp": 0.4,
+    "epm": 0.34
+  },
+  "Sandro Mamukelashvili|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Sandro Mamukelashvili|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Sandro Mamukelashvili|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Scottie Barnes|2025-26": {
+    "bpm": 3.7,
+    "ws48": 0.159,
+    "vorp": 3.1,
+    "epm": 4.57
+  },
+  "Scottie Barnes|2024-25": {
+    "bpm": 3.7,
+    "ws48": 0.159,
+    "vorp": 3.1,
+    "epm": 4.57
+  },
+  "Scottie Barnes|2023-24": {
+    "bpm": 3.7,
+    "ws48": 0.159,
+    "vorp": 3.1,
+    "epm": 4.57
+  },
+  "Trayce Jackson-Davis|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Trayce Jackson-Davis|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Trayce Jackson-Davis|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Ace Bailey|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Ace Bailey|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Ace Bailey|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Blake Hinson|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Blake Hinson|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Blake Hinson|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Brice Sensabaugh|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Brice Sensabaugh|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Brice Sensabaugh|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Cody Williams|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Cody Williams|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Cody Williams|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Elijah Harkless|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Elijah Harkless|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Elijah Harkless|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Isaiah Collier|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Isaiah Collier|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Isaiah Collier|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Jaren Jackson Jr.|2025-26": {
+    "bpm": 4,
+    "ws48": 0.184,
+    "vorp": 3.2,
+    "epm": 4.88
+  },
+  "Jaren Jackson Jr.|2024-25": {
+    "bpm": 4,
+    "ws48": 0.184,
+    "vorp": 3.2,
+    "epm": 4.88
+  },
+  "Jaren Jackson Jr.|2023-24": {
+    "bpm": 4,
+    "ws48": 0.184,
+    "vorp": 3.2,
+    "epm": 4.88
+  },
+  "John Konchar|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "John Konchar|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "John Konchar|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Jusuf Nurkic|2025-26": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Jusuf Nurkic|2024-25": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Jusuf Nurkic|2023-24": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Kevin Love|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Kevin Love|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Kevin Love|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Keyonte George|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Keyonte George|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Keyonte George|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Kyle Filipowski|2025-26": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Kyle Filipowski|2024-25": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Kyle Filipowski|2023-24": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Lauri Markkanen|2025-26": {
+    "bpm": 3.3,
+    "ws48": 0.158,
+    "vorp": 2.7,
+    "epm": 4.05
+  },
+  "Lauri Markkanen|2024-25": {
+    "bpm": 3.3,
+    "ws48": 0.158,
+    "vorp": 2.7,
+    "epm": 4.05
+  },
+  "Lauri Markkanen|2023-24": {
+    "bpm": 3.3,
+    "ws48": 0.158,
+    "vorp": 2.7,
+    "epm": 4.05
+  },
+  "Oscar Tshiebwe|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Oscar Tshiebwe|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Oscar Tshiebwe|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Svi Mykhailiuk|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Svi Mykhailiuk|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Svi Mykhailiuk|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Vince Williams Jr.|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Vince Williams Jr.|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Vince Williams Jr.|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Walker Kessler|2025-26": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Walker Kessler|2024-25": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Walker Kessler|2023-24": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Alex Sarr|2025-26": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Alex Sarr|2024-25": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Alex Sarr|2023-24": {
+    "bpm": 0.9,
+    "ws48": 0.109,
+    "vorp": 0.9,
+    "epm": 0.7
+  },
+  "Alondes Williams|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Alondes Williams|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Alondes Williams|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Anthony Davis|2025-26": {
+    "bpm": 5.8,
+    "ws48": 0.225,
+    "vorp": 5,
+    "epm": 7.22
+  },
+  "Anthony Davis|2024-25": {
+    "bpm": 5.8,
+    "ws48": 0.225,
+    "vorp": 5,
+    "epm": 7.22
+  },
+  "Anthony Davis|2023-24": {
+    "bpm": 5.8,
+    "ws48": 0.225,
+    "vorp": 5,
+    "epm": 7.22
+  },
+  "Anthony Gill|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Anthony Gill|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Anthony Gill|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Bilal Coulibaly|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Bilal Coulibaly|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Bilal Coulibaly|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Bub Carrington|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Bub Carrington|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Bub Carrington|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Cam Whitmore|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Cam Whitmore|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Cam Whitmore|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "D'Angelo Russell|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "D'Angelo Russell|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "D'Angelo Russell|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Jaden Hardy|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Jaden Hardy|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Jaden Hardy|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Jamir Watkins|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Jamir Watkins|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Jamir Watkins|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Justin Champagnie|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Justin Champagnie|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Justin Champagnie|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Kyshawn George|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Kyshawn George|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Kyshawn George|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Sharife Cooper|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Sharife Cooper|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Sharife Cooper|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Trae Young|2025-26": {
+    "bpm": 4.6,
+    "ws48": 0.145,
+    "vorp": 3.2,
+    "epm": 5.42
+  },
+  "Trae Young|2024-25": {
+    "bpm": 4.6,
+    "ws48": 0.145,
+    "vorp": 3.2,
+    "epm": 5.42
+  },
+  "Trae Young|2023-24": {
+    "bpm": 4.6,
+    "ws48": 0.145,
+    "vorp": 3.2,
+    "epm": 5.42
+  },
+  "Tre Johnson|2025-26": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Tre Johnson|2024-25": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Tre Johnson|2023-24": {
+    "bpm": 0.8,
+    "ws48": 0.093,
+    "vorp": 0.7,
+    "epm": 0.7
+  },
+  "Tristan Vukcevic|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Tristan Vukcevic|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Tristan Vukcevic|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Will Riley|2025-26": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Will Riley|2024-25": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  },
+  "Will Riley|2023-24": {
+    "bpm": 0.6,
+    "ws48": 0.094,
+    "vorp": 0.6,
+    "epm": 0.5
+  }
+}
