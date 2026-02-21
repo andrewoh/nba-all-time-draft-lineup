@@ -3,7 +3,11 @@ services:
     name: nba-all-time-draft-lineup
     env: docker
     autoDeploy: true
-    plan: free
+    plan: starter
+    disk:
+      name: sqlite-data
+      mountPath: /var/data
+      sizeGB: 1
     envVars:
       - key: DATABASE_URL
-        value: file:/tmp/dev.db
+        value: file:/var/data/dev.db
