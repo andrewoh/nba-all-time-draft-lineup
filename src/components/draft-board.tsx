@@ -10,7 +10,6 @@ import { cn } from '@/lib/cn';
 import { LINEUP_SLOTS } from '@/lib/types';
 import type { LineupSlot, LineupState, RosterPlayer, Team } from '@/lib/types';
 
-type PositionFilter = 'ALL' | LineupSlot;
 type MobilePanel = 'players' | 'lineup';
 
 type DraftBoardProps = {
@@ -52,7 +51,6 @@ export function DraftBoard({
 
   const [selectedPlayer, setSelectedPlayer] = useState<string | null>(null);
   const [selectedSlot, setSelectedSlot] = useState<LineupSlot | null>(null);
-  const [positionFilter, setPositionFilter] = useState<PositionFilter>('ALL');
   const [mobilePanel, setMobilePanel] = useState<MobilePanel>('players');
   const [isConfirmOpen, setIsConfirmOpen] = useState(false);
   const [isSubmittingPick, setIsSubmittingPick] = useState(false);
@@ -70,15 +68,25 @@ export function DraftBoard({
     () => selectedPlayerProfile?.eligibleSlots ?? [],
     [selectedPlayerProfile]
   );
-  const filteredRoster = useMemo(
-    () =>
-      roster.filter((player) =>
-        positionFilter === 'ALL' ? true : player.eligibleSlots.includes(positionFilter)
-      ),
-    [positionFilter, roster]
-  );
-
   const openSlots = LINEUP_SLOTS.filter((slot) => !lineup[slot]);
+  const rankedRoster = useMemo(() => {
+    return [...roster]
+      .map((player) => ({
+        player,
+        isPlayable: player.eligibleSlots.some((slot) => openSlots.includes(slot))
+      }))
+      .sort((a, b) => {
+        if (a.isPlayable !== b.isPlayable) {
+          return a.isPlayable ? -1 : 1;
+        }
+
+        return a.player.name.localeCompare(b.player.name);
+      });
+  }, [openSlots, roster]);
+  const playableCount = rankedRoster.reduce((count, item) => count + (item.isPlayable ? 1 : 0), 0);
+  const selectedPlayerIsPlayable = selectedPlayer
+    ? selectedPlayerEligibleSlots.some((slot) => openSlots.includes(slot))
+    : false;
   const lineupComplete = openSlots.length === 0;
   const progressPercent = ((currentDrawIndex + 1) / TOTAL_DRAWS) * 100;
   const canConfirm = Boolean(
@@ -125,21 +133,16 @@ export function DraftBoard({
   }, [isConfirmOpen]);
 
   useEffect(() => {
-    if (!selectedPlayer) {
-      return;
-    }
-
-    const stillVisible = filteredRoster.some((player) => player.name === selectedPlayer);
-    if (!stillVisible) {
+    if (selectedPlayer && !selectedPlayerIsPlayable) {
       setSelectedPlayer(null);
       setSelectedSlot(null);
       setIsConfirmOpen(false);
     }
-  }, [filteredRoster, selectedPlayer]);
+  }, [selectedPlayer, selectedPlayerIsPlayable]);
 
   return (
     <>
-      <section className="card p-5">
+      <section className="card fade-up p-5">
         <div className="flex flex-wrap items-center justify-between gap-4">
           <div className="flex items-center gap-3">
             {teamLogoUrl ? (
@@ -161,12 +164,12 @@ export function DraftBoard({
             </div>
           </div>
 
-          <div className="shot-clock-shell">
+          <div className="shot-clock-shell hidden md:block">
             <p className="shot-clock-label">SHOT CLOCK</p>
             <div className="shot-clock-display">
               <p
                 className={cn('shot-clock-value', secondsRemaining <= 5 && 'animate-pulse')}
-                data-testid="shot-clock"
+                data-testid="shot-clock-desktop"
               >
                 {String(secondsRemaining).padStart(2, '0')}
               </p>
@@ -191,14 +194,44 @@ export function DraftBoard({
         <p className="rounded-lg border border-red-200 bg-red-50 px-3 py-2 text-sm text-red-700">{errorMessage}</p>
       ) : null}
 
-      <div className="md:hidden">
+      <section className="sticky-draft-banner card sticky top-[60px] z-10 p-3 md:hidden">
+        <div className="flex items-center gap-2">
+          {teamLogoUrl ? (
+            <Image
+              src={teamLogoUrl}
+              alt={`${currentTeam.name} logo`}
+              width={36}
+              height={36}
+              className="h-9 w-9 rounded-md border border-slate-200 bg-white p-1"
+            />
+          ) : null}
+          <div className="min-w-0">
+            <p className="text-[11px] font-semibold uppercase tracking-wide text-court-700">Now Drafting</p>
+            <p className="truncate text-sm font-semibold text-slate-900">{currentTeam.name}</p>
+          </div>
+          <div className="ml-auto flex items-center gap-2">
+            <p className="text-xs font-semibold text-slate-600">
+              Draw {currentDrawIndex + 1}/{TOTAL_DRAWS}
+            </p>
+            <p
+              className={cn('mini-shot-clock', secondsRemaining <= 5 && 'urgent')}
+              data-testid="shot-clock"
+              aria-label={`Shot clock ${secondsRemaining} seconds remaining`}
+            >
+              {String(secondsRemaining).padStart(2, '0')}
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <div className="fade-up-delay md:hidden">
         <div className="mobile-segment">
           <button
             type="button"
             data-active={mobilePanel === 'players'}
             onClick={() => setMobilePanel('players')}
           >
-            Players ({filteredRoster.length})
+            Players ({playableCount}/{roster.length})
           </button>
           <button
             type="button"
@@ -214,53 +247,53 @@ export function DraftBoard({
         <section className={cn('card p-5', mobilePanel !== 'players' && 'hidden md:block')}>
           <div className="mb-3 flex items-center justify-between gap-3">
             <h2 className="text-lg font-semibold text-slate-900">Roster</h2>
-            <label className="flex items-center gap-2 text-sm text-slate-600">
-              <span>Filter:</span>
-              <select
-                value={positionFilter}
-                onChange={(event) => setPositionFilter(event.target.value as PositionFilter)}
-                className="rounded-md border border-slate-300 bg-white px-2 py-1 text-sm text-slate-700"
-                data-testid="position-filter"
-              >
-                <option value="ALL">All</option>
-                <option value="PG">PG</option>
-                <option value="SG">SG</option>
-                <option value="SF">SF</option>
-                <option value="PF">PF</option>
-                <option value="C">C</option>
-              </select>
-            </label>
+            <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">
+              Available first, unavailable last
+            </p>
           </div>
 
-          {filteredRoster.length === 0 ? (
-            <p className="text-sm text-slate-500">No players match this position filter.</p>
+          {rankedRoster.length === 0 ? (
+            <p className="text-sm text-slate-500">No players available for this team.</p>
           ) : (
             <ul className="grid gap-2 sm:grid-cols-2">
-              {filteredRoster.map((player, index) => {
+              {rankedRoster.map(({ player, isPlayable }, index) => {
                 const isSelected = selectedPlayer === player.name;
                 return (
-                  <li key={player.name}>
+                  <li key={player.name} className="player-item-enter" style={{ animationDelay: `${Math.min(index, 12) * 18}ms` }}>
                     <button
                       type="button"
                       onClick={() => {
+                        if (!isPlayable) {
+                          return;
+                        }
                         setSelectedPlayer(player.name);
                         setMobilePanel('lineup');
                         setIsConfirmOpen(false);
                       }}
-                      disabled={lineupComplete}
+                      disabled={lineupComplete || !isPlayable}
                       className={cn(
                         'w-full min-h-[3.5rem] rounded-xl border px-3 py-2.5 text-left text-sm transition active:scale-[0.995]',
-                        isSelected
-                          ? 'border-court-700 bg-court-50 text-court-900'
+                        isSelected && isPlayable
+                          ? 'selected-emphasis border-court-700 bg-court-50 text-court-900'
+                          : !isPlayable
+                            ? 'cursor-not-allowed border-slate-200 bg-slate-100 text-slate-400'
                           : 'border-slate-200 bg-white text-slate-700 hover:border-slate-300',
-                        lineupComplete && 'cursor-not-allowed opacity-50'
+                        (lineupComplete || !isPlayable) && 'opacity-70'
                       )}
                       data-testid={`player-option-${index}`}
                     >
-                      <p className="font-semibold">{player.name}</p>
-                      <p className="mt-0.5 text-xs text-slate-500">
+                      <p className={cn('font-semibold', !isPlayable && 'line-through')}>
+                        {!isPlayable ? 'X ' : null}
+                        {player.name}
+                      </p>
+                      <p className={cn('mt-0.5 text-xs', !isPlayable ? 'text-slate-400' : 'text-slate-500')}>
                         {player.yearsWithTeam} | {player.eligibleSlots.join(' / ')}
                       </p>
+                      {!isPlayable ? (
+                        <p className="mt-1 text-[11px] font-semibold uppercase tracking-wide text-red-500">
+                          No open eligible slots
+                        </p>
+                      ) : null}
                     </button>
                   </li>
                 );
