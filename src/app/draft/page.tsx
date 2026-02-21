@@ -51,18 +51,28 @@ export default async function DraftPage({
   }
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-4 pb-24 md:pb-0">
       <div className="flex items-center justify-between">
         <h1 className="text-xl font-semibold text-slate-900">Draft Round</h1>
-        <Link href="/leaderboard" className="text-sm font-medium text-court-700 hover:underline">
+        <Link href="/leaderboard" className="rounded-full border border-blue-200 bg-blue-50 px-3 py-1.5 text-sm font-semibold text-court-700 hover:bg-blue-100">
           Leaderboard
         </Link>
       </div>
 
-      <p className="rounded-lg border border-blue-100 bg-blue-50 px-3 py-2 text-sm text-blue-800">
-        Quick start: pick one all-time franchise legend from the drawn team, check their years with
-        that franchise, assign to an eligible position, and beat the 24-second shot clock.
-      </p>
+      <section className="card p-4">
+        <p className="text-sm font-semibold text-slate-900">How this turn works</p>
+        <div className="mt-2 flex flex-wrap gap-2 text-xs text-slate-700">
+          <span className="chip-control" data-active="true">
+            1) Pick a player
+          </span>
+          <span className="chip-control" data-active="true">
+            2) Choose open slot
+          </span>
+          <span className="chip-control" data-active="true">
+            3) Lock before 24s
+          </span>
+        </div>
+      </section>
 
       <DraftBoard
         key={`${draftView.id}-${draftView.currentDrawIndex}-${draftView.shotClockDeadlineAt ?? 'done'}`}

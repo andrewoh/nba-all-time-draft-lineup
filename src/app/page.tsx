@@ -11,13 +11,28 @@ export default function HomePage({
   const errorMessage = searchParams.error;
 
   return (
-    <div className="grid gap-6 md:grid-cols-[1.2fr_1fr]">
+    <div className="grid gap-4 md:grid-cols-[1.2fr_1fr]">
       <section className="card p-6">
-        <h1 className="text-2xl font-bold text-slate-900">NBA All-Time Random Draft Lineup</h1>
-        <p className="mt-2 text-sm text-slate-600">
-          One round. Five random teams. Draft from each franchise&apos;s all-time top 15 and lock one
-          player into each lineup slot: PG, SG, SF, PF, C.
+        <p className="inline-flex rounded-full border border-blue-200 bg-blue-50 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-court-700">
+          Mobile Friendly Draft
         </p>
+        <h1 className="mt-3 text-2xl font-bold text-slate-900 sm:text-3xl">NBA All-Time Random Draft Lineup</h1>
+        <p className="mt-2 text-sm leading-6 text-slate-600">
+          One round. Five random teams. Pick from each franchise&apos;s all-time top 15 and lock one
+          legend into PG, SG, SF, PF, and C before the 24-second clock expires.
+        </p>
+
+        <div className="mt-4 flex flex-wrap gap-2">
+          <span className="chip-control" data-active="true">
+            5 draws
+          </span>
+          <span className="chip-control" data-active="true">
+            24s shot clock
+          </span>
+          <span className="chip-control" data-active="true">
+            Share with friends
+          </span>
+        </div>
 
         {errorMessage ? (
           <p className="mt-4 rounded-lg border border-red-200 bg-red-50 px-3 py-2 text-sm text-red-700">{errorMessage}</p>

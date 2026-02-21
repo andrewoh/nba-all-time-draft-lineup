@@ -1,0 +1,17 @@
+{
+  "name": "NBA All-Time Draft Lineup",
+  "short_name": "All-Time Draft",
+  "description": "Draft five NBA franchises and build the best all-time lineup.",
+  "display": "standalone",
+  "start_url": "/",
+  "scope": "/",
+  "background_color": "#eef2ff",
+  "theme_color": "#1d4ed8",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "48x48",
+      "type": "image/x-icon"
+    }
+  ]
+}

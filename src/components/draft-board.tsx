@@ -11,6 +11,7 @@ import { LINEUP_SLOTS } from '@/lib/types';
 import type { LineupSlot, LineupState, RosterPlayer, Team } from '@/lib/types';
 
 type PositionFilter = 'ALL' | LineupSlot;
+type MobilePanel = 'players' | 'lineup';
 
 type DraftBoardProps = {
   currentTeam: Team;
@@ -52,6 +53,7 @@ export function DraftBoard({
   const [selectedPlayer, setSelectedPlayer] = useState<string | null>(null);
   const [selectedSlot, setSelectedSlot] = useState<LineupSlot | null>(null);
   const [positionFilter, setPositionFilter] = useState<PositionFilter>('ALL');
+  const [mobilePanel, setMobilePanel] = useState<MobilePanel>('players');
   const [isConfirmOpen, setIsConfirmOpen] = useState(false);
   const [isSubmittingPick, setIsSubmittingPick] = useState(false);
   const [secondsRemaining, setSecondsRemaining] = useState(() =>
@@ -85,6 +87,11 @@ export function DraftBoard({
       openSlots.includes(selectedSlot) &&
       selectedPlayerEligibleSlots.includes(selectedSlot)
   );
+  const selectedSummary = selectedPlayer
+    ? selectedSlot
+      ? `${selectedPlayer} -> ${selectedSlot}`
+      : `${selectedPlayer} selected`
+    : 'Choose player + slot';
 
   useEffect(() => {
     setSecondsRemaining(getSecondsRemaining(shotClockDeadlineAt));
@@ -171,6 +178,7 @@ export function DraftBoard({
             {userName ? <p>You: {userName}</p> : null}
             {groupCode ? <p>Group: {groupCode}</p> : null}
             {seed ? <p>Seed: {seed}</p> : <p>Seed: random</p>}
+            <p>Open Slots: {openSlots.join(', ') || 'None'}</p>
           </div>
         </div>
 
@@ -183,8 +191,27 @@ export function DraftBoard({
         <p className="rounded-lg border border-red-200 bg-red-50 px-3 py-2 text-sm text-red-700">{errorMessage}</p>
       ) : null}
 
+      <div className="md:hidden">
+        <div className="mobile-segment">
+          <button
+            type="button"
+            data-active={mobilePanel === 'players'}
+            onClick={() => setMobilePanel('players')}
+          >
+            Players ({filteredRoster.length})
+          </button>
+          <button
+            type="button"
+            data-active={mobilePanel === 'lineup'}
+            onClick={() => setMobilePanel('lineup')}
+          >
+            Lineup ({openSlots.length} open)
+          </button>
+        </div>
+      </div>
+
       <div className="grid gap-4 md:grid-cols-[1.3fr_1fr]">
-        <section className="card p-5">
+        <section className={cn('card p-5', mobilePanel !== 'players' && 'hidden md:block')}>
           <div className="mb-3 flex items-center justify-between gap-3">
             <h2 className="text-lg font-semibold text-slate-900">Roster</h2>
             <label className="flex items-center gap-2 text-sm text-slate-600">
@@ -217,11 +244,12 @@ export function DraftBoard({
                       type="button"
                       onClick={() => {
                         setSelectedPlayer(player.name);
+                        setMobilePanel('lineup');
                         setIsConfirmOpen(false);
                       }}
                       disabled={lineupComplete}
                       className={cn(
-                        'w-full rounded-lg border px-3 py-2 text-left text-sm transition',
+                        'w-full min-h-[3.5rem] rounded-xl border px-3 py-2.5 text-left text-sm transition active:scale-[0.995]',
                         isSelected
                           ? 'border-court-700 bg-court-50 text-court-900'
                           : 'border-slate-200 bg-white text-slate-700 hover:border-slate-300',
@@ -230,7 +258,7 @@ export function DraftBoard({
                       data-testid={`player-option-${index}`}
                     >
                       <p className="font-semibold">{player.name}</p>
-                      <p className="text-xs text-slate-500">
+                      <p className="mt-0.5 text-xs text-slate-500">
                         {player.yearsWithTeam} | {player.eligibleSlots.join(' / ')}
                       </p>
                     </button>
@@ -241,7 +269,7 @@ export function DraftBoard({
           )}
         </section>
 
-        <section className="card p-5">
+        <section className={cn('card p-5', mobilePanel !== 'lineup' && 'hidden md:block')}>
           <h2 className="text-lg font-semibold text-slate-900">Lineup Slots</h2>
           <p className="mt-1 text-sm text-slate-600">Select an open slot allowed by the player position.</p>
 
@@ -261,7 +289,7 @@ export function DraftBoard({
                   onClick={() => !isDisabled && setSelectedSlot(slot)}
                   disabled={isDisabled}
                   className={cn(
-                    'flex w-full items-center justify-between rounded-lg border px-3 py-2 text-left',
+                    'flex min-h-[3.25rem] w-full items-center justify-between rounded-xl border px-3 py-2.5 text-left active:scale-[0.995]',
                     isOpen && isEligibleForSelectedPlayer
                       ? isSelected
                         ? 'border-court-700 bg-court-50'
@@ -298,13 +326,28 @@ export function DraftBoard({
             type="button"
             onClick={() => setIsConfirmOpen(true)}
             disabled={!canConfirm}
-            className="button-primary mt-4 w-full"
+            className="button-primary mt-4 hidden w-full md:inline-flex"
             data-testid="confirm-assignment"
           >
             Confirm assignment
           </button>
         </section>
       </div>
+
+      {!lineupComplete && !isConfirmOpen ? (
+        <div className="mobile-dock md:hidden">
+          <p className="mobile-dock-meta">{selectedSummary}</p>
+          <button
+            type="button"
+            onClick={() => setIsConfirmOpen(true)}
+            disabled={!canConfirm}
+            className="button-primary w-full"
+            data-testid="confirm-assignment"
+          >
+            Confirm assignment
+          </button>
+        </div>
+      ) : null}
 
       {isConfirmOpen ? (
         <div className="fixed inset-0 z-30 flex items-center justify-center bg-slate-900/40 p-4">
