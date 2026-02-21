@@ -10,6 +10,8 @@ import { cn } from '@/lib/cn';
 import { LINEUP_SLOTS } from '@/lib/types';
 import type { LineupSlot, LineupState, RosterPlayer, Team } from '@/lib/types';
 
+type PositionFilter = 'ALL' | LineupSlot;
+
 type DraftBoardProps = {
   currentTeam: Team;
   roster: RosterPlayer[];
@@ -49,6 +51,7 @@ export function DraftBoard({
 
   const [selectedPlayer, setSelectedPlayer] = useState<string | null>(null);
   const [selectedSlot, setSelectedSlot] = useState<LineupSlot | null>(null);
+  const [positionFilter, setPositionFilter] = useState<PositionFilter>('ALL');
   const [isConfirmOpen, setIsConfirmOpen] = useState(false);
   const [isSubmittingPick, setIsSubmittingPick] = useState(false);
   const [secondsRemaining, setSecondsRemaining] = useState(() =>
@@ -64,6 +67,13 @@ export function DraftBoard({
   const selectedPlayerEligibleSlots = useMemo(
     () => selectedPlayerProfile?.eligibleSlots ?? [],
     [selectedPlayerProfile]
+  );
+  const filteredRoster = useMemo(
+    () =>
+      roster.filter((player) =>
+        positionFilter === 'ALL' ? true : player.eligibleSlots.includes(positionFilter)
+      ),
+    [positionFilter, roster]
   );
 
   const openSlots = LINEUP_SLOTS.filter((slot) => !lineup[slot]);
@@ -106,6 +116,19 @@ export function DraftBoard({
       setIsSubmittingPick(false);
     }
   }, [isConfirmOpen]);
+
+  useEffect(() => {
+    if (!selectedPlayer) {
+      return;
+    }
+
+    const stillVisible = filteredRoster.some((player) => player.name === selectedPlayer);
+    if (!stillVisible) {
+      setSelectedPlayer(null);
+      setSelectedSlot(null);
+      setIsConfirmOpen(false);
+    }
+  }, [filteredRoster, selectedPlayer]);
 
   return (
     <>
@@ -164,13 +187,29 @@ export function DraftBoard({
         <section className="card p-5">
           <div className="mb-3 flex items-center justify-between gap-3">
             <h2 className="text-lg font-semibold text-slate-900">Roster</h2>
+            <label className="flex items-center gap-2 text-sm text-slate-600">
+              <span>Filter:</span>
+              <select
+                value={positionFilter}
+                onChange={(event) => setPositionFilter(event.target.value as PositionFilter)}
+                className="rounded-md border border-slate-300 bg-white px-2 py-1 text-sm text-slate-700"
+                data-testid="position-filter"
+              >
+                <option value="ALL">All</option>
+                <option value="PG">PG</option>
+                <option value="SG">SG</option>
+                <option value="SF">SF</option>
+                <option value="PF">PF</option>
+                <option value="C">C</option>
+              </select>
+            </label>
           </div>
 
-          {roster.length === 0 ? (
-            <p className="text-sm text-slate-500">No players available for this team.</p>
+          {filteredRoster.length === 0 ? (
+            <p className="text-sm text-slate-500">No players match this position filter.</p>
           ) : (
             <ul className="grid gap-2 sm:grid-cols-2">
-              {roster.map((player, index) => {
+              {filteredRoster.map((player, index) => {
                 const isSelected = selectedPlayer === player.name;
                 return (
                   <li key={player.name}>

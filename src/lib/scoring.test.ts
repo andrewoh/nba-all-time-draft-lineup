@@ -35,7 +35,7 @@ describe('score normalization', () => {
     const elite = scorePlayer({ bpm: 99, ws48: 2, vorp: 20, epm: 20 });
     const poor = scorePlayer({ bpm: -99, ws48: -2, vorp: -10, epm: -20 });
 
-    expect(elite.contribution).toBeLessThanOrEqual(100);
+    expect(elite.contribution).toBeLessThanOrEqual(95);
     expect(elite.contribution).toBeGreaterThanOrEqual(0);
     expect(poor.contribution).toBeGreaterThanOrEqual(0);
     expect(poor.contribution).toBeLessThanOrEqual(100);
@@ -57,6 +57,18 @@ describe('score normalization', () => {
     expect(result.teamScore).toBe(0);
     expect(result.playerScores[0]?.contribution).toBe(0);
     expect(result.playerScores[0]?.usedFallback).toBe(false);
+  });
+
+  it('normalizes player contribution against the full all-time player pool', () => {
+    const elite = scoreLineup([
+      { slot: 'PG', playerName: 'Stephen Curry', teamAbbr: 'GSW', teamName: 'Golden State Warriors' }
+    ]);
+    const fallback = scoreLineup([
+      { slot: 'PG', playerName: 'Unknown Player', teamAbbr: 'ATL', teamName: 'Atlanta Hawks' }
+    ]);
+
+    expect(elite.playerScores[0]?.contribution).toBeGreaterThan(fallback.playerScores[0]?.contribution ?? 0);
+    expect(elite.playerScores[0]?.contribution).toBeLessThan(100);
   });
 
 });

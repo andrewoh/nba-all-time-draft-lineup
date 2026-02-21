@@ -21,6 +21,18 @@ const rosterByTeam = new Map<string, FranchiseRosterPlayer[]>();
 const rosterNamesByTeam = new Map<string, string[]>();
 const statsByTeamPlayer = new Map<string, PlayerStats>();
 const slotsByTeamPlayer = new Map<string, LineupSlot[]>();
+const globalMetricRanges: Record<keyof PlayerStats, { min: number; max: number }> = {
+  bpm: { min: 0, max: 100 },
+  ws48: { min: 0, max: 100 },
+  vorp: { min: 0, max: 100 },
+  epm: { min: 0, max: 100 }
+};
+const globalMetricDistributions: Record<keyof PlayerStats, number[]> = {
+  bpm: [],
+  ws48: [],
+  vorp: [],
+  epm: []
+};
 
 const teamLogoIdByAbbr: Record<string, string> = {
   ATL: '1610612737',
@@ -243,6 +255,40 @@ function projectedBaselineStats(teamAbbr: string, playerName: string): PlayerSta
   return fallbackByPrimarySlot(primarySlot);
 }
 
+function initializeGlobalMetricCalibration(): void {
+  const bpm: number[] = [];
+  const ws48: number[] = [];
+  const vorp: number[] = [];
+  const epm: number[] = [];
+
+  for (const stats of statsByTeamPlayer.values()) {
+    bpm.push(stats.bpm);
+    ws48.push(stats.ws48);
+    vorp.push(stats.vorp);
+    epm.push(stats.epm);
+  }
+
+  const updateMetric = (metric: keyof PlayerStats, values: number[]) => {
+    if (values.length === 0) {
+      globalMetricRanges[metric] = { min: 0, max: 100 };
+      globalMetricDistributions[metric] = [];
+      return;
+    }
+
+    const sorted = [...values].sort((a, b) => a - b);
+    globalMetricDistributions[metric] = sorted;
+    globalMetricRanges[metric] = {
+      min: sorted[0] ?? 0,
+      max: sorted[sorted.length - 1] ?? 100
+    };
+  };
+
+  updateMetric('bpm', bpm);
+  updateMetric('ws48', ws48);
+  updateMetric('vorp', vorp);
+  updateMetric('epm', epm);
+}
+
 export function getAllTeams(): Team[] {
   return typedTeams;
 }
@@ -281,6 +327,71 @@ export function getTeamLogoUrl(teamAbbr: string): string | null {
   return `https://cdn.nba.com/logos/nba/${teamId}/global/L/logo.svg`;
 }
 
+function upperBound(sortedValues: number[], value: number): number {
+  let low = 0;
+  let high = sortedValues.length;
+
+  while (low < high) {
+    const mid = Math.floor((low + high) / 2);
+    if ((sortedValues[mid] ?? Number.NEGATIVE_INFINITY) <= value) {
+      low = mid + 1;
+    } else {
+      high = mid;
+    }
+  }
+
+  return low;
+}
+
+function lowerBound(sortedValues: number[], value: number): number {
+  let low = 0;
+  let high = sortedValues.length;
+
+  while (low < high) {
+    const mid = Math.floor((low + high) / 2);
+    if ((sortedValues[mid] ?? Number.POSITIVE_INFINITY) < value) {
+      low = mid + 1;
+    } else {
+      high = mid;
+    }
+  }
+
+  return low;
+}
+
+export function getGlobalMetricRanges(): Record<keyof PlayerStats, { min: number; max: number }> {
+  return {
+    bpm: { ...globalMetricRanges.bpm },
+    ws48: { ...globalMetricRanges.ws48 },
+    vorp: { ...globalMetricRanges.vorp },
+    epm: { ...globalMetricRanges.epm }
+  };
+}
+
+export function normalizePlayerMetricGlobally(metric: keyof PlayerStats, value: number): number {
+  const distribution = globalMetricDistributions[metric];
+  if (distribution.length === 0) {
+    return 50;
+  }
+
+  if (distribution.length === 1) {
+    return 50;
+  }
+
+  const lower = lowerBound(distribution, value);
+  const upper = upperBound(distribution, value);
+
+  if (upper <= 0) {
+    return 0;
+  }
+
+  const clampedLower = clamp(lower, 0, distribution.length - 1);
+  const clampedUpper = clamp(upper - 1, 0, distribution.length - 1);
+  const averageRank = (clampedLower + clampedUpper) / 2;
+
+  return (averageRank / (distribution.length - 1)) * 100;
+}
+
 export function lookupPlayerStats(
   teamAbbr: string,
   playerName: string,
@@ -310,3 +421,5 @@ export function lookupPlayerStats(
     projectedFromSeasons: 1
   };
 }
+
+initializeGlobalMetricCalibration();

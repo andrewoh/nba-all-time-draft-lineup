@@ -1,5 +1,5 @@
 import { DEFAULT_SEASON } from '@/lib/constants';
-import { lookupPlayerStats } from '@/lib/data';
+import { getGlobalMetricRanges, lookupPlayerStats, normalizePlayerMetricGlobally } from '@/lib/data';
 import type { LineupPick, PlayerScoreBreakdown, PlayerStats } from '@/lib/types';
 
 const METRIC_WEIGHTS = {
@@ -13,26 +13,20 @@ const METRIC_WEIGHTS = {
   epm: 0.2
 } as const;
 
-const METRIC_RANGES: Record<keyof PlayerStats, { min: number; max: number }> = {
-  // All-time franchise component scores are pre-scaled to 0-100.
-  bpm: { min: 0, max: 100 },
-  ws48: { min: 0, max: 100 },
-  vorp: { min: 0, max: 100 },
-  epm: { min: 0, max: 100 }
-};
+const CONTRIBUTION_NORMALIZATION = {
+  // Soft cap keeps elite players near ~85-95 instead of bunching at 99/100.
+  ceiling: 95,
+  gamma: 1.15
+} as const;
 
 function clamp(value: number, min: number, max: number): number {
   return Math.max(min, Math.min(max, value));
 }
 
 function normalizeMetric(metric: keyof PlayerStats, value: number): number {
-  const { min, max } = METRIC_RANGES[metric];
-  if (max === min) {
-    return 50;
-  }
-
-  const normalized = ((value - min) / (max - min)) * 100;
-  return clamp(normalized, 0, 100);
+  const percentile = clamp(normalizePlayerMetricGlobally(metric, value), 0, 100);
+  const scaled = Math.pow(percentile / 100, CONTRIBUTION_NORMALIZATION.gamma);
+  return clamp(scaled * CONTRIBUTION_NORMALIZATION.ceiling, 0, CONTRIBUTION_NORMALIZATION.ceiling);
 }
 
 function roundToOneDecimal(value: number): number {
@@ -117,5 +111,6 @@ export function scoreLineup(picks: LineupPick[], season = DEFAULT_SEASON): {
 
 export const SCORING_CONFIG = {
   metricWeights: METRIC_WEIGHTS,
-  metricRanges: METRIC_RANGES
+  metricRanges: getGlobalMetricRanges(),
+  normalization: CONTRIBUTION_NORMALIZATION
 };
