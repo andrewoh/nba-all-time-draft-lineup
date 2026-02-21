@@ -16,6 +16,8 @@ type PlayerSeason = {
   teamId: string;
   seasonId: string;
   gp: number;
+  wins: number;
+  losses: number;
 };
 
 type PlayerAward = {
@@ -28,6 +30,26 @@ type PlayerMeta = {
   careerYears: number;
   seasons: PlayerSeason[];
   awards: PlayerAward[];
+};
+
+type AwardBreakdown = {
+  mvp: number;
+  finalsMvp: number;
+  dpoy: number;
+  roy: number;
+  sixthMan: number;
+  mip: number;
+  allNbaFirst: number;
+  allNbaSecond: number;
+  allNbaThird: number;
+  allDefFirst: number;
+  allDefSecond: number;
+  allStar: number;
+  scoringTitles: number;
+  reboundingTitles: number;
+  assistsTitles: number;
+  stealsTitles: number;
+  blocksTitles: number;
 };
 
 type FranchisePlayerRow = {
@@ -394,6 +416,8 @@ async function fetchPlayerCareerSeasons(playerId: number): Promise<PlayerSeason[
   const teamIdIndex = findHeaderIndex(headers, ['TEAM_ID']);
   const seasonIndex = findHeaderIndex(headers, ['SEASON_ID']);
   const gpIndex = findHeaderIndex(headers, ['GP']);
+  const winsIndex = findHeaderIndex(headers, ['W']);
+  const lossesIndex = findHeaderIndex(headers, ['L']);
 
   if (teamIdIndex === -1 || seasonIndex === -1 || gpIndex === -1) {
     return [];
@@ -414,7 +438,9 @@ async function fetchPlayerCareerSeasons(playerId: number): Promise<PlayerSeason[
     seasons.push({
       teamId,
       seasonId,
-      gp
+      gp,
+      wins: toNumber(data[winsIndex]),
+      losses: toNumber(data[lossesIndex])
     });
   }
 
@@ -489,27 +515,73 @@ function getFallbackSeed(teamAbbr: string, playerName: string): AllTimeSeedPlaye
   return seed.find((entry) => normalizeName(entry.name) === normalized) ?? null;
 }
 
-function computeCareerAwardPoints(awards: PlayerAward[]): number {
-  let points = 0;
+function buildAwardBreakdown(awards: PlayerAward[]): AwardBreakdown {
+  const breakdown: AwardBreakdown = {
+    mvp: 0,
+    finalsMvp: 0,
+    dpoy: 0,
+    roy: 0,
+    sixthMan: 0,
+    mip: 0,
+    allNbaFirst: 0,
+    allNbaSecond: 0,
+    allNbaThird: 0,
+    allDefFirst: 0,
+    allDefSecond: 0,
+    allStar: 0,
+    scoringTitles: 0,
+    reboundingTitles: 0,
+    assistsTitles: 0,
+    stealsTitles: 0,
+    blocksTitles: 0
+  };
 
   for (const award of awards) {
     const description = award.description.toUpperCase();
 
-    if (description.includes('NBA MOST VALUABLE PLAYER')) points += 16;
-    if (description.includes('NBA FINALS MOST VALUABLE PLAYER')) points += 10;
-    if (description.includes('NBA DEFENSIVE PLAYER OF THE YEAR')) points += 8;
-    if (description.includes('NBA ROOKIE OF THE YEAR')) points += 6;
-    if (description.includes('NBA SIXTH MAN')) points += 4;
-    if (description.includes('NBA MOST IMPROVED PLAYER')) points += 4;
-    if (description.includes('ALL-NBA')) points += 6;
-    if (description.includes('ALL-DEFENSIVE')) points += 3;
-    if (description.includes('NBA ALL-STAR')) points += 2;
-    if (description.includes('NBA SCORING CHAMPION')) points += 2;
-    if (description.includes('NBA REBOUNDING CHAMPION')) points += 1.5;
-    if (description.includes('NBA ASSISTS LEADER')) points += 1.5;
-    if (description.includes('NBA STEALS LEADER')) points += 1.5;
-    if (description.includes('NBA BLOCKS LEADER')) points += 1.5;
+    if (description.includes('NBA MOST VALUABLE PLAYER')) breakdown.mvp += 1;
+    if (description.includes('NBA FINALS MOST VALUABLE PLAYER')) breakdown.finalsMvp += 1;
+    if (description.includes('NBA DEFENSIVE PLAYER OF THE YEAR')) breakdown.dpoy += 1;
+    if (description.includes('NBA ROOKIE OF THE YEAR')) breakdown.roy += 1;
+    if (description.includes('NBA SIXTH MAN')) breakdown.sixthMan += 1;
+    if (description.includes('NBA MOST IMPROVED PLAYER')) breakdown.mip += 1;
+    if (description.includes('ALL-NBA FIRST TEAM')) breakdown.allNbaFirst += 1;
+    if (description.includes('ALL-NBA SECOND TEAM')) breakdown.allNbaSecond += 1;
+    if (description.includes('ALL-NBA THIRD TEAM')) breakdown.allNbaThird += 1;
+    if (description.includes('ALL-DEFENSIVE FIRST TEAM')) breakdown.allDefFirst += 1;
+    if (description.includes('ALL-DEFENSIVE SECOND TEAM')) breakdown.allDefSecond += 1;
+    if (description.includes('NBA ALL-STAR')) breakdown.allStar += 1;
+    if (description.includes('NBA SCORING CHAMPION')) breakdown.scoringTitles += 1;
+    if (description.includes('NBA REBOUNDING CHAMPION')) breakdown.reboundingTitles += 1;
+    if (description.includes('NBA ASSISTS LEADER')) breakdown.assistsTitles += 1;
+    if (description.includes('NBA STEALS LEADER')) breakdown.stealsTitles += 1;
+    if (description.includes('NBA BLOCKS LEADER')) breakdown.blocksTitles += 1;
   }
+
+  return breakdown;
+}
+
+function computePlayerAccoladesRaw(awards: PlayerAward[]): number {
+  const breakdown = buildAwardBreakdown(awards);
+
+  const points =
+    breakdown.mvp * 24 +
+    breakdown.finalsMvp * 16 +
+    breakdown.dpoy * 10 +
+    breakdown.roy * 6 +
+    breakdown.sixthMan * 4 +
+    breakdown.mip * 4 +
+    breakdown.allNbaFirst * 9 +
+    breakdown.allNbaSecond * 6 +
+    breakdown.allNbaThird * 4 +
+    breakdown.allDefFirst * 4 +
+    breakdown.allDefSecond * 3 +
+    breakdown.allStar * 2 +
+    breakdown.scoringTitles * 2 +
+    breakdown.reboundingTitles * 1.5 +
+    breakdown.assistsTitles * 1.5 +
+    breakdown.stealsTitles * 1.5 +
+    breakdown.blocksTitles * 1.5;
 
   return rounded(points, 2);
 }
@@ -529,6 +601,18 @@ function championshipsForTeam(awards: PlayerAward[], teamSeasonStarts: Set<numbe
   }
 
   return championshipSeasons.size;
+}
+
+function teamWinningPercentage(seasons: PlayerSeason[]): number {
+  const totalWins = seasons.reduce((sum, season) => sum + season.wins, 0);
+  const totalLosses = seasons.reduce((sum, season) => sum + season.losses, 0);
+  const totalGames = totalWins + totalLosses;
+
+  if (totalGames <= 0) {
+    return 0.5;
+  }
+
+  return totalWins / totalGames;
 }
 
 function deriveYearRange(seasons: PlayerSeason[]): { years: string; yearsWithTeam: number; teamSeasonStarts: Set<number> } {
@@ -629,6 +713,12 @@ function formatSeedFile(seedByTeam: Record<string, AllTimeSeedPlayer[]>): string
   lines.push('  positions: LineupSlot[];');
   lines.push('  careerYears?: number;');
   lines.push('  championships?: number;');
+  lines.push('  categoryRaw?: {');
+  lines.push('    playerAccolades: number;');
+  lines.push('    teamAccolades: number;');
+  lines.push('    stats: number;');
+  lines.push('    advanced: number;');
+  lines.push('  };');
   lines.push('};');
   lines.push('');
   lines.push('// Auto-generated by scripts/sync-all-time-data.ts');
@@ -649,6 +739,11 @@ function formatSeedFile(seedByTeam: Record<string, AllTimeSeedPlayer[]>): string
       }
       if (typeof player.championships === 'number' && player.championships > 0) {
         fields.push(`championships: ${Math.round(player.championships)}`);
+      }
+      if (player.categoryRaw) {
+        fields.push(
+          `categoryRaw: { playerAccolades: ${rounded(player.categoryRaw.playerAccolades, 3)}, teamAccolades: ${rounded(player.categoryRaw.teamAccolades, 3)}, stats: ${rounded(player.categoryRaw.stats, 3)}, advanced: ${rounded(player.categoryRaw.advanced, 3)} }`
+        );
       }
       lines.push(`    { ${fields.join(', ')} },`);
     }
@@ -711,10 +806,14 @@ async function buildTeamSeed(team: Team, teamId: string, candidateLimit: number)
         championshipsForTeam(meta.awards, yearRange.teamSeasonStarts),
         fallbackPlayer?.championships ?? 0
       );
+      const teamWinPct = teamWinningPercentage(teamSeasons);
 
-      const personalAccoladesRaw = computeCareerAwardPoints(meta.awards);
+      const personalAccoladesRaw = computePlayerAccoladesRaw(meta.awards);
       const teamAccoladesRaw =
-        championshipCount * 14 + (leaderCounts.get(candidate.playerId) ?? 0) * 4 + yearsWithTeam * 0.75;
+        championshipCount * 18 +
+        (leaderCounts.get(candidate.playerId) ?? 0) * 4 +
+        yearsWithTeam * 0.9 +
+        teamWinPct * 40;
       const statsRaw =
         candidate.pts * 1 +
         candidate.reb * 1.2 +
@@ -769,10 +868,11 @@ async function buildTeamSeed(team: Team, teamId: string, candidateLimit: number)
         careerYears,
         positions: slotList(fallbackPlayer, []),
         championships: fallbackPlayer?.championships ?? 0,
-        personalAccoladesRaw: 0,
-        teamAccoladesRaw: yearsWithTeam * 0.75,
-        statsRaw: initialFranchiseImpact(candidate),
-        advancedRaw: 0,
+        personalAccoladesRaw: fallbackPlayer?.categoryRaw?.playerAccolades ?? 0,
+        teamAccoladesRaw:
+          fallbackPlayer?.categoryRaw?.teamAccolades ?? yearsWithTeam * 1.1,
+        statsRaw: fallbackPlayer?.categoryRaw?.stats ?? initialFranchiseImpact(candidate),
+        advancedRaw: fallbackPlayer?.categoryRaw?.advanced ?? 0,
         tenureRatio,
         franchiseScore: 0
       } satisfies EnrichedCandidate;
@@ -809,7 +909,13 @@ async function buildTeamSeed(team: Team, teamId: string, candidateLimit: number)
     years: entry.years,
     positions: entry.positions,
     careerYears: Math.max(1, Math.round(entry.careerYears)),
-    championships: Math.max(0, Math.round(entry.championships))
+    championships: Math.max(0, Math.round(entry.championships)),
+    categoryRaw: {
+      playerAccolades: rounded(entry.personalAccoladesRaw, 3),
+      teamAccolades: rounded(entry.teamAccoladesRaw, 3),
+      stats: rounded(entry.statsRaw, 3),
+      advanced: rounded(entry.advancedRaw, 3)
+    }
   }));
 
   if (seedPlayers.length < 15) {

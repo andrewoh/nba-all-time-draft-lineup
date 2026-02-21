@@ -15,6 +15,15 @@ type FranchiseRosterPlayer = RosterPlayer & {
   greatness: FranchiseGreatnessBreakdown;
 };
 
+type CategoryRaw = {
+  playerAccolades: number;
+  teamAccolades: number;
+  stats: number;
+  advanced: number;
+};
+
+type CategoryScores = CategoryRaw;
+
 const typedTeams = teamsData as Team[];
 const teamByAbbr = new Map(typedTeams.map((team) => [team.abbr, team]));
 const rosterByTeam = new Map<string, FranchiseRosterPlayer[]>();
@@ -95,67 +104,60 @@ function parseYearsWithTeam(yearRange: string): number {
   return Math.max(1, endYear - startYear + 1);
 }
 
-function tierForRank(rankIndex: number): number {
-  if (rankIndex <= 2) {
-    return 1;
-  }
-
-  if (rankIndex <= 6) {
-    return 2;
-  }
-
-  if (rankIndex <= 10) {
-    return 3;
-  }
-
-  if (rankIndex <= 13) {
-    return 4;
-  }
-
-  return 5;
-}
-
-function computeGreatness(input: {
+function legacyCategoryRawFromRank(input: {
   rankIndex: number;
   yearsWithTeam: number;
   careerYears: number;
   championships: number;
-}): FranchiseGreatnessBreakdown {
+}): CategoryRaw {
   const { rankIndex, yearsWithTeam, careerYears, championships } = input;
-  const tier = tierForRank(rankIndex);
-  const tierBoostByTier: Record<number, number> = {
-    1: 10,
-    2: 5,
-    3: 0,
-    4: -4,
-    5: -8
+  const rankPercent = clamp(1 - rankIndex / 14, 0, 1);
+  const yearsNorm = clamp(yearsWithTeam / 16, 0, 1);
+  const tenureRatio = clamp(yearsWithTeam / Math.max(1, careerYears), 0.08, 1);
+
+  return {
+    playerAccolades: rankPercent * 72 + championships * 6 + yearsNorm * 10 + tenureRatio * 8,
+    teamAccolades: championships * 20 + yearsNorm * 28 + rankPercent * 24 + tenureRatio * 12,
+    stats: rankPercent * 56 + yearsNorm * 36 + tenureRatio * 14 + championships * 2,
+    advanced: rankPercent * 62 + tenureRatio * 22 + yearsNorm * 12 + championships * 3
+  };
+}
+
+function toCategoryScores(raw: CategoryRaw): CategoryScores {
+  const scale = (metric: keyof CategoryRaw, value: number): number => {
+    const safe = Math.max(0, value);
+    const factorByMetric: Record<keyof CategoryRaw, number> = {
+      playerAccolades: 27,
+      teamAccolades: 26,
+      stats: 19,
+      advanced: 25
+    };
+
+    return clamp(Math.log10(safe + 1) * factorByMetric[metric], 6, 97);
   };
 
-  const rankBase = 100 - rankIndex * 4.2;
-  const tierBoost = tierBoostByTier[tier] ?? 0;
-  const tenureRatio = clamp(yearsWithTeam / Math.max(1, careerYears), 0.08, 1);
-  const tenureAdjustment = (tenureRatio - 0.65) * 30;
+  return {
+    playerAccolades: scale('playerAccolades', raw.playerAccolades),
+    teamAccolades: scale('teamAccolades', raw.teamAccolades),
+    stats: scale('stats', raw.stats),
+    advanced: scale('advanced', raw.advanced)
+  };
+}
 
-  const personalAccolades = clamp(
-    rankBase + tierBoost + yearsWithTeam * 0.55 + tenureAdjustment * 0.6,
-    18,
-    99
-  );
-  const teamAccolades = clamp(
-    rankBase + tierBoost * 0.6 + championships * 6 + yearsWithTeam * 0.75 + tenureAdjustment * 0.7,
-    15,
-    99
-  );
-  const boxStats = clamp(
-    rankBase + tierBoost * 0.35 + yearsWithTeam * 0.9 + tenureAdjustment * 0.45,
-    18,
-    99
-  );
-  const advancedStats = clamp(
-    rankBase + tierBoost * 0.9 + yearsWithTeam * 0.65 + tenureAdjustment * 0.8,
-    18,
-    99
-  );
+function computeGreatness(input: {
+  categories: CategoryScores;
+  yearsWithTeam: number;
+  careerYears: number;
+}): FranchiseGreatnessBreakdown {
+  const { categories, yearsWithTeam, careerYears } = input;
+  const tenureRatio = clamp(yearsWithTeam / Math.max(1, careerYears), 0.08, 1);
+
+  // Contribution categories:
+  // 1) player accolades, 2) team accolades, 3) box stats, 4) advanced impact.
+  const personalAccolades = clamp(categories.playerAccolades * (0.9 + tenureRatio * 0.1), 4, 97);
+  const teamAccolades = clamp(categories.teamAccolades * (0.84 + tenureRatio * 0.16), 4, 97);
+  const boxStats = clamp(categories.stats * (0.88 + tenureRatio * 0.12), 4, 97);
+  const advancedStats = clamp(categories.advanced * (0.87 + tenureRatio * 0.13), 4, 97);
 
   const rawScore =
     personalAccolades * 0.3 +
@@ -163,8 +165,8 @@ function computeGreatness(input: {
     boxStats * 0.25 +
     advancedStats * 0.2;
 
-  const tenureMultiplier = 0.58 + tenureRatio * 0.42;
-  const franchiseScore = clamp(rawScore * tenureMultiplier, 12, 99);
+  const tenureMultiplier = 0.66 + tenureRatio * 0.34;
+  const franchiseScore = clamp(rawScore * tenureMultiplier, 8, 97);
 
   return {
     personalAccolades: roundToOneDecimal(personalAccolades),
@@ -180,22 +182,22 @@ function computeGreatness(input: {
 
 function fallbackByPrimarySlot(slot: LineupSlot): PlayerStats {
   if (slot === 'PG') {
-    return { bpm: 55, ws48: 52, vorp: 54, epm: 53 };
+    return { bpm: 30, ws48: 28, vorp: 33, epm: 29 };
   }
 
   if (slot === 'SG') {
-    return { bpm: 54, ws48: 50, vorp: 53, epm: 52 };
+    return { bpm: 29, ws48: 27, vorp: 32, epm: 28 };
   }
 
   if (slot === 'SF') {
-    return { bpm: 55, ws48: 52, vorp: 55, epm: 54 };
+    return { bpm: 30, ws48: 28, vorp: 33, epm: 29 };
   }
 
   if (slot === 'PF') {
-    return { bpm: 56, ws48: 54, vorp: 56, epm: 55 };
+    return { bpm: 31, ws48: 29, vorp: 34, epm: 30 };
   }
 
-  return { bpm: 57, ws48: 55, vorp: 57, epm: 56 };
+  return { bpm: 32, ws48: 30, vorp: 35, epm: 31 };
 }
 
 function initializeAllTimeData(): void {
@@ -206,12 +208,18 @@ function initializeAllTimeData(): void {
       const yearsWithTeam = parseYearsWithTeam(seedPlayer.years);
       const careerYears = Math.max(seedPlayer.careerYears ?? yearsWithTeam, yearsWithTeam);
       const championships = Math.max(0, seedPlayer.championships ?? 0);
-
-      const greatness = computeGreatness({
+      const categoryRaw = seedPlayer.categoryRaw ?? legacyCategoryRawFromRank({
         rankIndex,
         yearsWithTeam,
         careerYears,
         championships
+      });
+      const categoryScores = toCategoryScores(categoryRaw);
+
+      const greatness = computeGreatness({
+        categories: categoryScores,
+        yearsWithTeam,
+        careerYears
       });
 
       const player: FranchiseRosterPlayer = {

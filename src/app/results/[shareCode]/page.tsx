@@ -99,6 +99,9 @@ export default async function ResultsPage({
       <section className="card overflow-hidden">
         <div className="border-b border-slate-200 px-4 py-3">
           <h2 className="text-lg font-semibold text-slate-900">Per-player contributions</h2>
+          <p className="mt-1 text-xs text-slate-500">
+            Personal/Team/Stats/Advanced are global percentile-style metrics used for contribution scoring.
+          </p>
         </div>
         <div className="overflow-x-auto">
           <table className="min-w-full text-sm">

@@ -109,6 +109,11 @@ What the script does:
 
 - pulls franchise career totals per team
 - enriches candidates with player position, career seasons, and awards
+- builds 4 contribution categories per player:
+  - player accolades (MVP, All-NBA tiers, etc.)
+  - team accolades (titles, franchise win percentage, etc.)
+  - stats (points, rebounds, assists, steals, blocks, turnovers)
+  - advanced impact proxy
 - computes a franchise score using:
   - personal accolades
   - team accolades

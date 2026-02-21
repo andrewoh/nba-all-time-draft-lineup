@@ -189,10 +189,11 @@ async function persistDraftState(input: {
           playerName: playerScore.pick.playerName,
           teamAbbr: playerScore.pick.teamAbbr,
           teamName: playerScore.pick.teamName,
-          bpm: playerScore.stats.bpm,
-          ws48: playerScore.stats.ws48,
-          vorp: playerScore.stats.vorp,
-          epm: playerScore.stats.epm,
+          // Persist globally-normalized metrics so results table matches contribution math.
+          bpm: playerScore.normalizedMetrics.bpm,
+          ws48: playerScore.normalizedMetrics.ws48,
+          vorp: playerScore.normalizedMetrics.vorp,
+          epm: playerScore.normalizedMetrics.epm,
           usedFallback: playerScore.usedFallback,
           isPenalty: Boolean(playerScore.pick.isPenalty),
           contribution: playerScore.contribution

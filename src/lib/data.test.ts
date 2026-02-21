@@ -8,7 +8,7 @@ describe('all-time franchise stat lookup', () => {
     expect(lookup.usedFallback).toBe(false);
     expect(lookup.seasonsUsed).toEqual(['ALL_TIME_FRANCHISE']);
     expect(lookup.projectedFromSeasons).toBe(1);
-    expect(lookup.stats.bpm).toBeGreaterThan(70);
+    expect(lookup.stats.bpm).toBeGreaterThan(45);
   });
 
   it('falls back to baseline for missing franchise entries', () => {
