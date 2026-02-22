@@ -126,19 +126,33 @@ function makeTeamPlayerKey(teamAbbr: string, playerName: string): string {
 }
 
 function parseYearsWithTeam(yearRange: string): number {
-  const match = yearRange.match(/^(\d{4})-(\d{4})$/);
-  if (!match) {
+  const segments = yearRange
+    .split(',')
+    .map((part) => part.trim())
+    .map((part) => {
+      const match = part.match(/^(\d{4})-(\d{4})$/);
+      if (!match) {
+        return null;
+      }
+
+      const startYear = Number(match[1]);
+      const endYear = Number(match[2]);
+      if (!Number.isFinite(startYear) || !Number.isFinite(endYear) || endYear < startYear) {
+        return null;
+      }
+
+      return { startYear, endYear };
+    })
+    .filter((segment): segment is { startYear: number; endYear: number } => Boolean(segment));
+
+  if (segments.length === 0) {
     return 1;
   }
 
-  const startYear = Number(match[1]);
-  const endYear = Number(match[2]);
-
-  if (!Number.isFinite(startYear) || !Number.isFinite(endYear) || endYear < startYear) {
-    return 1;
-  }
-
-  return Math.max(1, endYear - startYear + 1);
+  return Math.max(
+    1,
+    segments.reduce((sum, segment) => sum + Math.max(1, segment.endYear - segment.startYear + 1), 0)
+  );
 }
 
 function legacyCategoryRawFromRank(input: {

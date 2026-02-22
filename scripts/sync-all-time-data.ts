@@ -368,6 +368,38 @@ function parseSeasonBounds(seasonId: string): { start: number; end: number } | n
   return null;
 }
 
+function parseDisplayYearSegments(rangeLabel: string): Array<{ start: number; end: number }> {
+  return rangeLabel
+    .split(',')
+    .map((part) => part.trim())
+    .map((part) => {
+      const match = part.match(/^(\d{4})-(\d{4})$/);
+      if (!match) {
+        return null;
+      }
+      const start = Number(match[1]);
+      const end = Number(match[2]);
+      if (!Number.isFinite(start) || !Number.isFinite(end) || end < start) {
+        return null;
+      }
+      return { start, end };
+    })
+    .filter((segment): segment is { start: number; end: number } => Boolean(segment));
+}
+
+function countYearsFromRangeLabel(rangeLabel: string): number {
+  const segments = parseDisplayYearSegments(rangeLabel);
+  if (segments.length === 0) {
+    return 1;
+  }
+
+  let years = 0;
+  for (const segment of segments) {
+    years += Math.max(1, segment.end - segment.start + 1);
+  }
+  return Math.max(1, years);
+}
+
 function mapNbaPositionToSlots(position: string): LineupSlot[] {
   const normalized = position.trim().toUpperCase();
   if (!normalized) {
@@ -774,8 +806,6 @@ function statsPeakFromTeamSeasons(seasons: PlayerSeason[]): { peakOne: number; p
 
 function deriveYearRange(seasons: PlayerSeason[]): { years: string; yearsWithTeam: number; teamSeasonStarts: Set<number> } {
   const starts = new Set<number>();
-  let minStart = Number.MAX_SAFE_INTEGER;
-  let maxEnd = Number.MIN_SAFE_INTEGER;
 
   for (const season of seasons) {
     const parsed = parseSeasonBounds(season.seasonId);
@@ -783,17 +813,34 @@ function deriveYearRange(seasons: PlayerSeason[]): { years: string; yearsWithTea
       continue;
     }
     starts.add(parsed.start);
-    minStart = Math.min(minStart, parsed.start);
-    maxEnd = Math.max(maxEnd, parsed.end);
   }
 
-  if (starts.size === 0 || !Number.isFinite(minStart) || !Number.isFinite(maxEnd)) {
+  if (starts.size === 0) {
     return { years: 'Unknown', yearsWithTeam: 1, teamSeasonStarts: new Set<number>() };
   }
 
+  const sortedStarts = [...starts].sort((a, b) => a - b);
+  const segments: Array<{ start: number; end: number }> = [];
+  let segmentStart = sortedStarts[0]!;
+  let previous = sortedStarts[0]!;
+
+  for (let i = 1; i < sortedStarts.length; i += 1) {
+    const current = sortedStarts[i]!;
+    if (current === previous + 1) {
+      previous = current;
+      continue;
+    }
+    segments.push({ start: segmentStart, end: previous + 1 });
+    segmentStart = current;
+    previous = current;
+  }
+  segments.push({ start: segmentStart, end: previous + 1 });
+
+  const yearsLabel = segments.map((segment) => `${segment.start}-${segment.end}`).join(', ');
+
   return {
-    years: `${minStart}-${maxEnd}`,
-    yearsWithTeam: Math.max(1, maxEnd - minStart + 1),
+    years: yearsLabel,
+    yearsWithTeam: sortedStarts.length,
     teamSeasonStarts: starts
   };
 }
@@ -964,10 +1011,7 @@ async function buildTeamSeed(
       const meta = await getPlayerMeta(candidate.playerId);
       const teamSeasons = meta.seasons.filter((season) => season.teamId === teamId);
       const yearRange = deriveYearRange(teamSeasons);
-      const fallbackBounds = parseSeasonBounds(fallbackPlayer?.years ?? '');
-      const fallbackYearsWithTeam = fallbackBounds
-        ? Math.max(1, fallbackBounds.end - fallbackBounds.start + 1)
-        : 1;
+      const fallbackYearsWithTeam = countYearsFromRangeLabel(fallbackPlayer?.years ?? '');
 
       const years = yearRange.years === 'Unknown' ? fallbackPlayer?.years ?? 'Unknown' : yearRange.years;
       const yearsWithTeam =
@@ -1048,8 +1092,7 @@ async function buildTeamSeed(
       );
 
       const fallbackYears = fallbackPlayer?.years ?? 'Unknown';
-      const bounds = parseSeasonBounds(fallbackYears);
-      const yearsWithTeam = bounds ? Math.max(1, bounds.end - bounds.start + 1) : 1;
+      const yearsWithTeam = countYearsFromRangeLabel(fallbackYears);
       const careerYears = Math.max(fallbackPlayer?.careerYears ?? yearsWithTeam, yearsWithTeam);
       const tenureRatio = clamp(yearsWithTeam / Math.max(1, careerYears), 0.08, 1);
 
