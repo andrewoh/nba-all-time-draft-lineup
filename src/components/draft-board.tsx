@@ -16,6 +16,7 @@ type DraftBoardProps = {
   currentTeam: Team;
   roster: RosterPlayer[];
   lineup: LineupState;
+  chosenPlayers: string[];
   currentDrawIndex: number;
   userName: string | null;
   groupCode: string | null;
@@ -38,6 +39,7 @@ export function DraftBoard({
   currentTeam,
   roster,
   lineup,
+  chosenPlayers,
   currentDrawIndex,
   userName,
   groupCode,
@@ -68,24 +70,34 @@ export function DraftBoard({
     () => selectedPlayerProfile?.eligibleSlots ?? [],
     [selectedPlayerProfile]
   );
+  const chosenPlayersSet = useMemo(() => new Set(chosenPlayers), [chosenPlayers]);
   const openSlots = LINEUP_SLOTS.filter((slot) => !lineup[slot]);
   const rankedRoster = useMemo(() => {
     return [...roster]
       .map((player) => ({
         player,
-        isPlayable: player.eligibleSlots.some((slot) => openSlots.includes(slot))
+        alreadySelected: chosenPlayersSet.has(player.name),
+        hasOpenEligibleSlot: player.eligibleSlots.some((slot) => openSlots.includes(slot)),
+        isPlayable:
+          !chosenPlayersSet.has(player.name) &&
+          player.eligibleSlots.some((slot) => openSlots.includes(slot))
       }))
       .sort((a, b) => {
         if (a.isPlayable !== b.isPlayable) {
           return a.isPlayable ? -1 : 1;
         }
 
+        if (a.alreadySelected !== b.alreadySelected) {
+          return a.alreadySelected ? 1 : -1;
+        }
+
         return a.player.name.localeCompare(b.player.name);
       });
-  }, [openSlots, roster]);
+  }, [chosenPlayersSet, openSlots, roster]);
   const playableCount = rankedRoster.reduce((count, item) => count + (item.isPlayable ? 1 : 0), 0);
   const selectedPlayerIsPlayable = selectedPlayer
-    ? selectedPlayerEligibleSlots.some((slot) => openSlots.includes(slot))
+    ? !chosenPlayersSet.has(selectedPlayer) &&
+      selectedPlayerEligibleSlots.some((slot) => openSlots.includes(slot))
     : false;
   const lineupComplete = openSlots.length === 0;
   const progressPercent = ((currentDrawIndex + 1) / TOTAL_DRAWS) * 100;
@@ -256,8 +268,13 @@ export function DraftBoard({
             <p className="text-sm text-slate-500">No players available for this team.</p>
           ) : (
             <ul className="grid gap-2 sm:grid-cols-2">
-              {rankedRoster.map(({ player, isPlayable }, index) => {
+              {rankedRoster.map(({ player, isPlayable, alreadySelected, hasOpenEligibleSlot }, index) => {
                 const isSelected = selectedPlayer === player.name;
+                const disabledReason = alreadySelected
+                  ? 'Already selected earlier in this round'
+                  : hasOpenEligibleSlot
+                    ? null
+                    : 'No open eligible slots';
                 return (
                   <li key={player.name} className="player-item-enter" style={{ animationDelay: `${Math.min(index, 12) * 18}ms` }}>
                     <button
@@ -276,8 +293,10 @@ export function DraftBoard({
                         isSelected && isPlayable
                           ? 'selected-emphasis border-court-700 bg-court-50 text-court-900'
                           : !isPlayable
-                            ? 'cursor-not-allowed border-slate-200 bg-slate-100 text-slate-400'
-                          : 'border-slate-200 bg-white text-slate-700 hover:border-slate-300',
+                            ? alreadySelected
+                              ? 'cursor-not-allowed border-rose-200 bg-rose-50 text-rose-700'
+                              : 'cursor-not-allowed border-slate-200 bg-slate-100 text-slate-400'
+                            : 'border-slate-200 bg-white text-slate-700 hover:border-slate-300',
                         (lineupComplete || !isPlayable) && 'opacity-70'
                       )}
                       data-testid={`player-option-${index}`}
@@ -307,9 +326,14 @@ export function DraftBoard({
                           );
                         })}
                       </div>
-                      {!isPlayable ? (
-                        <p className="mt-1 text-[11px] font-semibold uppercase tracking-wide text-red-500">
-                          No open eligible slots
+                      {disabledReason ? (
+                        <p
+                          className={cn(
+                            'mt-1 text-[11px] font-semibold uppercase tracking-wide',
+                            alreadySelected ? 'text-rose-600' : 'text-red-500'
+                          )}
+                        >
+                          {disabledReason}
                         </p>
                       ) : null}
                     </button>
@@ -332,6 +356,13 @@ export function DraftBoard({
               const isEligibleForSelectedPlayer =
                 !selectedPlayer || selectedPlayerEligibleSlots.includes(slot);
               const isDisabled = !isOpen || !isEligibleForSelectedPlayer;
+              const statusText = pick
+                ? pick.isPenalty
+                  ? 'LOCKED (0 pts)'
+                  : 'LOCKED'
+                : isEligibleForSelectedPlayer
+                  ? 'OPEN'
+                  : 'INELIGIBLE';
 
               return (
                 <button
@@ -343,15 +374,20 @@ export function DraftBoard({
                     'flex min-h-[3.25rem] w-full items-center justify-between rounded-xl border px-3 py-2.5 text-left active:scale-[0.995]',
                     isOpen && isEligibleForSelectedPlayer
                       ? isSelected
-                        ? 'border-court-700 bg-court-50'
-                        : 'border-slate-200 bg-white hover:border-slate-300'
-                      : 'cursor-not-allowed border-slate-200 bg-slate-50 text-slate-500'
+                        ? 'border-court-700 bg-court-100 ring-2 ring-court-300'
+                        : 'border-emerald-400 bg-emerald-50 text-emerald-900 hover:border-emerald-500'
+                      : isOpen
+                        ? 'cursor-not-allowed border-rose-200 bg-rose-50 text-rose-700'
+                        : 'cursor-not-allowed border-slate-300 bg-slate-100 text-slate-600'
                   )}
                   data-testid={`slot-${slot}`}
                   data-slot-open={isOpen ? 'true' : 'false'}
                   data-slot-eligible={isEligibleForSelectedPlayer ? 'true' : 'false'}
                 >
                   <span className="font-semibold text-slate-900">{slot}</span>
+                  <span className="mr-2 rounded-full border border-current px-2 py-0.5 text-[10px] font-bold tracking-wide">
+                    {statusText}
+                  </span>
                   <span className="truncate text-xs sm:text-sm">
                     {pick
                       ? pick.isPenalty
@@ -385,20 +421,20 @@ export function DraftBoard({
         </section>
       </div>
 
-      {!lineupComplete ? (
-        <div className="mobile-dock md:hidden">
-          <p className="mobile-dock-meta">{selectedSummary}</p>
-          <button
-            type="button"
-            onClick={() => setIsConfirmOpen(true)}
-            disabled={!canConfirm}
-            className="button-primary w-full"
-            data-testid="confirm-assignment"
-          >
-            Confirm assignment
-          </button>
-        </div>
-      ) : null}
+      <div className="mobile-dock md:hidden">
+        <p className="mobile-dock-meta">
+          {lineupComplete ? 'All slots are filled. Finishing round...' : selectedSummary}
+        </p>
+        <button
+          type="button"
+          onClick={() => setIsConfirmOpen(true)}
+          disabled={lineupComplete || !canConfirm}
+          className="button-primary w-full"
+          data-testid="confirm-assignment"
+        >
+          {lineupComplete ? 'Round complete' : 'Confirm assignment'}
+        </button>
+      </div>
 
       {isConfirmOpen ? (
         <div className="fixed inset-0 z-30 flex items-center justify-center bg-slate-900/40 p-4">

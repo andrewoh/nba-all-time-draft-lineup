@@ -95,7 +95,7 @@ a {
   left: 0.75rem;
   right: 0.75rem;
   bottom: 0.75rem;
-  z-index: 25;
+  z-index: 42;
   border: 1px solid #bfdbfe;
   border-radius: 1rem;
   background: rgba(255, 255, 255, 0.96);
@@ -108,7 +108,7 @@ a {
 
 .mobile-dock-meta {
   color: #334155;
-  font-size: 0.75rem;
+  font-size: 0.8125rem;
   line-height: 1.25;
   margin: 0 0 0.5rem;
 }
@@ -124,17 +124,18 @@ a {
     radial-gradient(circle, rgba(239, 68, 68, 0.24) 18%, rgba(0, 0, 0, 0) 19%) 0 0/8px 8px,
     #040404;
   border: 1px solid #7f1d1d;
-  border-radius: 0.6rem;
+  border-radius: 0.7rem;
   color: #ff3b3b;
   display: inline-flex;
   font-family: 'Impact', 'Arial Black', 'Courier New', Courier, monospace;
-  font-size: 1.2rem;
+  font-size: 1.95rem;
   font-weight: 700;
+  height: 2.65rem;
   justify-content: center;
   letter-spacing: 0.03em;
   line-height: 1;
-  min-width: 3rem;
-  padding: 0.3rem 0.45rem;
+  min-width: 4.45rem;
+  padding: 0 0.5rem;
   text-shadow:
     0 0 4px rgba(255, 52, 52, 0.95),
     0 0 10px rgba(248, 113, 113, 0.75);
@@ -278,6 +279,11 @@ a {
   .app-main {
     padding: 0.75rem;
     padding-bottom: calc(0.75rem + var(--safe-bottom));
+  }
+
+  .mini-shot-clock {
+    font-size: 1.8rem;
+    min-width: 4.2rem;
   }
 
   .shot-clock-shell {

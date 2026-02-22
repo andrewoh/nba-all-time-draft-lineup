@@ -9,6 +9,36 @@ export type Team = {
   name: string;
 };
 
+export type AwardBreakdown = {
+  mvp: number;
+  finalsMvp: number;
+  dpoy: number;
+  roy: number;
+  sixthMan: number;
+  mip: number;
+  allNbaFirst: number;
+  allNbaSecond: number;
+  allNbaThird: number;
+  allDefFirst: number;
+  allDefSecond: number;
+  allStar: number;
+  scoringTitles: number;
+  reboundingTitles: number;
+  assistsTitles: number;
+  stealsTitles: number;
+  blocksTitles: number;
+};
+
+export type BoxTotals = {
+  gp: number;
+  pts: number;
+  reb: number;
+  ast: number;
+  stl: number;
+  blk: number;
+  tov: number;
+};
+
 export type RosterPlayer = {
   name: string;
   yearsWithTeam: string;
@@ -68,4 +98,26 @@ export type ChemistryBreakdown = {
   culture: number;
   chemistryScore: number;
   multiplier: number;
+};
+
+export type PlayerExplanationData = {
+  yearsWithTeam: number;
+  careerYears: number;
+  tenureRatio: number;
+  championships: number;
+  categoryPercentiles: {
+    personalAccolades: number;
+    teamAccolades: number;
+    boxStats: number;
+    advancedImpact: number;
+  };
+  accolades: AwardBreakdown | null;
+  boxTotals: BoxTotals | null;
+  boxPercentiles: {
+    pts: number;
+    reb: number;
+    ast: number;
+    stl: number;
+    blk: number;
+  } | null;
 };

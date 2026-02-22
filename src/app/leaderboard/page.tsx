@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { getTeamLogoUrl } from '@/lib/data';
-import { usesEphemeralDatabase } from '@/lib/deployment';
 import { formatDateTime } from '@/lib/format';
 import { getLeaderboardRuns } from '@/lib/run-service';
 
@@ -16,7 +15,6 @@ export default async function LeaderboardPage({
   const groupCode = searchParams.groupCode?.trim() ?? '';
   const timeframe = searchParams.timeframe === 'daily' ? 'daily' : 'all';
   const runs = await getLeaderboardRuns(groupCode || null, timeframe);
-  const ephemeralDatabase = usesEphemeralDatabase();
 
   return (
     <div className="space-y-4">
@@ -25,13 +23,6 @@ export default async function LeaderboardPage({
         <p className="mt-1 text-sm text-slate-600">
           Filter by Group Code to compare runs with friends. Leave blank to see recent top runs.
         </p>
-
-        {ephemeralDatabase ? (
-          <p className="mt-3 rounded-lg border border-amber-200 bg-amber-50 px-3 py-2 text-sm text-amber-800">
-            This deployment is using an ephemeral database path (`/tmp`). Leaderboard history resets on
-            restart. Use a persistent Render disk or Postgres for durable daily/all-time history.
-          </p>
-        ) : null}
 
         <div className="mt-4 inline-flex rounded-xl border border-slate-200 bg-slate-50 p-1">
           <Link

@@ -107,6 +107,23 @@ Optional tuning (larger candidate pool = slower, but can improve edge cases):
 ALL_TIME_CANDIDATE_LIMIT=45 npm run data:sync:all-time
 ```
 
+Low-call / anti-throttle mode:
+
+```bash
+ALL_TIME_CANDIDATE_LIMIT=15 \
+ALL_TIME_PLAYER_CONCURRENCY=2 \
+ALL_TIME_SKIP_AWARDS=1 \
+ALL_TIME_FETCH_TIMEOUT_MS=45000 \
+ALL_TIME_TEAM_DELAY_MS=200 \
+npm run data:sync:all-time
+```
+
+Caching (enabled by default) for faster + safer repeat runs:
+
+- `ALL_TIME_CACHE_ENABLED=1` (default)
+- `ALL_TIME_CACHE_TTL_HOURS=168` (default, 7 days)
+- `ALL_TIME_CACHE_DIR=/absolute/path` (optional override)
+
 What the script does:
 
 - pulls franchise career totals per team
@@ -114,15 +131,19 @@ What the script does:
 - builds 4 contribution categories per player:
   - player accolades (MVP, All-NBA tiers, etc.)
   - team accolades (titles, franchise win percentage, etc.)
-  - stats (points, rebounds, assists, steals, blocks, turnovers)
-  - advanced impact proxy
+  - stats (PTS/REB/AST/STL/BLK with volume + peak blend)
+  - advanced winning-impact proxy (separated from pure box volume)
+- stores granular explanation metadata per player when available:
+  - accolade breakdown counts
+  - franchise box totals
 - computes a franchise score using:
   - personal accolades
   - team accolades
   - franchise box production
   - advanced impact proxy
 - applies tenure penalty so short late-career stints rank lower
-- writes top 15 per franchise with `years`, `positions`, `careerYears`, and `championships`
+- writes top 15 per franchise with `years`, `positions`, `careerYears`, `championships`,
+  category raw values, and optional explanation metadata
 
 If a player/team lookup fails, it automatically falls back to the existing local seed entry so the file is still complete.
 

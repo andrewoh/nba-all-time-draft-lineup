@@ -4,9 +4,11 @@ import { headers } from 'next/headers';
 import { notFound } from 'next/navigation';
 import { resetGameAction } from '@/app/actions';
 import { CopyLinkButton } from '@/components/copy-link-button';
-import { getTeamLogoUrl } from '@/lib/data';
+import { getPlayerExplanationData, getTeamLogoUrl } from '@/lib/data';
 import { formatDateTime } from '@/lib/format';
 import { getRunByShareCode } from '@/lib/run-service';
+import { scoreLineup } from '@/lib/scoring';
+import type { AwardBreakdown, LineupPick } from '@/lib/types';
 
 type ResultPick = {
   id: string;
@@ -23,6 +25,33 @@ type ResultPick = {
   contribution: number;
 };
 
+const ACCOLADE_LABELS: Array<{ key: keyof AwardBreakdown; label: string }> = [
+  { key: 'mvp', label: 'MVP' },
+  { key: 'finalsMvp', label: 'Finals MVP' },
+  { key: 'dpoy', label: 'DPOY' },
+  { key: 'allNbaFirst', label: 'All-NBA 1st Team' },
+  { key: 'allNbaSecond', label: 'All-NBA 2nd Team' },
+  { key: 'allNbaThird', label: 'All-NBA 3rd Team' },
+  { key: 'allDefFirst', label: 'All-Def 1st Team' },
+  { key: 'allDefSecond', label: 'All-Def 2nd Team' },
+  { key: 'allStar', label: 'All-Star' },
+  { key: 'scoringTitles', label: 'Scoring Title' },
+  { key: 'reboundingTitles', label: 'Rebounding Title' },
+  { key: 'assistsTitles', label: 'Assists Title' },
+  { key: 'stealsTitles', label: 'Steals Title' },
+  { key: 'blocksTitles', label: 'Blocks Title' }
+];
+
+function formatAccoladeHighlights(accolades: AwardBreakdown): string[] {
+  return ACCOLADE_LABELS
+    .map(({ key, label }) => {
+      const count = accolades[key];
+      return count > 0 ? `${label} x${count}` : null;
+    })
+    .filter((value): value is string => Boolean(value))
+    .slice(0, 4);
+}
+
 function buildScoreDrivers(pick: ResultPick): string[] {
   if (pick.isPenalty) {
     return [
@@ -31,33 +60,73 @@ function buildScoreDrivers(pick: ResultPick): string[] {
     ];
   }
 
-  const metrics = [
-    { label: 'Player accolades', value: pick.bpm },
-    { label: 'Team accolades', value: pick.ws48 },
-    { label: 'Box stats', value: pick.vorp },
-    { label: 'Advanced impact', value: pick.epm }
-  ];
-
-  const strongest = [...metrics].sort((a, b) => b.value - a.value).slice(0, 2);
-  const weakest = [...metrics].sort((a, b) => a.value - b.value).slice(0, 2);
+  const explanation = getPlayerExplanationData(pick.teamAbbr, pick.playerName);
   const drivers: string[] = [];
 
-  if ((strongest[0]?.value ?? 0) >= 75) {
-    drivers.push(`${strongest[0]?.label} (${strongest[0]?.value.toFixed(1)}) strongly boosted this score.`);
-  } else if ((strongest[0]?.value ?? 0) >= 60) {
-    drivers.push(`${strongest[0]?.label} (${strongest[0]?.value.toFixed(1)}) was a positive contributor.`);
+  if (pick.bpm >= 72) {
+    drivers.push(`Player accolades (${pick.bpm.toFixed(1)}) were a strong positive.`);
+  } else if (pick.bpm <= 48) {
+    drivers.push(`Player accolades (${pick.bpm.toFixed(1)}) were below top-tier thresholds.`);
   }
 
-  if ((strongest[1]?.value ?? 0) >= 65) {
-    drivers.push(`${strongest[1]?.label} (${strongest[1]?.value.toFixed(1)}) added meaningful support.`);
+  if (pick.ws48 >= 70) {
+    drivers.push(`Team accolades/winning context (${pick.ws48.toFixed(1)}) materially boosted value.`);
+  } else if (pick.ws48 <= 46) {
+    drivers.push(`Team accolades/winning context (${pick.ws48.toFixed(1)}) limited this profile.`);
   }
 
-  if ((weakest[0]?.value ?? 100) <= 45) {
-    drivers.push(`${weakest[0]?.label} (${weakest[0]?.value.toFixed(1)}) pulled the score down.`);
+  if (pick.vorp >= 70) {
+    drivers.push(`PTS/REB/AST/STL/BLK production profile (${pick.vorp.toFixed(1)}) graded as elite.`);
+  } else if (pick.vorp <= 48) {
+    drivers.push(
+      `PTS/REB/AST/STL/BLK production profile (${pick.vorp.toFixed(1)}) was below elite all-time levels.`
+    );
   }
 
-  if ((weakest[1]?.value ?? 100) <= 50) {
-    drivers.push(`${weakest[1]?.label} (${weakest[1]?.value.toFixed(1)}) limited the ceiling.`);
+  if (pick.epm >= 70) {
+    drivers.push(`Advanced winning-impact profile (${pick.epm.toFixed(1)}) strongly lifted this score.`);
+  } else if (pick.epm <= 48) {
+    drivers.push(`Advanced winning-impact profile (${pick.epm.toFixed(1)}) sat below contender-tier impact.`);
+  }
+
+  if (explanation?.accolades) {
+    const accoladeHighlights = formatAccoladeHighlights(explanation.accolades);
+    if (accoladeHighlights.length > 0) {
+      drivers.push(`Accolade detail: ${accoladeHighlights.join(', ')}.`);
+    } else {
+      drivers.push('No major award counts were recorded during this franchise stint.');
+    }
+  } else {
+    drivers.push('Detailed award counts were not available; aggregate accolade signal was used.');
+  }
+
+  if (explanation?.championships && explanation.championships > 0) {
+    drivers.push(`Franchise championships in this stint: ${explanation.championships}.`);
+  }
+
+  if (explanation?.boxPercentiles) {
+    const boxMetrics = [
+      { label: 'PTS', value: explanation.boxPercentiles.pts },
+      { label: 'REB', value: explanation.boxPercentiles.reb },
+      { label: 'AST', value: explanation.boxPercentiles.ast },
+      { label: 'STL', value: explanation.boxPercentiles.stl },
+      { label: 'BLK', value: explanation.boxPercentiles.blk }
+    ];
+    const strong = boxMetrics.filter((metric) => metric.value >= 68).map((metric) => `${metric.label} ${metric.value.toFixed(0)}p`);
+    const weak = boxMetrics.filter((metric) => metric.value <= 42).map((metric) => `${metric.label} ${metric.value.toFixed(0)}p`);
+    if (strong.length > 0) {
+      drivers.push(`Stat strengths vs all players in dataset: ${strong.slice(0, 3).join(', ')}.`);
+    }
+    if (weak.length > 0) {
+      drivers.push(`Stat gaps vs peers: ${weak.slice(0, 3).join(', ')}.`);
+    }
+  } else if (pick.vorp <= 55) {
+    drivers.push('Box-score weakness came from not reaching top-tier franchise production in key counting stats.');
+  }
+
+  if (explanation) {
+    const tenurePct = Math.round(explanation.tenureRatio * 100);
+    drivers.push(`Franchise tenure context: ${explanation.yearsWithTeam} seasons (${tenurePct}% of career).`);
   }
 
   if (pick.usedFallback) {
@@ -94,6 +163,15 @@ export default async function ResultsPage({
   const chemistryMultiplier = run.chemistryMultiplier > 0 ? run.chemistryMultiplier : 1;
   const chemistryScore =
     run.chemistryScore > 0 ? run.chemistryScore : Math.max(0, (chemistryMultiplier - 1) * 100);
+  const chemistryBreakdown = scoreLineup(
+    run.picks.map((pick) => ({
+      slot: pick.slot as LineupPick['slot'],
+      playerName: pick.playerName,
+      teamAbbr: pick.teamAbbr,
+      teamName: pick.teamName,
+      isPenalty: pick.isPenalty
+    }))
+  ).chemistry;
 
   return (
     <div className="space-y-4">
@@ -152,6 +230,21 @@ export default async function ResultsPage({
           <div className="rounded-lg border border-blue-200 bg-blue-50 px-3 py-2">
             <p className="text-xs font-semibold uppercase tracking-wide text-court-700">Multiplier</p>
             <p className="text-lg font-bold text-court-900">{chemistryMultiplier.toFixed(2)}x</p>
+          </div>
+        </div>
+
+        <div className="mt-3 rounded-lg border border-slate-200 bg-slate-50 p-3 text-xs text-slate-700">
+          <p className="font-semibold text-slate-900">Chemistry breakdown</p>
+          <p className="mt-1">
+            Multiplier formula: <span className="font-semibold">1 + (Chemistry Score / 100)</span>, bounded
+            between <span className="font-semibold">1.00x</span> and <span className="font-semibold">2.00x</span>.
+          </p>
+          <div className="mt-2 grid gap-1 sm:grid-cols-2 lg:grid-cols-5">
+            <p>Role coverage: {chemistryBreakdown.roleCoverage.toFixed(1)}</p>
+            <p>Complementarity: {chemistryBreakdown.complementarity.toFixed(1)}</p>
+            <p>Usage balance: {chemistryBreakdown.usageBalance.toFixed(1)}</p>
+            <p>Two-way balance: {chemistryBreakdown.twoWayBalance.toFixed(1)}</p>
+            <p>Culture fit: {chemistryBreakdown.culture.toFixed(1)}</p>
           </div>
         </div>
 

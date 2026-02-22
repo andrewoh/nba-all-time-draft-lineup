@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import { startGameAction } from '@/app/actions';
-import { usesEphemeralDatabase } from '@/lib/deployment';
 
 export default function HomePage({
   searchParams
@@ -10,7 +9,6 @@ export default function HomePage({
   };
 }) {
   const errorMessage = searchParams.error;
-  const ephemeralDatabase = usesEphemeralDatabase();
 
   return (
     <div className="grid gap-4 md:grid-cols-[1.2fr_1fr]">
@@ -38,13 +36,6 @@ export default function HomePage({
 
         {errorMessage ? (
           <p className="mt-4 rounded-lg border border-red-200 bg-red-50 px-3 py-2 text-sm text-red-700">{errorMessage}</p>
-        ) : null}
-
-        {ephemeralDatabase ? (
-          <p className="mt-4 rounded-lg border border-amber-200 bg-amber-50 px-3 py-2 text-sm text-amber-800">
-            This deployment is using ephemeral `/tmp` SQLite storage. Scores and leaderboard history will reset
-            when the instance restarts unless you move to persistent storage.
-          </p>
         ) : null}
 
         <form action={startGameAction} className="mt-5 space-y-4">
