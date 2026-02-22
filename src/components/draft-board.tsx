@@ -286,9 +286,27 @@ export function DraftBoard({
                         {!isPlayable ? 'X ' : null}
                         {player.name}
                       </p>
-                      <p className={cn('mt-0.5 text-xs', !isPlayable ? 'text-slate-400' : 'text-slate-500')}>
-                        {player.yearsWithTeam} | {player.eligibleSlots.join(' / ')}
+                      <p className={cn('mt-0.5 text-xs', !isPlayable ? 'text-slate-400' : 'text-slate-600')}>
+                        {player.yearsWithTeam}
                       </p>
+                      <div className="mt-1 flex flex-wrap gap-1">
+                        {player.eligibleSlots.map((slot) => {
+                          const isOpenSlot = openSlots.includes(slot);
+                          return (
+                            <span
+                              key={`${player.name}-${slot}`}
+                              className={cn(
+                                'rounded-full border px-2 py-0.5 text-[10px] font-bold',
+                                isPlayable && isOpenSlot
+                                  ? 'border-blue-300 bg-blue-100 text-blue-800'
+                                  : 'border-slate-300 bg-slate-100 text-slate-500'
+                              )}
+                            >
+                              {slot}
+                            </span>
+                          );
+                        })}
+                      </div>
                       {!isPlayable ? (
                         <p className="mt-1 text-[11px] font-semibold uppercase tracking-wide text-red-500">
                           No open eligible slots
@@ -367,7 +385,7 @@ export function DraftBoard({
         </section>
       </div>
 
-      {!lineupComplete && !isConfirmOpen ? (
+      {!lineupComplete ? (
         <div className="mobile-dock md:hidden">
           <p className="mobile-dock-meta">{selectedSummary}</p>
           <button

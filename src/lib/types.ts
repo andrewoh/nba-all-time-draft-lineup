@@ -59,3 +59,13 @@ export type PlayerScoreBreakdown = {
   normalizedMetrics: PlayerStats;
   contribution: number;
 };
+
+export type ChemistryBreakdown = {
+  roleCoverage: number;
+  complementarity: number;
+  usageBalance: number;
+  twoWayBalance: number;
+  culture: number;
+  chemistryScore: number;
+  multiplier: number;
+};

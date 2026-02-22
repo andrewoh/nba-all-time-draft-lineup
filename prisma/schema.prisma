@@ -34,6 +34,9 @@ model Run {
   userName          String?
   groupCode         String?
   seed              String?
+  baseTeamScore     Float         @default(0)
+  chemistryScore    Float         @default(0)
+  chemistryMultiplier Float       @default(1)
   teamScore         Float
   usedFallbackStats Boolean       @default(false)
   lineupJson        String

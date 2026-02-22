@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { getTeamLogoUrl } from '@/lib/data';
+import { usesEphemeralDatabase } from '@/lib/deployment';
 import { formatDateTime } from '@/lib/format';
 import { getLeaderboardRuns } from '@/lib/run-service';
 
@@ -9,10 +10,13 @@ export default async function LeaderboardPage({
 }: {
   searchParams: {
     groupCode?: string;
+    timeframe?: string;
   };
 }) {
   const groupCode = searchParams.groupCode?.trim() ?? '';
-  const runs = await getLeaderboardRuns(groupCode || null);
+  const timeframe = searchParams.timeframe === 'daily' ? 'daily' : 'all';
+  const runs = await getLeaderboardRuns(groupCode || null, timeframe);
+  const ephemeralDatabase = usesEphemeralDatabase();
 
   return (
     <div className="space-y-4">
@@ -22,7 +26,38 @@ export default async function LeaderboardPage({
           Filter by Group Code to compare runs with friends. Leave blank to see recent top runs.
         </p>
 
+        {ephemeralDatabase ? (
+          <p className="mt-3 rounded-lg border border-amber-200 bg-amber-50 px-3 py-2 text-sm text-amber-800">
+            This deployment is using an ephemeral database path (`/tmp`). Leaderboard history resets on
+            restart. Use a persistent Render disk or Postgres for durable daily/all-time history.
+          </p>
+        ) : null}
+
+        <div className="mt-4 inline-flex rounded-xl border border-slate-200 bg-slate-50 p-1">
+          <Link
+            href={groupCode ? `/leaderboard?groupCode=${encodeURIComponent(groupCode)}` : '/leaderboard'}
+            className={`rounded-lg px-3 py-1.5 text-sm font-semibold ${
+              timeframe === 'all' ? 'bg-white text-court-700 shadow-sm' : 'text-slate-600'
+            }`}
+          >
+            All-time
+          </Link>
+          <Link
+            href={
+              groupCode
+                ? `/leaderboard?timeframe=daily&groupCode=${encodeURIComponent(groupCode)}`
+                : '/leaderboard?timeframe=daily'
+            }
+            className={`rounded-lg px-3 py-1.5 text-sm font-semibold ${
+              timeframe === 'daily' ? 'bg-white text-court-700 shadow-sm' : 'text-slate-600'
+            }`}
+          >
+            Daily
+          </Link>
+        </div>
+
         <form className="mt-4 flex flex-wrap items-end gap-2" method="get">
+          <input type="hidden" name="timeframe" value={timeframe} />
           <div>
             <label htmlFor="groupCode" className="mb-1 block text-sm font-medium text-slate-700">
               Group Code
@@ -39,7 +74,7 @@ export default async function LeaderboardPage({
           <button type="submit" className="button-primary">
             Apply
           </button>
-          <Link href="/leaderboard" className="button-secondary">
+          <Link href={timeframe === 'daily' ? '/leaderboard?timeframe=daily' : '/leaderboard'} className="button-secondary">
             Clear
           </Link>
         </form>
@@ -48,7 +83,11 @@ export default async function LeaderboardPage({
       <section className="card overflow-hidden">
         <div className="border-b border-slate-200 px-4 py-3">
           <h2 className="text-lg font-semibold text-slate-900">
-            {groupCode ? `Results for ${groupCode.toUpperCase()}` : 'Top Runs'}
+            {groupCode
+              ? `${timeframe === 'daily' ? 'Daily' : 'All-time'} results for ${groupCode.toUpperCase()}`
+              : timeframe === 'daily'
+                ? 'Daily Top Runs'
+                : 'All-time Top Runs'}
           </h2>
         </div>
 

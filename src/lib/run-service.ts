@@ -1,6 +1,7 @@
 import { db } from '@/lib/db';
 import { normalizeGroupCode } from '@/lib/share-code';
 import { LINEUP_SLOTS } from '@/lib/types';
+import type { Prisma } from '@prisma/client';
 
 const slotOrder = new Map(LINEUP_SLOTS.map((slot, index) => [slot, index]));
 
@@ -31,15 +32,31 @@ export async function getRunByShareCode(shareCode: string) {
   };
 }
 
-export async function getLeaderboardRuns(groupCode?: string | null) {
+export type LeaderboardTimeframe = 'all' | 'daily';
+
+function startOfCurrentUtcDay(date = new Date()): Date {
+  return new Date(Date.UTC(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate()));
+}
+
+export async function getLeaderboardRuns(
+  groupCode?: string | null,
+  timeframe: LeaderboardTimeframe = 'all'
+) {
   const normalizedGroup = normalizeGroupCode(groupCode);
+  const where: Prisma.RunWhereInput = {};
+
+  if (normalizedGroup) {
+    where.groupCode = normalizedGroup;
+  }
+
+  if (timeframe === 'daily') {
+    where.createdAt = {
+      gte: startOfCurrentUtcDay()
+    };
+  }
 
   const runs = await db.run.findMany({
-    where: normalizedGroup
-      ? {
-          groupCode: normalizedGroup
-        }
-      : undefined,
+    where,
     include: {
       picks: true
     },

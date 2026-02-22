@@ -12,11 +12,13 @@ A production-style MVP built with Next.js App Router + TypeScript + Tailwind + P
 - Each draw has a 24-second shot clock. If it expires, a random open slot is auto-filled with a 0-point penalty.
 - User assigns one player to one open lineup slot: `PG`, `SG`, `SF`, `PF`, `C`.
 - Filled slots lock for the rest of the round.
-- Team Score is normalized to `0-100` and blends franchise-specific:
+- Base Team Score is built from four player categories:
   - personal accolades
   - team accolades
   - box stats value
   - advanced impact value
+- Chemistry is computed from role coverage, complementarity, usage balance, two-way balance, and culture.
+- Final Team Score = `Base Team Score x Chemistry Multiplier`, where multiplier is bounded to `1.0 - 2.0`.
 - Completed runs are stored with share codes and can be compared on a group leaderboard.
 
 ## Stack
@@ -139,6 +141,11 @@ Default weights:
 
 To rebalance gameplay, update `METRIC_WEIGHTS`.
 
+Chemistry multiplier:
+
+- bounded to `1.0 - 2.0`
+- computed in `computeChemistry` inside `src/lib/scoring.ts`
+
 ## Deterministic Randomness
 
 - Optional `seed` at game start.
@@ -151,6 +158,7 @@ To rebalance gameplay, update `METRIC_WEIGHTS`.
 - `/draft` Draft board
 - `/results/[shareCode]` Read-only run results
 - `/leaderboard` Friend leaderboard filtered by group code
+  - supports `All-time` and `Daily` views
 
 ## Prisma
 
@@ -163,6 +171,7 @@ Migrations:
 - `prisma/migrations/20260220000000_init/migration.sql`
 - `prisma/migrations/20260220100000_shot_clock_penalties/migration.sql`
 - `prisma/migrations/20260221131000_add_user_name/migration.sql`
+- `prisma/migrations/20260222133000_add_chemistry_fields/migration.sql`
 
 ## Deploy (Render)
 
@@ -173,5 +182,5 @@ Migrations:
 
 Notes:
 
-- Free-tier config uses SQLite at `/tmp/dev.db` (ephemeral data).
-- For persistence, use a paid disk or migrate to Postgres.
+- Current `render.yaml` uses a persistent Render disk at `/var/data/dev.db`.
+- If you deploy with `/tmp/dev.db`, leaderboard history will reset whenever the instance restarts.

@@ -3,7 +3,7 @@ import { scoreLineup, scorePlayer } from '@/lib/scoring';
 import type { LineupPick } from '@/lib/types';
 
 describe('score normalization', () => {
-  it('keeps lineup score in 0-100 range', () => {
+  it('keeps lineup score in 0-200 range after chemistry multiplier', () => {
     const picks: LineupPick[] = [
       { slot: 'PG', playerName: 'Luka Doncic', teamAbbr: 'DAL', teamName: 'Dallas Mavericks' },
       { slot: 'SG', playerName: 'Stephen Curry', teamAbbr: 'GSW', teamName: 'Golden State Warriors' },
@@ -15,7 +15,9 @@ describe('score normalization', () => {
     const result = scoreLineup(picks);
 
     expect(result.teamScore).toBeGreaterThanOrEqual(0);
-    expect(result.teamScore).toBeLessThanOrEqual(100);
+    expect(result.teamScore).toBeLessThanOrEqual(200);
+    expect(result.chemistry.multiplier).toBeGreaterThanOrEqual(1);
+    expect(result.chemistry.multiplier).toBeLessThanOrEqual(2);
     expect(result.playerScores).toHaveLength(5);
   });
 
