@@ -6,9 +6,15 @@ export default function HomePage({
 }: {
   searchParams: {
     error?: string;
+    userName?: string;
+    groupCode?: string;
+    seed?: string;
   };
 }) {
   const errorMessage = searchParams.error;
+  const defaultUserName = searchParams.userName?.trim() ?? '';
+  const defaultGroupCode = searchParams.groupCode?.trim() ?? '';
+  const defaultSeed = searchParams.seed?.trim() ?? '';
 
   return (
     <div className="grid gap-4 md:grid-cols-[1.2fr_1fr]">
@@ -48,6 +54,7 @@ export default function HomePage({
               name="userName"
               className="input"
               placeholder="e.g. Andrew"
+              defaultValue={defaultUserName}
               autoComplete="off"
               maxLength={32}
             />
@@ -62,6 +69,7 @@ export default function HomePage({
               name="groupCode"
               className="input"
               placeholder="e.g. FRIENDS"
+              defaultValue={defaultGroupCode}
               autoComplete="off"
               maxLength={16}
             />
@@ -76,6 +84,7 @@ export default function HomePage({
               name="seed"
               className="input"
               placeholder="Use same seed to replay exact team draws"
+              defaultValue={defaultSeed}
               autoComplete="off"
               maxLength={64}
             />

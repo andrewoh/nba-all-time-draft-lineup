@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { headers } from 'next/headers';
 import { notFound } from 'next/navigation';
-import { resetGameAction } from '@/app/actions';
+import { resetGameWithPrefillAction } from '@/app/actions';
 import { CopyLinkButton } from '@/components/copy-link-button';
 import { getPlayerExplanationData, getTeamLogoUrl } from '@/lib/data';
 import { formatDateTime } from '@/lib/format';
@@ -142,6 +142,35 @@ function buildScoreDrivers(pick: ResultPick): string[] {
   return drivers.length > 0 ? drivers : ['This score came from a balanced, middle-tier profile across all 4 categories.'];
 }
 
+function firstHeaderValue(value: string | null): string | null {
+  if (!value) {
+    return null;
+  }
+
+  return value.split(',')[0]?.trim() ?? null;
+}
+
+function resolveBaseUrl(headerStore: Headers): string | null {
+  const configured =
+    process.env.NEXT_PUBLIC_APP_URL?.trim() ||
+    process.env.APP_URL?.trim() ||
+    null;
+  if (configured) {
+    return configured.replace(/\/$/, '');
+  }
+
+  const forwardedHost = firstHeaderValue(headerStore.get('x-forwarded-host'));
+  const host = forwardedHost || firstHeaderValue(headerStore.get('host'));
+  if (!host) {
+    return null;
+  }
+
+  const forwardedProto = firstHeaderValue(headerStore.get('x-forwarded-proto'));
+  const protocol = forwardedProto || (process.env.NODE_ENV === 'production' ? 'https' : 'http');
+
+  return `${protocol}://${host}`;
+}
+
 export default async function ResultsPage({
   params
 }: {
@@ -156,9 +185,9 @@ export default async function ResultsPage({
   }
 
   const headerStore = headers();
-  const host = headerStore.get('host');
-  const protocol = process.env.NODE_ENV === 'production' ? 'https' : 'http';
-  const shareUrl = host ? `${protocol}://${host}/results/${run.shareCode}` : `/results/${run.shareCode}`;
+  const sharePath = `/results/${run.shareCode}`;
+  const baseUrl = resolveBaseUrl(headerStore);
+  const shareUrl = baseUrl ? `${baseUrl}${sharePath}` : sharePath;
   const baseTeamScore = run.baseTeamScore > 0 ? run.baseTeamScore : run.teamScore;
   const chemistryMultiplier = run.chemistryMultiplier > 0 ? run.chemistryMultiplier : 1;
   const chemistryScore =
@@ -172,9 +201,12 @@ export default async function ResultsPage({
       isPenalty: pick.isPenalty
     }))
   ).chemistry;
+  const prefillUserName = run.userName ?? '';
+  const prefillGroupCode = run.groupCode ?? '';
+  const prefillSeed = run.seed ?? '';
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-4 pb-28 md:pb-24">
       <section className="card p-6">
         <div className="flex flex-wrap items-center justify-between gap-4">
           <div>
@@ -235,16 +267,53 @@ export default async function ResultsPage({
 
         <div className="mt-3 rounded-lg border border-slate-200 bg-slate-50 p-3 text-xs text-slate-700">
           <p className="font-semibold text-slate-900">Chemistry breakdown</p>
-          <p className="mt-1">
-            Multiplier formula: <span className="font-semibold">1 + (Chemistry Score / 100)</span>, bounded
-            between <span className="font-semibold">1.00x</span> and <span className="font-semibold">2.00x</span>.
-          </p>
-          <div className="mt-2 grid gap-1 sm:grid-cols-2 lg:grid-cols-5">
-            <p>Role coverage: {chemistryBreakdown.roleCoverage.toFixed(1)}</p>
-            <p>Complementarity: {chemistryBreakdown.complementarity.toFixed(1)}</p>
-            <p>Usage balance: {chemistryBreakdown.usageBalance.toFixed(1)}</p>
-            <p>Two-way balance: {chemistryBreakdown.twoWayBalance.toFixed(1)}</p>
-            <p>Culture fit: {chemistryBreakdown.culture.toFixed(1)}</p>
+          <p className="mt-1 text-slate-600">Tap each item for a simple explanation.</p>
+          <div className="mt-2 grid gap-2 sm:grid-cols-2 lg:grid-cols-5">
+            <details className="rounded-lg border border-slate-200 bg-white p-2">
+              <summary className="cursor-pointer font-semibold text-slate-900">
+                Role coverage: {chemistryBreakdown.roleCoverage.toFixed(1)}
+              </summary>
+              <p className="mt-1 text-[11px] text-slate-600">
+                Higher when your lineup has strong coverage across core roles like playmaking,
+                spacing, defense, rim protection, and rebounding.
+              </p>
+            </details>
+            <details className="rounded-lg border border-slate-200 bg-white p-2">
+              <summary className="cursor-pointer font-semibold text-slate-900">
+                Complementarity: {chemistryBreakdown.complementarity.toFixed(1)}
+              </summary>
+              <p className="mt-1 text-[11px] text-slate-600">
+                Higher when players bring different strengths that fit together, and lower when
+                too many players overlap in ball-dominant styles.
+              </p>
+            </details>
+            <details className="rounded-lg border border-slate-200 bg-white p-2">
+              <summary className="cursor-pointer font-semibold text-slate-900">
+                Usage balance: {chemistryBreakdown.usageBalance.toFixed(1)}
+              </summary>
+              <p className="mt-1 text-[11px] text-slate-600">
+                Rewards a healthy distribution of on-ball responsibility. It drops when the lineup
+                is overloaded with high-usage creators.
+              </p>
+            </details>
+            <details className="rounded-lg border border-slate-200 bg-white p-2">
+              <summary className="cursor-pointer font-semibold text-slate-900">
+                Two-way balance: {chemistryBreakdown.twoWayBalance.toFixed(1)}
+              </summary>
+              <p className="mt-1 text-[11px] text-slate-600">
+                Compares overall offense and defense profile. More balanced lineups score higher
+                than one-sided lineups.
+              </p>
+            </details>
+            <details className="rounded-lg border border-slate-200 bg-white p-2">
+              <summary className="cursor-pointer font-semibold text-slate-900">
+                Culture fit: {chemistryBreakdown.culture.toFixed(1)}
+              </summary>
+              <p className="mt-1 text-[11px] text-slate-600">
+                Uses winning-context strength across the five players and rewards lineups where
+                that profile is both strong and consistent.
+              </p>
+            </details>
           </div>
         </div>
 
@@ -336,12 +405,6 @@ export default async function ResultsPage({
       </section>
 
       <div className="flex flex-wrap items-center gap-3">
-        <form action={resetGameAction}>
-          <button type="submit" className="button-primary">
-            Play again
-          </button>
-        </form>
-
         {run.groupCode ? (
           <Link href={`/leaderboard?groupCode=${encodeURIComponent(run.groupCode)}`} className="button-secondary">
             View group leaderboard
@@ -351,6 +414,19 @@ export default async function ResultsPage({
             View leaderboard
           </Link>
         )}
+      </div>
+
+      <div className="fixed inset-x-0 bottom-0 z-40 border-t border-slate-200 bg-white/95 px-3 py-2 backdrop-blur md:px-6">
+        <div className="mx-auto w-full max-w-5xl">
+          <form action={resetGameWithPrefillAction}>
+            <input type="hidden" name="userName" value={prefillUserName} />
+            <input type="hidden" name="groupCode" value={prefillGroupCode} />
+            <input type="hidden" name="seed" value={prefillSeed} />
+            <button type="submit" className="button-primary w-full">
+              Play again
+            </button>
+          </form>
+        </div>
       </div>
     </div>
   );

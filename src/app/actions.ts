@@ -78,3 +78,24 @@ export async function resetGameAction() {
   clearDraftSessionCookieToken();
   redirect('/');
 }
+
+export async function resetGameWithPrefillAction(formData: FormData) {
+  const userName = formData.get('userName')?.toString().trim() ?? '';
+  const groupCode = formData.get('groupCode')?.toString().trim() ?? '';
+  const seed = formData.get('seed')?.toString().trim() ?? '';
+
+  const query = new URLSearchParams();
+  if (userName) {
+    query.set('userName', userName);
+  }
+  if (groupCode) {
+    query.set('groupCode', groupCode);
+  }
+  if (seed) {
+    query.set('seed', seed);
+  }
+
+  clearDraftSessionCookieToken();
+  const queryString = query.toString();
+  redirect(queryString ? `/?${queryString}` : '/');
+}
