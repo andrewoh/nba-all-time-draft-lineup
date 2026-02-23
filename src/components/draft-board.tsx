@@ -313,158 +313,73 @@ export function DraftBoard({
           {rankedRoster.length === 0 ? (
             <p className="text-sm text-slate-500">No players available for this team.</p>
           ) : (
-            <>
-              <div className="md:hidden">
-                <p className="mb-2 text-[11px] font-semibold uppercase tracking-wide text-slate-500">
-                  Swipe cards. Tap a card to select.
-                </p>
-                <ul className="mobile-player-carousel">
-                  {rankedRoster.map(
-                    (
-                      { player, isPlayable, alreadySelected, hasOpenEligibleSlot, disabledReason },
-                      index
-                    ) => {
-                      const isSelected = selectedPlayer === player.name;
-                      const cardStateClass = isSelected && isPlayable
-                        ? 'selected-emphasis border-court-700 bg-court-50'
-                        : !isPlayable
-                          ? alreadySelected
-                            ? 'border-rose-200 bg-rose-50'
-                            : 'border-slate-200 bg-slate-100'
-                          : 'border-slate-200 bg-white';
-
-                      return (
-                        <li
-                          key={`${player.name}-mobile`}
-                          className="mobile-player-snap player-item-enter"
-                          style={{ animationDelay: `${Math.min(index, 12) * 18}ms` }}
-                        >
-                          <div className={cn('mobile-player-card rounded-xl border p-3', cardStateClass)}>
-                            <button
-                              type="button"
-                              onClick={() => handleSelectPlayer(player.name, isPlayable)}
-                              disabled={lineupComplete || !isPlayable}
-                              className={cn(
-                                'w-full text-left text-sm',
-                                (lineupComplete || !isPlayable) && 'cursor-not-allowed opacity-75'
-                              )}
-                              data-testid={`player-option-mobile-${index}`}
-                            >
-                              <p className={cn('font-semibold text-slate-900', !isPlayable && 'line-through')}>
-                                {!isPlayable ? 'X ' : null}
-                                {player.name}
-                              </p>
-                              <p className={cn('mt-0.5 text-xs', !isPlayable ? 'text-slate-500' : 'text-slate-600')}>
-                                {player.yearsWithTeam}
-                              </p>
-                              <div className="mt-1 flex flex-wrap gap-1">
-                                {player.eligibleSlots.map((slot) => {
-                                  const isOpenSlot = openSlots.includes(slot);
-                                  return (
-                                    <span
-                                      key={`${player.name}-mobile-${slot}`}
-                                      className={cn(
-                                        'rounded-full border px-2 py-0.5 text-[10px] font-bold',
-                                        isPlayable && isOpenSlot
-                                          ? 'border-blue-300 bg-blue-100 text-blue-800'
-                                          : 'border-slate-300 bg-slate-100 text-slate-500'
-                                      )}
-                                    >
-                                      {slot}
-                                    </span>
-                                  );
-                                })}
-                              </div>
-                            </button>
-                            <details className="mt-2 rounded-lg border border-slate-200 bg-white px-2 py-1">
-                              <summary className="cursor-pointer text-[11px] font-semibold text-slate-700">
-                                {disabledReason ? 'Why unavailable?' : 'Tap for status'}
-                              </summary>
-                              <p className="mt-1 text-[11px] text-slate-600">
-                                {disabledReason ??
-                                  `Eligible now: ${player.eligibleSlots
-                                    .filter((slot) => openSlots.includes(slot))
-                                    .join(', ') || 'None'}`}
-                              </p>
-                              {!disabledReason && !hasOpenEligibleSlot ? (
-                                <p className="text-[11px] text-slate-500">Open slots no longer match this player.</p>
-                              ) : null}
-                            </details>
-                          </div>
-                        </li>
-                      );
-                    }
-                  )}
-                </ul>
-              </div>
-
-              <ul className="hidden gap-2 sm:grid-cols-2 md:grid">
-                {rankedRoster.map(({ player, isPlayable, alreadySelected, disabledReason }, index) => {
+            <ul className="grid gap-2 sm:grid-cols-2">
+              {rankedRoster.map(({ player, isPlayable, alreadySelected, disabledReason }, index) => {
                 const isSelected = selectedPlayer === player.name;
-                  return (
-                    <li
-                      key={player.name}
-                      className="player-item-enter"
-                      style={{ animationDelay: `${Math.min(index, 12) * 18}ms` }}
+
+                return (
+                  <li
+                    key={player.name}
+                    className="player-item-enter"
+                    style={{ animationDelay: `${Math.min(index, 12) * 18}ms` }}
+                  >
+                    <button
+                      type="button"
+                      onClick={() => handleSelectPlayer(player.name, isPlayable)}
+                      disabled={lineupComplete || !isPlayable}
+                      className={cn(
+                        'w-full min-h-[3.5rem] rounded-xl border px-3 py-2.5 text-left text-sm transition active:scale-[0.995]',
+                        isSelected && isPlayable
+                          ? 'selected-emphasis border-court-700 bg-court-50 text-court-900'
+                          : !isPlayable
+                            ? alreadySelected
+                              ? 'cursor-not-allowed border-rose-200 bg-rose-50 text-rose-700'
+                              : 'cursor-not-allowed border-slate-200 bg-slate-100 text-slate-400'
+                            : 'border-slate-200 bg-white text-slate-700 hover:border-slate-300',
+                        (lineupComplete || !isPlayable) && 'opacity-70'
+                      )}
+                      data-testid={`player-option-${index}`}
                     >
-                      <button
-                        type="button"
-                        onClick={() => handleSelectPlayer(player.name, isPlayable)}
-                        disabled={lineupComplete || !isPlayable}
-                        className={cn(
-                          'w-full min-h-[3.5rem] rounded-xl border px-3 py-2.5 text-left text-sm transition active:scale-[0.995]',
-                          isSelected && isPlayable
-                            ? 'selected-emphasis border-court-700 bg-court-50 text-court-900'
-                            : !isPlayable
-                              ? alreadySelected
-                                ? 'cursor-not-allowed border-rose-200 bg-rose-50 text-rose-700'
-                                : 'cursor-not-allowed border-slate-200 bg-slate-100 text-slate-400'
-                              : 'border-slate-200 bg-white text-slate-700 hover:border-slate-300',
-                          (lineupComplete || !isPlayable) && 'opacity-70'
-                        )}
-                        data-testid={`player-option-${index}`}
-                      >
-                        <p className={cn('font-semibold', !isPlayable && 'line-through')}>
-                          {!isPlayable ? 'X ' : null}
-                          {player.name}
+                      <p className={cn('font-semibold', !isPlayable && 'line-through')}>
+                        {!isPlayable ? 'X ' : null}
+                        {player.name}
+                      </p>
+                      <p className={cn('mt-0.5 text-xs', !isPlayable ? 'text-slate-400' : 'text-slate-600')}>
+                        {player.yearsWithTeam}
+                      </p>
+                      <div className="mt-1 flex flex-wrap gap-1">
+                        {player.eligibleSlots.map((slot) => {
+                          const isOpenSlot = openSlots.includes(slot);
+                          return (
+                            <span
+                              key={`${player.name}-${slot}`}
+                              className={cn(
+                                'rounded-full border px-2 py-0.5 text-[10px] font-bold',
+                                isPlayable && isOpenSlot
+                                  ? 'border-blue-300 bg-blue-100 text-blue-800'
+                                  : 'border-slate-300 bg-slate-100 text-slate-500'
+                              )}
+                            >
+                              {slot}
+                            </span>
+                          );
+                        })}
+                      </div>
+                      {disabledReason ? (
+                        <p
+                          className={cn(
+                            'mt-1 text-[11px] font-semibold uppercase tracking-wide',
+                            alreadySelected ? 'text-rose-600' : 'text-red-500'
+                          )}
+                        >
+                          {disabledReason}
                         </p>
-                        <p className={cn('mt-0.5 text-xs', !isPlayable ? 'text-slate-400' : 'text-slate-600')}>
-                          {player.yearsWithTeam}
-                        </p>
-                        <div className="mt-1 flex flex-wrap gap-1">
-                          {player.eligibleSlots.map((slot) => {
-                            const isOpenSlot = openSlots.includes(slot);
-                            return (
-                              <span
-                                key={`${player.name}-${slot}`}
-                                className={cn(
-                                  'rounded-full border px-2 py-0.5 text-[10px] font-bold',
-                                  isPlayable && isOpenSlot
-                                    ? 'border-blue-300 bg-blue-100 text-blue-800'
-                                    : 'border-slate-300 bg-slate-100 text-slate-500'
-                                )}
-                              >
-                                {slot}
-                              </span>
-                            );
-                          })}
-                        </div>
-                        {disabledReason ? (
-                          <p
-                            className={cn(
-                              'mt-1 text-[11px] font-semibold uppercase tracking-wide',
-                              alreadySelected ? 'text-rose-600' : 'text-red-500'
-                            )}
-                          >
-                            {disabledReason}
-                          </p>
-                        ) : null}
-                      </button>
-                    </li>
-                  );
-                })}
-              </ul>
-            </>
+                      ) : null}
+                    </button>
+                  </li>
+                );
+              })}
+            </ul>
           )}
         </section>
 

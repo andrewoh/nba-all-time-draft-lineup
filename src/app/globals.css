@@ -113,31 +113,6 @@ a {
   margin: 0 0 0.5rem;
 }
 
-.mobile-player-carousel {
-  display: flex;
-  gap: 0.75rem;
-  margin: 0;
-  overflow-x: auto;
-  padding: 0.1rem 0.15rem 0.45rem;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-}
-
-.mobile-player-carousel::-webkit-scrollbar {
-  display: none;
-}
-
-.mobile-player-snap {
-  flex: 0 0 84%;
-  list-style: none;
-  scroll-snap-align: start;
-}
-
-.mobile-player-card {
-  min-height: 10.2rem;
-  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
-}
-
 .sticky-draft-banner {
   animation: banner-in 220ms ease-out both;
   backdrop-filter: blur(10px);
@@ -340,9 +315,5 @@ a {
 
   .shot-clock-value {
     font-size: 3.3rem;
-  }
-
-  .mobile-player-snap {
-    flex-basis: 88%;
   }
 }
