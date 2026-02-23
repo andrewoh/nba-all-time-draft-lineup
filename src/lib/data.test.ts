@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { getRosterByTeam, lookupPlayerStats } from '@/lib/data';
+import { lookupPlayerStats } from '@/lib/data';
 
 describe('all-time franchise stat lookup', () => {
   it('returns team-specific all-time greatness stats', () => {
@@ -19,10 +19,12 @@ describe('all-time franchise stat lookup', () => {
     expect(lookup.stats.bpm).toBeGreaterThan(0);
   });
 
-  it('keeps short late-career franchise stints lower in that team ranking', () => {
-    const wasRoster = getRosterByTeam('WAS');
-    const jordanIndex = wasRoster.findIndex((player) => player.name === 'Michael Jordan');
+  it('keeps a shorter late-career stint lower than prime-franchise value for the same star', () => {
+    const cle = lookupPlayerStats('CLE', 'LeBron James', 'ALL_TIME');
+    const lal = lookupPlayerStats('LAL', 'LeBron James', 'ALL_TIME');
 
-    expect(jordanIndex).toBeGreaterThan(8);
+    expect(cle.usedFallback).toBe(false);
+    expect(lal.usedFallback).toBe(false);
+    expect(cle.stats.ws48 + cle.stats.vorp).toBeGreaterThan(lal.stats.ws48 + lal.stats.vorp);
   });
 });

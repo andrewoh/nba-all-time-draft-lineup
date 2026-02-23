@@ -230,12 +230,24 @@ function toCategoryScores(input: {
     statsPeakProxyRaw(raw, yearsWithTeam),
     global.statsPeakProxy
   );
-  const advancedPercentile = normalizeByDistribution(raw.advanced, global.advancedRaw);
   const championshipPercentile = normalizeByDistribution(championships, global.championships);
   const winningImpactPercentile = normalizeByDistribution(
     winningImpactProxyRaw({ raw, championships }),
     global.winningImpactProxy
   );
+  // Safeguard: if advanced raw is missing/zero, infer advanced impact from winning context
+  // and peak-style profile so elite players are not artificially cratered.
+  const advancedPercentile =
+    raw.advanced > 0
+      ? normalizeByDistribution(raw.advanced, global.advancedRaw)
+      : clamp(
+          winningImpactPercentile * 0.62 +
+            teamPercentile * 0.2 +
+            statsPeakPercentile * 0.12 +
+            championshipPercentile * 0.06,
+          0,
+          100
+        );
 
   const playerAccoladesBase =
     personalPercentile * 0.8 + teamPercentile * 0.1 + championshipPercentile * 0.1;

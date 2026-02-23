@@ -143,6 +143,7 @@ const PLAYER_CONCURRENCY = Number(process.env.ALL_TIME_PLAYER_CONCURRENCY ?? '5'
 const SKIP_AWARDS = process.env.ALL_TIME_SKIP_AWARDS === '1';
 const CACHE_ENABLED = process.env.ALL_TIME_CACHE_ENABLED !== '0';
 const CACHE_TTL_HOURS = Number(process.env.ALL_TIME_CACHE_TTL_HOURS ?? '168');
+const SYNC_MISSING_ONLY = process.env.ALL_TIME_SYNC_MISSING_ONLY !== '0';
 const DEBUG_SYNC = process.env.ALL_TIME_SYNC_DEBUG === '1';
 const SCRIPT_DIR = path.dirname(fileURLToPath(import.meta.url));
 const ROOT_DIR = path.resolve(SCRIPT_DIR, '..');
@@ -398,6 +399,76 @@ function countYearsFromRangeLabel(rangeLabel: string): number {
     years += Math.max(1, segment.end - segment.start + 1);
   }
   return Math.max(1, years);
+}
+
+function isAccoladesShape(value: unknown): value is AwardBreakdown {
+  return Boolean(
+    value &&
+      typeof value === 'object' &&
+      'mvp' in (value as Record<string, unknown>) &&
+      'allStar' in (value as Record<string, unknown>)
+  );
+}
+
+function isBoxTotalsShape(
+  value: unknown
+): value is {
+  gp: number;
+  pts: number;
+  reb: number;
+  ast: number;
+  stl: number;
+  blk: number;
+  tov: number;
+} {
+  return Boolean(
+    value &&
+      typeof value === 'object' &&
+      'gp' in (value as Record<string, unknown>) &&
+      'pts' in (value as Record<string, unknown>) &&
+      'reb' in (value as Record<string, unknown>) &&
+      'ast' in (value as Record<string, unknown>) &&
+      'stl' in (value as Record<string, unknown>) &&
+      'blk' in (value as Record<string, unknown>) &&
+      'tov' in (value as Record<string, unknown>)
+  );
+}
+
+function assessExistingTeamSeed(teamAbbr: string): { needsSync: boolean; reasons: string[] } {
+  const seedPlayers = (fallbackSeedByTeam[teamAbbr] ?? []).slice(0, 15);
+  const reasons = new Set<string>();
+
+  if (seedPlayers.length < 15) {
+    reasons.add(`only ${seedPlayers.length}/15 players`);
+  }
+
+  for (const player of seedPlayers) {
+    if (!player.categoryRaw) {
+      reasons.add('missing categoryRaw');
+      continue;
+    }
+
+    if (player.categoryRaw.advanced <= 0) {
+      reasons.add('advanced raw missing/zero');
+    }
+
+    if (!isAccoladesShape(player.accolades)) {
+      reasons.add('missing accolades metadata');
+    }
+
+    if (!isBoxTotalsShape(player.boxTotals)) {
+      reasons.add('missing box totals metadata');
+    }
+
+    if (player.years === 'Unknown' || parseDisplayYearSegments(player.years).length === 0) {
+      reasons.add('unknown/invalid year ranges');
+    }
+  }
+
+  return {
+    needsSync: reasons.size > 0,
+    reasons: [...reasons]
+  };
 }
 
 function mapNbaPositionToSlots(position: string): LineupSlot[] {
@@ -1201,6 +1272,7 @@ async function main() {
       'Sync config:',
       `candidateLimit=${candidateLimit}`,
       `playerConcurrency=${playerConcurrency}`,
+      `syncMissingOnly=${SYNC_MISSING_ONLY}`,
       `skipAwards=${SKIP_AWARDS}`,
       `cacheEnabled=${CACHE_ENABLED}`,
       `cacheTtlHours=${CACHE_TTL_HOURS}`,
@@ -1221,7 +1293,18 @@ async function main() {
       continue;
     }
 
-    console.log(`Syncing all-time roster for ${team.abbr}...`);
+    if (SYNC_MISSING_ONLY) {
+      const assessment = assessExistingTeamSeed(team.abbr);
+      if (!assessment.needsSync) {
+        seedByTeam[team.abbr] = (fallbackSeedByTeam[team.abbr] ?? []).slice(0, 15);
+        console.log(`Skipping ${team.abbr} (already complete).`);
+        continue;
+      }
+      console.log(`Syncing all-time roster for ${team.abbr} (missing: ${assessment.reasons.join(', ')})...`);
+    } else {
+      console.log(`Syncing all-time roster for ${team.abbr}...`);
+    }
+
     seedByTeam[team.abbr] = await buildTeamSeed(team, teamId, candidateLimit, playerConcurrency);
     const topNames = seedByTeam[team.abbr].slice(0, 5).map((player) => player.name).join(', ');
     console.log(`Top ${team.abbr}: ${topNames}`);

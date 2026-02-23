@@ -124,6 +124,11 @@ Caching (enabled by default) for faster + safer repeat runs:
 - `ALL_TIME_CACHE_TTL_HOURS=168` (default, 7 days)
 - `ALL_TIME_CACHE_DIR=/absolute/path` (optional override)
 
+Missing-only sync mode (enabled by default):
+
+- `ALL_TIME_SYNC_MISSING_ONLY=1` (default) skips teams that already have complete metadata
+- set `ALL_TIME_SYNC_MISSING_ONLY=0` to force a full refresh of all teams
+
 What the script does:
 
 - pulls franchise career totals per team
