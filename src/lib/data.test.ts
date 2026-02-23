@@ -29,4 +29,16 @@ describe('all-time franchise stat lookup', () => {
     expect(lal.usedFallback).toBe(false);
     expect(cle.stats.ws48 + cle.stats.vorp).toBeGreaterThan(lal.stats.ws48 + lal.stats.vorp);
   });
+
+  it('repairs malformed franchise raw rows so stars are not artificially cratered', () => {
+    const adNop = lookupPlayerStats('NOP', 'Anthony Davis', 'ALL_TIME');
+    const stockton = lookupPlayerStats('UTA', 'John Stockton', 'ALL_TIME');
+    const fallback = lookupPlayerStats('UTA', 'Definitely Unknown Player', 'ALL_TIME');
+
+    expect(adNop.usedFallback).toBe(false);
+    expect(adNop.stats.ws48).toBeGreaterThan(35);
+    expect(adNop.stats.epm).toBeGreaterThan(35);
+    expect(stockton.stats.ws48).toBeGreaterThan(fallback.stats.ws48);
+    expect(stockton.stats.epm).toBeGreaterThan(fallback.stats.epm);
+  });
 });

@@ -1163,9 +1163,47 @@ async function buildTeamSeed(
       );
 
       const fallbackYears = fallbackPlayer?.years ?? 'Unknown';
-      const yearsWithTeam = countYearsFromRangeLabel(fallbackYears);
+      const fallbackYearsWithTeam = countYearsFromRangeLabel(fallbackYears);
+      const estimatedYearsWithTeam = Math.max(1, Math.min(22, Math.round(candidate.gp / 72)));
+      const yearsWithTeam = Math.max(fallbackYearsWithTeam, estimatedYearsWithTeam);
       const careerYears = Math.max(fallbackPlayer?.careerYears ?? yearsWithTeam, yearsWithTeam);
       const tenureRatio = clamp(yearsWithTeam / Math.max(1, careerYears), 0.08, 1);
+      const fallbackRaw = fallbackPlayer?.categoryRaw;
+      const fallbackRawIsReliable = Boolean(
+        fallbackRaw &&
+          fallbackRaw.stats > 0 &&
+          fallbackRaw.advanced > 0 &&
+          fallbackRaw.teamAccolades > yearsWithTeam * 1.2
+      );
+      const leaderBonus = leaderCounts.get(candidate.playerId) ?? 0;
+      const statsVolumeRaw =
+        candidate.pts * 1 +
+        candidate.reb * 1.2 +
+        candidate.ast * 1.5 +
+        candidate.stl * 2.4 +
+        candidate.blk * 2.4 -
+        candidate.tov * 1.15;
+      const surrogateStatsRaw =
+        statsVolumeRaw * 0.74 + Math.sqrt(Math.max(1, candidate.gp)) * 110;
+      const surrogateTeamRaw = clamp(
+        26 + yearsWithTeam * 0.9 + leaderBonus * 4.2,
+        yearsWithTeam * 1.4,
+        90
+      );
+      const surrogateAdvancedRaw = clamp(
+        surrogateStatsRaw * 0.09 + surrogateTeamRaw * 14 + leaderBonus * 10,
+        1200,
+        4200
+      );
+      const surrogatePersonalRaw = clamp(
+        leaderBonus * 6.5 +
+          Math.log10(
+            Math.max(100, candidate.pts + candidate.reb + candidate.ast + candidate.stl + candidate.blk)
+          ) *
+            5,
+        0,
+        140
+      );
 
       return {
         playerId: candidate.playerId,
@@ -1175,11 +1213,18 @@ async function buildTeamSeed(
         careerYears,
         positions: slotList(fallbackPlayer, []),
         championships: fallbackPlayer?.championships ?? 0,
-        personalAccoladesRaw: fallbackPlayer?.categoryRaw?.playerAccolades ?? 0,
-        teamAccoladesRaw:
-          fallbackPlayer?.categoryRaw?.teamAccolades ?? yearsWithTeam * 1.1,
-        statsRaw: fallbackPlayer?.categoryRaw?.stats ?? initialFranchiseImpact(candidate),
-        advancedRaw: fallbackPlayer?.categoryRaw?.advanced ?? 0,
+        personalAccoladesRaw: fallbackRawIsReliable
+          ? fallbackRaw?.playerAccolades ?? 0
+          : Math.max(fallbackRaw?.playerAccolades ?? 0, surrogatePersonalRaw),
+        teamAccoladesRaw: fallbackRawIsReliable
+          ? fallbackRaw?.teamAccolades ?? yearsWithTeam * 1.1
+          : Math.max(fallbackRaw?.teamAccolades ?? 0, surrogateTeamRaw),
+        statsRaw: fallbackRawIsReliable
+          ? fallbackRaw?.stats ?? initialFranchiseImpact(candidate)
+          : Math.max(fallbackRaw?.stats ?? 0, surrogateStatsRaw),
+        advancedRaw: fallbackRawIsReliable
+          ? fallbackRaw?.advanced ?? 0
+          : Math.max(fallbackRaw?.advanced ?? 0, surrogateAdvancedRaw),
         tenureRatio,
         franchiseScore: 0,
         accolades: fallbackPlayer?.accolades ?? null,

@@ -214,9 +214,19 @@ function toCategoryScores(input: {
   yearsWithTeam: number;
   careerYears: number;
   championships: number;
+  hasAccoladeMetadata: boolean;
+  hasBoxMetadata: boolean;
   global: GlobalCategoryDistributions;
 }): CategoryScores {
-  const { raw, yearsWithTeam, careerYears, championships, global } = input;
+  const {
+    raw,
+    yearsWithTeam,
+    careerYears,
+    championships,
+    hasAccoladeMetadata,
+    hasBoxMetadata,
+    global
+  } = input;
   const tenureRatio = clamp(yearsWithTeam / Math.max(1, careerYears), 0.08, 1);
 
   const personalPercentile = normalizeByDistribution(raw.playerAccolades, global.personalRaw);
@@ -235,14 +245,61 @@ function toCategoryScores(input: {
     winningImpactProxyRaw({ raw, championships }),
     global.winningImpactProxy
   );
+  const statsSignalPercentile = clamp(
+    statsPerYearPercentile * 0.45 + statsPeakPercentile * 0.55,
+    0,
+    100
+  );
+  const hasMetadata = hasAccoladeMetadata || hasBoxMetadata;
+  // Some sync fallbacks can leave placeholder raw values (for example: advanced=0,
+  // teamAccolades ~= years*1.1 with no metadata). Repair those rows using stable
+  // percentile signals so elite players are not artificially cratered.
+  const needsRawRepair =
+    raw.advanced <= 0 ||
+    raw.teamAccolades <= yearsWithTeam * 1.2 ||
+    (!hasMetadata && raw.playerAccolades <= 0 && raw.teamAccolades <= yearsWithTeam * 1.35);
+
+  const adjustedTeamPercentile = needsRawRepair
+    ? clamp(
+        Math.max(
+          teamPercentile,
+          statsSignalPercentile * 0.66 + championshipPercentile * 0.22
+        ),
+        0,
+        100
+      )
+    : teamPercentile;
+  const adjustedWinningImpactPercentile = needsRawRepair
+    ? clamp(
+        Math.max(
+          winningImpactPercentile,
+          statsSignalPercentile * 0.58 +
+            adjustedTeamPercentile * 0.3 +
+            championshipPercentile * 0.12
+        ),
+        0,
+        100
+      )
+    : winningImpactPercentile;
+  const adjustedPersonalPercentile = needsRawRepair
+    ? clamp(
+        Math.max(
+          personalPercentile,
+          statsSignalPercentile * 0.42 + adjustedTeamPercentile * 0.2 + championshipPercentile * 0.18
+        ),
+        0,
+        100
+      )
+    : personalPercentile;
+
   // Safeguard: if advanced raw is missing/zero, infer advanced impact from winning context
   // and peak-style profile so elite players are not artificially cratered.
   const advancedPercentile =
     raw.advanced > 0
       ? normalizeByDistribution(raw.advanced, global.advancedRaw)
       : clamp(
-          winningImpactPercentile * 0.62 +
-            teamPercentile * 0.2 +
+          adjustedWinningImpactPercentile * 0.62 +
+            adjustedTeamPercentile * 0.2 +
             statsPeakPercentile * 0.12 +
             championshipPercentile * 0.06,
           0,
@@ -250,15 +307,21 @@ function toCategoryScores(input: {
         );
 
   const playerAccoladesBase =
-    personalPercentile * 0.8 + teamPercentile * 0.1 + championshipPercentile * 0.1;
+    adjustedPersonalPercentile * 0.8 +
+    adjustedTeamPercentile * 0.1 +
+    championshipPercentile * 0.1;
   const teamAccoladesBase =
-    teamPercentile * 0.56 + winningImpactPercentile * 0.26 + championshipPercentile * 0.18;
+    adjustedTeamPercentile * 0.56 +
+    adjustedWinningImpactPercentile * 0.26 +
+    championshipPercentile * 0.18;
   // Box stats emphasize both total footprint and peak-quality seasons.
   const statsBase =
     statsVolumePercentile * 0.37 + statsPerYearPercentile * 0.29 + statsPeakPercentile * 0.34;
   // Advanced category is anchored to winning impact to avoid pure box-stat duplication.
   const advancedBase =
-    advancedPercentile * 0.52 + winningImpactPercentile * 0.36 + teamPercentile * 0.12;
+    advancedPercentile * 0.52 +
+    adjustedWinningImpactPercentile * 0.36 +
+    adjustedTeamPercentile * 0.12;
   const advancedDecoupled = clamp(
     advancedBase - Math.max(0, statsBase - advancedBase) * 0.35,
     0,
@@ -422,6 +485,8 @@ function initializeAllTimeData(): void {
         yearsWithTeam: profile.yearsWithTeam,
         careerYears: profile.careerYears,
         championships: profile.championships,
+        hasAccoladeMetadata: profile.accolades !== null,
+        hasBoxMetadata: profile.boxTotals !== null,
         global
       });
 
