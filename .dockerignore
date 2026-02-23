@@ -6,3 +6,4 @@ test-results
 .git
 .gitignore
 coverage
+.env
