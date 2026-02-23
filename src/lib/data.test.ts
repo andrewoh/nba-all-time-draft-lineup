@@ -4,11 +4,13 @@ import { lookupPlayerStats } from '@/lib/data';
 describe('all-time franchise stat lookup', () => {
   it('returns team-specific all-time greatness stats', () => {
     const lookup = lookupPlayerStats('GSW', 'Stephen Curry', 'ALL_TIME');
+    const fallback = lookupPlayerStats('GSW', 'Definitely Unknown Player', 'ALL_TIME');
 
     expect(lookup.usedFallback).toBe(false);
     expect(lookup.seasonsUsed).toEqual(['ALL_TIME_FRANCHISE']);
     expect(lookup.projectedFromSeasons).toBe(1);
-    expect(lookup.stats.bpm).toBeGreaterThan(45);
+    expect(lookup.stats.bpm).toBeGreaterThan(fallback.stats.bpm);
+    expect(lookup.stats.ws48).toBeGreaterThan(fallback.stats.ws48);
   });
 
   it('falls back to baseline for missing franchise entries', () => {
