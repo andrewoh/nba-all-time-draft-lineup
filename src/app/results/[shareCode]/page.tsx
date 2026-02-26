@@ -10,7 +10,7 @@ import { getPlayerExplanationData, getTeamLogoUrl } from '@/lib/data';
 import { formatDateTime } from '@/lib/format';
 import { getRunBenchmarks, getRunByShareCode } from '@/lib/run-service';
 import { scoreLineup } from '@/lib/scoring';
-import type { AwardBreakdown, ChemistryBreakdown, LineupPick } from '@/lib/types';
+import type { ChemistryBreakdown, LineupPick, PlayerExplanationData } from '@/lib/types';
 
 type ResultPick = {
   id: string;
@@ -39,23 +39,6 @@ type PercentileBadgeStyle = {
   className: string;
   tier: string;
 };
-
-const ACCOLADE_LABELS: Array<{ key: keyof AwardBreakdown; label: string }> = [
-  { key: 'mvp', label: 'MVP' },
-  { key: 'finalsMvp', label: 'Finals MVP' },
-  { key: 'dpoy', label: 'DPOY' },
-  { key: 'allNbaFirst', label: 'All-NBA 1st Team' },
-  { key: 'allNbaSecond', label: 'All-NBA 2nd Team' },
-  { key: 'allNbaThird', label: 'All-NBA 3rd Team' },
-  { key: 'allDefFirst', label: 'All-Def 1st Team' },
-  { key: 'allDefSecond', label: 'All-Def 2nd Team' },
-  { key: 'allStar', label: 'All-Star' },
-  { key: 'scoringTitles', label: 'Scoring Title' },
-  { key: 'reboundingTitles', label: 'Rebounding Title' },
-  { key: 'assistsTitles', label: 'Assists Title' },
-  { key: 'stealsTitles', label: 'Steals Title' },
-  { key: 'blocksTitles', label: 'Blocks Title' }
-];
 
 const CHEMISTRY_EXPLANATIONS: Array<{
   key: keyof Pick<ChemistryBreakdown, 'roleCoverage' | 'complementarity' | 'usageBalance' | 'twoWayBalance' | 'culture'>;
@@ -106,17 +89,7 @@ function average(values: number[]): number {
   return values.reduce((sum, value) => sum + value, 0) / values.length;
 }
 
-function formatAccoladeHighlights(accolades: AwardBreakdown): string[] {
-  return ACCOLADE_LABELS
-    .map(({ key, label }) => {
-      const count = accolades[key];
-      return count > 0 ? `${label} x${count}` : null;
-    })
-    .filter((value): value is string => Boolean(value))
-    .slice(0, 4);
-}
-
-function buildScoreDrivers(pick: ResultPick): string[] {
+function buildScoreDrivers(pick: ResultPick, explanation: PlayerExplanationData | null): string[] {
   if (pick.isPenalty) {
     return [
       'Shot clock violation auto-filled this slot with 0 contribution.',
@@ -124,7 +97,6 @@ function buildScoreDrivers(pick: ResultPick): string[] {
     ];
   }
 
-  const explanation = getPlayerExplanationData(pick.teamAbbr, pick.playerName);
   const drivers: string[] = [];
 
   if (pick.bpm >= 72) {
@@ -153,19 +125,24 @@ function buildScoreDrivers(pick: ResultPick): string[] {
     drivers.push(`Advanced winning-impact profile (${pick.epm.toFixed(1)}) sat below contender-tier impact.`);
   }
 
-  if (explanation?.accolades) {
-    const accoladeHighlights = formatAccoladeHighlights(explanation.accolades);
-    if (accoladeHighlights.length > 0) {
-      drivers.push(`Accolade detail: ${accoladeHighlights.join(', ')}.`);
-    } else {
-      drivers.push('No major award counts were recorded during this franchise stint.');
-    }
+  if (explanation?.personalAccoladeItems?.length) {
+    drivers.push(`Personal accolades: ${explanation.personalAccoladeItems.join(', ')}.`);
+  } else if (explanation?.accolades) {
+    drivers.push('No major personal awards were recorded during this franchise stint.');
   } else {
-    drivers.push('Detailed award counts were not available; aggregate accolade signal was used.');
+    drivers.push('Detailed personal accolade counts were not available; aggregate signal was used.');
   }
 
-  if (explanation?.championships && explanation.championships > 0) {
-    drivers.push(`Franchise championships in this stint: ${explanation.championships}.`);
+  if (explanation?.teamAccoladeItems?.length) {
+    drivers.push(`Team accolades/context: ${explanation.teamAccoladeItems.join(', ')}.`);
+  }
+
+  if (explanation?.statsDetailItems?.length) {
+    drivers.push(`Stats detail: ${explanation.statsDetailItems.slice(0, 3).join(', ')}.`);
+  }
+
+  if (explanation?.advancedDetailItems?.length) {
+    drivers.push(`Advanced detail: ${explanation.advancedDetailItems.slice(0, 3).join(', ')}.`);
   }
 
   if (explanation?.boxPercentiles) {
@@ -190,11 +167,6 @@ function buildScoreDrivers(pick: ResultPick): string[] {
     }
   } else if (pick.vorp <= 55) {
     drivers.push('Box-score weakness came from not reaching top-tier franchise production in key counting stats.');
-  }
-
-  if (explanation) {
-    const tenurePct = Math.round(explanation.tenureRatio * 100);
-    drivers.push(`Franchise tenure context: ${explanation.yearsWithTeam} seasons (${tenurePct}% of career).`);
   }
 
   if (pick.usedFallback) {
@@ -572,7 +544,8 @@ export default async function ResultsPage({
         <div className="mt-6 grid gap-2 sm:grid-cols-2 lg:grid-cols-5">
           {run.picks.map((pick) => {
             const teamLogoUrl = getTeamLogoUrl(pick.teamAbbr);
-            const drivers = buildScoreDrivers(pick as ResultPick);
+            const explanation = getPlayerExplanationData(pick.teamAbbr, pick.playerName);
+            const drivers = buildScoreDrivers(pick as ResultPick, explanation);
             const badges = [
               { label: 'Personal', value: pick.bpm },
               { label: 'Team', value: pick.ws48 },
@@ -626,6 +599,46 @@ export default async function ResultsPage({
                       <li key={reason}>{reason}</li>
                     ))}
                   </ul>
+                  {!pick.isPenalty && explanation ? (
+                    <div className="mt-2 space-y-2 text-[11px] text-slate-700">
+                      <div>
+                        <p className="font-semibold text-slate-900">Personal accolades</p>
+                        {explanation.personalAccoladeItems.length > 0 ? (
+                          <ul className="mt-1 list-disc space-y-1 pl-4 text-slate-600">
+                            {explanation.personalAccoladeItems.map((item) => (
+                              <li key={`${pick.id}-personal-${item}`}>{item}</li>
+                            ))}
+                          </ul>
+                        ) : (
+                          <p className="mt-1 text-slate-600">No major personal awards were recorded in this dataset.</p>
+                        )}
+                      </div>
+                      <div>
+                        <p className="font-semibold text-slate-900">Team accolades/context</p>
+                        <ul className="mt-1 list-disc space-y-1 pl-4 text-slate-600">
+                          {explanation.teamAccoladeItems.map((item) => (
+                            <li key={`${pick.id}-team-${item}`}>{item}</li>
+                          ))}
+                        </ul>
+                      </div>
+                      <div>
+                        <p className="font-semibold text-slate-900">Stats profile</p>
+                        <ul className="mt-1 list-disc space-y-1 pl-4 text-slate-600">
+                          {explanation.statsDetailItems.map((item) => (
+                            <li key={`${pick.id}-stats-${item}`}>{item}</li>
+                          ))}
+                        </ul>
+                      </div>
+                      <div>
+                        <p className="font-semibold text-slate-900">Advanced impact profile</p>
+                        <ul className="mt-1 list-disc space-y-1 pl-4 text-slate-600">
+                          {explanation.advancedDetailItems.map((item) => (
+                            <li key={`${pick.id}-advanced-${item}`}>{item}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  ) : null}
                 </details>
               </div>
             );

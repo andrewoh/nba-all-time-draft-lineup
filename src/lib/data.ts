@@ -54,6 +54,11 @@ type GlobalCategoryDistributions = {
   boxAst: number[];
   boxStl: number[];
   boxBlk: number[];
+  boxPtsPerGame: number[];
+  boxRebPerGame: number[];
+  boxAstPerGame: number[];
+  boxStlPerGame: number[];
+  boxBlkPerGame: number[];
 };
 
 const typedTeams = teamsData as Team[];
@@ -109,6 +114,38 @@ const teamLogoIdByAbbr: Record<string, string> = {
   WAS: '1610612764'
 };
 
+const ACCOLADE_ITEM_LABELS: Array<{
+  key: keyof AwardBreakdown;
+  singular: string;
+  plural: string;
+}> = [
+  { key: 'mvp', singular: 'NBA MVP', plural: 'NBA MVPs' },
+  { key: 'finalsMvp', singular: 'NBA Finals MVP', plural: 'NBA Finals MVPs' },
+  { key: 'dpoy', singular: 'NBA Defensive Player of the Year', plural: 'NBA Defensive Player of the Year awards' },
+  { key: 'roy', singular: 'NBA Rookie of the Year', plural: 'NBA Rookie of the Year awards' },
+  { key: 'sixthMan', singular: 'NBA Sixth Man of the Year', plural: 'NBA Sixth Man of the Year awards' },
+  { key: 'mip', singular: 'NBA Most Improved Player', plural: 'NBA Most Improved Player awards' },
+  { key: 'allNbaFirst', singular: 'All-NBA 1st Team selection', plural: 'All-NBA 1st Team selections' },
+  { key: 'allNbaSecond', singular: 'All-NBA 2nd Team selection', plural: 'All-NBA 2nd Team selections' },
+  { key: 'allNbaThird', singular: 'All-NBA 3rd Team selection', plural: 'All-NBA 3rd Team selections' },
+  {
+    key: 'allDefFirst',
+    singular: 'All-Defensive 1st Team selection',
+    plural: 'All-Defensive 1st Team selections'
+  },
+  {
+    key: 'allDefSecond',
+    singular: 'All-Defensive 2nd Team selection',
+    plural: 'All-Defensive 2nd Team selections'
+  },
+  { key: 'allStar', singular: 'NBA All-Star selection', plural: 'NBA All-Star selections' },
+  { key: 'scoringTitles', singular: 'scoring title', plural: 'scoring titles' },
+  { key: 'reboundingTitles', singular: 'rebounding title', plural: 'rebounding titles' },
+  { key: 'assistsTitles', singular: 'assists title', plural: 'assists titles' },
+  { key: 'stealsTitles', singular: 'steals title', plural: 'steals titles' },
+  { key: 'blocksTitles', singular: 'blocks title', plural: 'blocks titles' }
+];
+
 function clamp(value: number, min: number, max: number): number {
   return Math.max(min, Math.min(max, value));
 }
@@ -153,6 +190,117 @@ function parseYearsWithTeam(yearRange: string): number {
     1,
     segments.reduce((sum, segment) => sum + Math.max(1, segment.endYear - segment.startYear + 1), 0)
   );
+}
+
+function hasMeaningfulAccolades(accolades: AwardBreakdown | null): boolean {
+  if (!accolades) {
+    return false;
+  }
+
+  return Object.values(accolades).some((value) => value > 0);
+}
+
+function formatAccoladeCount(count: number, singular: string, plural: string): string {
+  return `${count} ${count === 1 ? singular : plural}`;
+}
+
+function buildPersonalAccoladeItems(accolades: AwardBreakdown | null): string[] {
+  if (!accolades) {
+    return [];
+  }
+
+  return ACCOLADE_ITEM_LABELS
+    .map(({ key, singular, plural }) => {
+      const count = accolades[key];
+      if (count <= 0) {
+        return null;
+      }
+      return formatAccoladeCount(count, singular, plural);
+    })
+    .filter((item): item is string => Boolean(item));
+}
+
+function buildTeamAccoladeItems(input: {
+  championships: number;
+  yearsWithTeam: number;
+  careerYears: number;
+  teamAccoladesScore: number;
+}): string[] {
+  const { championships, yearsWithTeam, careerYears, teamAccoladesScore } = input;
+  const tenurePct = Math.round((yearsWithTeam / Math.max(1, careerYears)) * 100);
+
+  const items: string[] = [];
+  if (championships > 0) {
+    items.push(formatAccoladeCount(championships, 'NBA championship with this franchise', 'NBA championships with this franchise'));
+  } else {
+    items.push('0 NBA championships with this franchise');
+  }
+  items.push(`Franchise tenure: ${yearsWithTeam} seasons (${tenurePct}% of career)`);
+  items.push(`Team accolades score: ${roundToOneDecimal(teamAccoladesScore)}`);
+
+  return items;
+}
+
+function formatPercentile(value: number): string {
+  return `P${Math.round(clamp(value, 0, 100))}`;
+}
+
+function buildStatsDetailItems(input: {
+  boxTotals: BoxTotals | null;
+  boxPercentiles: PlayerExplanationData['boxPercentiles'];
+  yearsWithTeam: number;
+  statsPerYearPercentile: number;
+  statsPeakPercentile: number;
+}): string[] {
+  const { boxTotals, boxPercentiles, yearsWithTeam, statsPerYearPercentile, statsPeakPercentile } = input;
+  const items: string[] = [
+    `Per-season production percentile: ${formatPercentile(statsPerYearPercentile)}`,
+    `Peak-season proxy percentile: ${formatPercentile(statsPeakPercentile)}`
+  ];
+
+  if (boxTotals && boxPercentiles) {
+    items.unshift(
+      `BLK: ${Math.round(boxTotals.blk).toLocaleString()} (${formatPercentile(boxPercentiles.blk)})`,
+      `STL: ${Math.round(boxTotals.stl).toLocaleString()} (${formatPercentile(boxPercentiles.stl)})`,
+      `AST: ${Math.round(boxTotals.ast).toLocaleString()} (${formatPercentile(boxPercentiles.ast)})`,
+      `REB: ${Math.round(boxTotals.reb).toLocaleString()} (${formatPercentile(boxPercentiles.reb)})`,
+      `PTS: ${Math.round(boxTotals.pts).toLocaleString()} (${formatPercentile(boxPercentiles.pts)})`
+    );
+  } else {
+    items.push('Detailed box totals were unavailable; stats score used available aggregate franchise data.');
+  }
+
+  const gamesPlayed = boxTotals?.gp ?? 0;
+  items.push(`Franchise sample size: ${gamesPlayed > 0 ? gamesPlayed.toLocaleString() : 'N/A'} games across ${yearsWithTeam} seasons`);
+  return items;
+}
+
+function buildAdvancedDetailItems(input: {
+  advancedScore: number;
+  boxStatsScore: number;
+  teamAccoladesScore: number;
+  championships: number;
+  rawAdvancedPercentile: number;
+  winningImpactPercentile: number;
+}): string[] {
+  const {
+    advancedScore,
+    boxStatsScore,
+    teamAccoladesScore,
+    championships,
+    rawAdvancedPercentile,
+    winningImpactPercentile
+  } = input;
+
+  const impactDelta = roundToOneDecimal(advancedScore - boxStatsScore);
+  const items: string[] = [
+    `Winning-impact proxy percentile: ${formatPercentile(winningImpactPercentile)}`,
+    `Raw advanced profile percentile: ${formatPercentile(rawAdvancedPercentile)}`,
+    `Advanced vs box profile delta: ${impactDelta >= 0 ? '+' : ''}${impactDelta.toFixed(1)}`,
+    `Team-context signal used by advanced model: ${teamAccoladesScore.toFixed(1)}`,
+    `Championship context in this stint: ${championships}`
+  ];
+  return items;
 }
 
 function legacyCategoryRawFromRank(input: {
@@ -214,8 +362,9 @@ function toCategoryScores(input: {
   yearsWithTeam: number;
   careerYears: number;
   championships: number;
-  hasAccoladeMetadata: boolean;
+  hasMeaningfulAccolades: boolean;
   hasBoxMetadata: boolean;
+  boxTotals: BoxTotals | null;
   global: GlobalCategoryDistributions;
 }): CategoryScores {
   const {
@@ -223,8 +372,9 @@ function toCategoryScores(input: {
     yearsWithTeam,
     careerYears,
     championships,
-    hasAccoladeMetadata,
+    hasMeaningfulAccolades,
     hasBoxMetadata,
+    boxTotals,
     global
   } = input;
   const tenureRatio = clamp(yearsWithTeam / Math.max(1, careerYears), 0.08, 1);
@@ -245,19 +395,28 @@ function toCategoryScores(input: {
     winningImpactProxyRaw({ raw, championships }),
     global.winningImpactProxy
   );
+  const rawAdvancedPercentile =
+    raw.advanced > 0 ? normalizeByDistribution(raw.advanced, global.advancedRaw) : 0;
   const statsSignalPercentile = clamp(
     statsPerYearPercentile * 0.45 + statsPeakPercentile * 0.55,
     0,
     100
   );
-  const hasMetadata = hasAccoladeMetadata || hasBoxMetadata;
+  const hasMetadata = hasMeaningfulAccolades || hasBoxMetadata;
+  const missingAccoladeSignal = !hasMeaningfulAccolades && raw.playerAccolades <= 0;
+  const eliteImpactSignal =
+    statsSignalPercentile >= 72 ||
+    rawAdvancedPercentile >= 72 ||
+    winningImpactPercentile >= 72 ||
+    championshipPercentile >= 65;
   // Some sync fallbacks can leave placeholder raw values (for example: advanced=0,
   // teamAccolades ~= years*1.1 with no metadata). Repair those rows using stable
   // percentile signals so elite players are not artificially cratered.
   const needsRawRepair =
     raw.advanced <= 0 ||
     raw.teamAccolades <= yearsWithTeam * 1.2 ||
-    (!hasMetadata && raw.playerAccolades <= 0 && raw.teamAccolades <= yearsWithTeam * 1.35);
+    (!hasMetadata && raw.playerAccolades <= 0 && raw.teamAccolades <= yearsWithTeam * 1.35) ||
+    (missingAccoladeSignal && eliteImpactSignal);
 
   const adjustedTeamPercentile = needsRawRepair
     ? clamp(
@@ -281,30 +440,87 @@ function toCategoryScores(input: {
         100
       )
     : winningImpactPercentile;
+  const inferredPersonalPercentile = clamp(
+    statsSignalPercentile * 0.34 +
+      rawAdvancedPercentile * 0.34 +
+      adjustedWinningImpactPercentile * 0.18 +
+      championshipPercentile * 0.14,
+    0,
+    100
+  );
   const adjustedPersonalPercentile = needsRawRepair
     ? clamp(
         Math.max(
           personalPercentile,
-          statsSignalPercentile * 0.42 + adjustedTeamPercentile * 0.2 + championshipPercentile * 0.18
+          inferredPersonalPercentile
         ),
         0,
         100
       )
     : personalPercentile;
 
-  // Safeguard: if advanced raw is missing/zero, infer advanced impact from winning context
-  // and peak-style profile so elite players are not artificially cratered.
+  const boxCompositePercentile =
+    hasBoxMetadata && boxTotals
+      ? clamp(
+          normalizeByDistribution(boxTotals.pts, global.boxPts) * 0.36 +
+            normalizeByDistribution(boxTotals.reb, global.boxReb) * 0.19 +
+            normalizeByDistribution(boxTotals.ast, global.boxAst) * 0.21 +
+            normalizeByDistribution(boxTotals.stl, global.boxStl) * 0.12 +
+            normalizeByDistribution(boxTotals.blk, global.boxBlk) * 0.12,
+          0,
+          100
+        )
+      : statsSignalPercentile;
+  const boxRatePercentile =
+    hasBoxMetadata && boxTotals
+      ? clamp(
+          normalizeByDistribution(
+            boxTotals.pts / Math.max(1, boxTotals.gp),
+            global.boxPtsPerGame
+          ) * 0.36 +
+            normalizeByDistribution(
+              boxTotals.reb / Math.max(1, boxTotals.gp),
+              global.boxRebPerGame
+            ) * 0.19 +
+            normalizeByDistribution(
+              boxTotals.ast / Math.max(1, boxTotals.gp),
+              global.boxAstPerGame
+            ) * 0.21 +
+            normalizeByDistribution(
+              boxTotals.stl / Math.max(1, boxTotals.gp),
+              global.boxStlPerGame
+            ) * 0.12 +
+            normalizeByDistribution(
+              boxTotals.blk / Math.max(1, boxTotals.gp),
+              global.boxBlkPerGame
+            ) * 0.12,
+          0,
+          100
+        )
+      : statsSignalPercentile;
+  const boxRateWeight = clamp(0.92 - Math.max(0, yearsWithTeam - 4) * 0.025, 0.62, 0.92);
+  const blendedBoxPercentile =
+    boxCompositePercentile * (1 - boxRateWeight) + boxRatePercentile * boxRateWeight;
+
+  // Safeguard: if advanced raw is missing/zero, infer advanced impact from winning context.
   const advancedPercentile =
     raw.advanced > 0
-      ? normalizeByDistribution(raw.advanced, global.advancedRaw)
+      ? rawAdvancedPercentile
       : clamp(
-          adjustedWinningImpactPercentile * 0.62 +
-            adjustedTeamPercentile * 0.2 +
-            statsPeakPercentile * 0.12 +
-            championshipPercentile * 0.06,
+          adjustedWinningImpactPercentile * 0.74 +
+            adjustedTeamPercentile * 0.18 +
+            championshipPercentile * 0.08,
           0,
           100
         );
+  // De-bias advanced category away from dynasty-only inflation. We anchor to a
+  // player's own advanced percentile and box-impact footprint, then apply a
+  // modest team-context tax so pure team success doesn't dominate this category.
+  const advancedRelativePercentile = clamp(
+    50 + (advancedPercentile - blendedBoxPercentile) * 0.45,
+    0,
+    100
+  );
 
   const playerAccoladesBase =
     adjustedPersonalPercentile * 0.8 +
@@ -314,16 +530,21 @@ function toCategoryScores(input: {
     adjustedTeamPercentile * 0.56 +
     adjustedWinningImpactPercentile * 0.26 +
     championshipPercentile * 0.18;
-  // Box stats emphasize both total footprint and peak-quality seasons.
+  // Stats bucket tracks box-score output and peak quality during franchise years.
   const statsBase =
-    statsVolumePercentile * 0.37 + statsPerYearPercentile * 0.29 + statsPeakPercentile * 0.34;
-  // Advanced category is anchored to winning impact to avoid pure box-stat duplication.
+    hasBoxMetadata && boxTotals
+      ? blendedBoxPercentile * 0.58 +
+        statsPerYearPercentile * 0.18 +
+        statsPeakPercentile * 0.24
+      : statsVolumePercentile * 0.34 + statsPerYearPercentile * 0.28 + statsPeakPercentile * 0.38;
+  // Advanced category emphasizes impact profile while reducing team-context leakage.
   const advancedBase =
-    advancedPercentile * 0.52 +
-    adjustedWinningImpactPercentile * 0.36 +
-    adjustedTeamPercentile * 0.12;
+    advancedPercentile * 0.45 +
+    blendedBoxPercentile * 0.4 +
+    advancedRelativePercentile * 0.15 -
+    adjustedTeamPercentile * 0.03;
   const advancedDecoupled = clamp(
-    advancedBase - Math.max(0, statsBase - advancedBase) * 0.35,
+    advancedBase,
     0,
     100
   );
@@ -354,10 +575,10 @@ function computeGreatness(input: {
   const advancedStats = clamp(categories.advanced, 4, 97);
 
   const rawScore =
-    personalAccolades * 0.3 +
-    teamAccolades * 0.25 +
-    boxStats * 0.25 +
-    advancedStats * 0.2;
+    personalAccolades * 0.29 +
+    teamAccolades * 0.23 +
+    boxStats * 0.29 +
+    advancedStats * 0.19;
 
   const tenureMultiplier = 0.56 + tenureRatio * 0.44;
   const franchiseScore = clamp(rawScore * tenureMultiplier, 8, 97);
@@ -474,6 +695,56 @@ function initializeAllTimeData(): void {
       allProfiles
         .map((profile) => profile.boxTotals?.blk)
         .filter((value): value is number => typeof value === 'number')
+    ),
+    boxPtsPerGame: sortNumeric(
+      allProfiles
+        .map((profile) => {
+          if (!profile.boxTotals) {
+            return null;
+          }
+          return profile.boxTotals.pts / Math.max(1, profile.boxTotals.gp);
+        })
+        .filter((value): value is number => typeof value === 'number')
+    ),
+    boxRebPerGame: sortNumeric(
+      allProfiles
+        .map((profile) => {
+          if (!profile.boxTotals) {
+            return null;
+          }
+          return profile.boxTotals.reb / Math.max(1, profile.boxTotals.gp);
+        })
+        .filter((value): value is number => typeof value === 'number')
+    ),
+    boxAstPerGame: sortNumeric(
+      allProfiles
+        .map((profile) => {
+          if (!profile.boxTotals) {
+            return null;
+          }
+          return profile.boxTotals.ast / Math.max(1, profile.boxTotals.gp);
+        })
+        .filter((value): value is number => typeof value === 'number')
+    ),
+    boxStlPerGame: sortNumeric(
+      allProfiles
+        .map((profile) => {
+          if (!profile.boxTotals) {
+            return null;
+          }
+          return profile.boxTotals.stl / Math.max(1, profile.boxTotals.gp);
+        })
+        .filter((value): value is number => typeof value === 'number')
+    ),
+    boxBlkPerGame: sortNumeric(
+      allProfiles
+        .map((profile) => {
+          if (!profile.boxTotals) {
+            return null;
+          }
+          return profile.boxTotals.blk / Math.max(1, profile.boxTotals.gp);
+        })
+        .filter((value): value is number => typeof value === 'number')
     )
   };
 
@@ -485,8 +756,9 @@ function initializeAllTimeData(): void {
         yearsWithTeam: profile.yearsWithTeam,
         careerYears: profile.careerYears,
         championships: profile.championships,
-        hasAccoladeMetadata: profile.accolades !== null,
+        hasMeaningfulAccolades: hasMeaningfulAccolades(profile.accolades),
         hasBoxMetadata: profile.boxTotals !== null,
+        boxTotals: profile.boxTotals,
         global
       });
 
@@ -540,6 +812,32 @@ function initializeAllTimeData(): void {
             blk: roundToOneDecimal(normalizeByDistribution(entry.profile.boxTotals.blk, global.boxBlk))
           }
         : null;
+      const statsPerYearPercentile = roundToOneDecimal(
+        normalizeByDistribution(
+          statsPerYearRaw(entry.profile.categoryRaw, entry.profile.yearsWithTeam),
+          global.statsPerYear
+        )
+      );
+      const statsPeakPercentile = roundToOneDecimal(
+        normalizeByDistribution(
+          statsPeakProxyRaw(entry.profile.categoryRaw, entry.profile.yearsWithTeam),
+          global.statsPeakProxy
+        )
+      );
+      const winningImpactPercentile = roundToOneDecimal(
+        normalizeByDistribution(
+          winningImpactProxyRaw({
+            raw: entry.profile.categoryRaw,
+            championships: entry.profile.championships
+          }),
+          global.winningImpactProxy
+        )
+      );
+      const rawAdvancedPercentile = roundToOneDecimal(
+        entry.profile.categoryRaw.advanced > 0
+          ? normalizeByDistribution(entry.profile.categoryRaw.advanced, global.advancedRaw)
+          : 0
+      );
 
       explanationByTeamPlayer.set(key, {
         yearsWithTeam: entry.profile.yearsWithTeam,
@@ -555,6 +853,28 @@ function initializeAllTimeData(): void {
           advancedImpact: entry.player.greatness.advancedStats
         },
         accolades: entry.profile.accolades,
+        personalAccoladeItems: buildPersonalAccoladeItems(entry.profile.accolades),
+        teamAccoladeItems: buildTeamAccoladeItems({
+          championships: entry.profile.championships,
+          yearsWithTeam: entry.profile.yearsWithTeam,
+          careerYears: entry.profile.careerYears,
+          teamAccoladesScore: entry.player.greatness.teamAccolades
+        }),
+        statsDetailItems: buildStatsDetailItems({
+          boxTotals: entry.profile.boxTotals,
+          boxPercentiles,
+          yearsWithTeam: entry.profile.yearsWithTeam,
+          statsPerYearPercentile,
+          statsPeakPercentile
+        }),
+        advancedDetailItems: buildAdvancedDetailItems({
+          advancedScore: entry.player.greatness.advancedStats,
+          boxStatsScore: entry.player.greatness.boxStats,
+          teamAccoladesScore: entry.player.greatness.teamAccolades,
+          championships: entry.profile.championships,
+          rawAdvancedPercentile,
+          winningImpactPercentile
+        }),
         boxTotals: entry.profile.boxTotals,
         boxPercentiles
       });

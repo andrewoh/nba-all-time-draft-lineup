@@ -112,6 +112,10 @@ export type PlayerExplanationData = {
     advancedImpact: number;
   };
   accolades: AwardBreakdown | null;
+  personalAccoladeItems: string[];
+  teamAccoladeItems: string[];
+  statsDetailItems: string[];
+  advancedDetailItems: string[];
   boxTotals: BoxTotals | null;
   boxPercentiles: {
     pts: number;

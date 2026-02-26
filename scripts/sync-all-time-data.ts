@@ -30,6 +30,11 @@ type PlayerSeason = {
 type PlayerAward = {
   description: string;
   season: string;
+  team: string;
+  allNbaTeamNumber: number | null;
+  subtype1: string;
+  subtype2: string;
+  subtype3: string;
 };
 
 type PlayerMeta = {
@@ -144,6 +149,9 @@ const SKIP_AWARDS = process.env.ALL_TIME_SKIP_AWARDS === '1';
 const CACHE_ENABLED = process.env.ALL_TIME_CACHE_ENABLED !== '0';
 const CACHE_TTL_HOURS = Number(process.env.ALL_TIME_CACHE_TTL_HOURS ?? '168');
 const SYNC_MISSING_ONLY = process.env.ALL_TIME_SYNC_MISSING_ONLY !== '0';
+const SYNC_ZERO_ACCOLADES_ONLY = process.env.ALL_TIME_SYNC_ZERO_ACCOLADES_ONLY === '1';
+const ZERO_ACCOLADES_PLAYER_LEVEL_ONLY = process.env.ALL_TIME_ZERO_ACCOLADES_PLAYER_LEVEL_ONLY === '1';
+const REFRESH_AWARDS = process.env.ALL_TIME_REFRESH_AWARDS === '1';
 const DEBUG_SYNC = process.env.ALL_TIME_SYNC_DEBUG === '1';
 const SCRIPT_DIR = path.dirname(fileURLToPath(import.meta.url));
 const ROOT_DIR = path.resolve(SCRIPT_DIR, '..');
@@ -190,6 +198,15 @@ function rounded(value: number, digits = 3): number {
 function toNumber(value: unknown): number {
   const numeric = Number(value);
   return Number.isFinite(numeric) ? numeric : 0;
+}
+
+function toOptionalInt(value: unknown): number | null {
+  const numeric = Number(value);
+  if (!Number.isFinite(numeric)) {
+    return null;
+  }
+  const rounded = Math.round(numeric);
+  return rounded > 0 ? rounded : null;
 }
 
 function findHeaderIndex(headers: string[], variants: string[]): number {
@@ -292,10 +309,16 @@ async function writeCachedPayload(url: string, payload: unknown): Promise<void> 
   }
 }
 
-async function fetchJson(url: string, retries = 3): Promise<unknown> {
-  const freshCache = await readCachedPayload(url);
-  if (freshCache !== null) {
-    return freshCache;
+async function fetchJson(
+  url: string,
+  retries = 3,
+  options?: { skipFreshCache?: boolean; skipStaleCache?: boolean }
+): Promise<unknown> {
+  if (!options?.skipFreshCache) {
+    const freshCache = await readCachedPayload(url);
+    if (freshCache !== null) {
+      return freshCache;
+    }
   }
 
   let lastError: unknown;
@@ -322,12 +345,14 @@ async function fetchJson(url: string, retries = 3): Promise<unknown> {
     }
   }
 
-  const staleCache = await readCachedPayload(url, { allowStale: true });
-  if (staleCache !== null) {
-    if (DEBUG_SYNC) {
-      console.warn(`Using stale cache after failed live fetch: ${url}`);
+  if (!options?.skipStaleCache) {
+    const staleCache = await readCachedPayload(url, { allowStale: true });
+    if (staleCache !== null) {
+      if (DEBUG_SYNC) {
+        console.warn(`Using stale cache after failed live fetch: ${url}`);
+      }
+      return staleCache;
     }
-    return staleCache;
   }
 
   throw lastError;
@@ -410,6 +435,14 @@ function isAccoladesShape(value: unknown): value is AwardBreakdown {
   );
 }
 
+function hasZeroAccolades(accolades: AwardBreakdown | undefined): boolean {
+  if (!accolades) {
+    return true;
+  }
+
+  return Object.values(accolades).every((value) => Number(value) <= 0);
+}
+
 function isBoxTotalsShape(
   value: unknown
 ): value is {
@@ -434,9 +467,14 @@ function isBoxTotalsShape(
   );
 }
 
-function assessExistingTeamSeed(teamAbbr: string): { needsSync: boolean; reasons: string[] } {
+function assessExistingTeamSeed(teamAbbr: string): {
+  needsSync: boolean;
+  reasons: string[];
+  zeroAccoladesPlayers: number;
+} {
   const seedPlayers = (fallbackSeedByTeam[teamAbbr] ?? []).slice(0, 15);
   const reasons = new Set<string>();
+  let zeroAccoladesPlayers = 0;
 
   if (seedPlayers.length < 15) {
     reasons.add(`only ${seedPlayers.length}/15 players`);
@@ -454,6 +492,8 @@ function assessExistingTeamSeed(teamAbbr: string): { needsSync: boolean; reasons
 
     if (!isAccoladesShape(player.accolades)) {
       reasons.add('missing accolades metadata');
+    } else if (Object.values(player.accolades).every((value) => Number(value) <= 0)) {
+      zeroAccoladesPlayers += 1;
     }
 
     if (!isBoxTotalsShape(player.boxTotals)) {
@@ -465,9 +505,14 @@ function assessExistingTeamSeed(teamAbbr: string): { needsSync: boolean; reasons
     }
   }
 
+  if (SYNC_ZERO_ACCOLADES_ONLY && zeroAccoladesPlayers > 0) {
+    reasons.add(`${zeroAccoladesPlayers} zero-accolade players`);
+  }
+
   return {
-    needsSync: reasons.size > 0,
-    reasons: [...reasons]
+    needsSync: reasons.size > 0 || (SYNC_ZERO_ACCOLADES_ONLY && zeroAccoladesPlayers > 0),
+    reasons: [...reasons],
+    zeroAccoladesPlayers
   };
 }
 
@@ -670,11 +715,16 @@ async function fetchPlayerCareerSeasons(playerId: number): Promise<PlayerSeason[
 
 async function fetchPlayerAwards(playerId: number): Promise<PlayerAward[]> {
   const url = `https://stats.nba.com/stats/playerawards?PlayerID=${playerId}`;
-  const payload = await fetchJson(url);
+  const payload = await fetchJson(url, 3, { skipFreshCache: REFRESH_AWARDS });
   const { headers, rows } = parseResultSet(payload);
 
   const descriptionIndex = findHeaderIndex(headers, ['DESCRIPTION']);
   const seasonIndex = findHeaderIndex(headers, ['SEASON']);
+  const teamIndex = findHeaderIndex(headers, ['TEAM']);
+  const allNbaTeamNumberIndex = findHeaderIndex(headers, ['ALL_NBA_TEAM_NUMBER']);
+  const subtype1Index = findHeaderIndex(headers, ['SUBTYPE1']);
+  const subtype2Index = findHeaderIndex(headers, ['SUBTYPE2']);
+  const subtype3Index = findHeaderIndex(headers, ['SUBTYPE3']);
 
   if (descriptionIndex === -1) {
     return [];
@@ -685,12 +735,47 @@ async function fetchPlayerAwards(playerId: number): Promise<PlayerAward[]> {
       const data = row as unknown[];
       const description = String(data[descriptionIndex] ?? '').trim();
       const season = seasonIndex === -1 ? '' : String(data[seasonIndex] ?? '').trim();
+      const team = teamIndex === -1 ? '' : String(data[teamIndex] ?? '').trim();
+      const allNbaTeamNumber =
+        allNbaTeamNumberIndex === -1 ? null : toOptionalInt(data[allNbaTeamNumberIndex]);
+      const subtype1 = subtype1Index === -1 ? '' : String(data[subtype1Index] ?? '').trim();
+      const subtype2 = subtype2Index === -1 ? '' : String(data[subtype2Index] ?? '').trim();
+      const subtype3 = subtype3Index === -1 ? '' : String(data[subtype3Index] ?? '').trim();
       if (!description) {
         return null;
       }
-      return { description, season } satisfies PlayerAward;
+      return {
+        description,
+        season,
+        team,
+        allNbaTeamNumber,
+        subtype1,
+        subtype2,
+        subtype3
+      } satisfies PlayerAward;
     })
     .filter((row): row is PlayerAward => Boolean(row));
+}
+
+async function withPlayerMetaFallback<T>(
+  input: {
+    playerId: number;
+    label: string;
+    run: () => Promise<T>;
+    fallback: T;
+  }
+): Promise<T> {
+  try {
+    return await input.run();
+  } catch (error) {
+    if (DEBUG_SYNC) {
+      console.warn(
+        `Could not fetch ${input.label} for player ${input.playerId}; using fallback metadata.`,
+        error
+      );
+    }
+    return input.fallback;
+  }
 }
 
 async function getPlayerMeta(playerId: number): Promise<PlayerMeta> {
@@ -702,11 +787,26 @@ async function getPlayerMeta(playerId: number): Promise<PlayerMeta> {
   const promise = (async () => {
     const awardsPromise = SKIP_AWARDS
       ? Promise.resolve<PlayerAward[]>([])
-      : fetchPlayerAwards(playerId);
+      : withPlayerMetaFallback({
+          playerId,
+          label: 'playerawards',
+          run: () => fetchPlayerAwards(playerId),
+          fallback: []
+        });
 
     const [common, seasons, awards] = await Promise.all([
-      fetchCommonPlayerInfo(playerId),
-      fetchPlayerCareerSeasons(playerId),
+      withPlayerMetaFallback({
+        playerId,
+        label: 'commonplayerinfo',
+        run: () => fetchCommonPlayerInfo(playerId),
+        fallback: { slots: [...LINEUP_SLOTS], careerYears: 0 }
+      }),
+      withPlayerMetaFallback({
+        playerId,
+        label: 'playercareerstats',
+        run: () => fetchPlayerCareerSeasons(playerId),
+        fallback: []
+      }),
       awardsPromise
     ]);
 
@@ -740,6 +840,19 @@ function getFallbackSeed(teamAbbr: string, playerName: string): AllTimeSeedPlaye
   return seed.find((entry) => normalizeName(entry.name) === normalized) ?? null;
 }
 
+function inferAwardTeamNumber(description: string): number | null {
+  if (description.includes('FIRST TEAM')) {
+    return 1;
+  }
+  if (description.includes('SECOND TEAM')) {
+    return 2;
+  }
+  if (description.includes('THIRD TEAM')) {
+    return 3;
+  }
+  return null;
+}
+
 function buildAwardBreakdown(awards: PlayerAward[]): AwardBreakdown {
   const breakdown: AwardBreakdown = {
     mvp: 0,
@@ -762,25 +875,66 @@ function buildAwardBreakdown(awards: PlayerAward[]): AwardBreakdown {
   };
 
   for (const award of awards) {
-    const description = award.description.toUpperCase();
+    const description = award.description.toUpperCase().replace(/\s+/g, ' ').trim();
+    const subtype2 = award.subtype2.toUpperCase();
+    const teamNumber = award.allNbaTeamNumber ?? inferAwardTeamNumber(description);
 
-    if (description.includes('NBA MOST VALUABLE PLAYER')) breakdown.mvp += 1;
-    if (description.includes('NBA FINALS MOST VALUABLE PLAYER')) breakdown.finalsMvp += 1;
-    if (description.includes('NBA DEFENSIVE PLAYER OF THE YEAR')) breakdown.dpoy += 1;
-    if (description.includes('NBA ROOKIE OF THE YEAR')) breakdown.roy += 1;
-    if (description.includes('NBA SIXTH MAN')) breakdown.sixthMan += 1;
-    if (description.includes('NBA MOST IMPROVED PLAYER')) breakdown.mip += 1;
-    if (description.includes('ALL-NBA FIRST TEAM')) breakdown.allNbaFirst += 1;
-    if (description.includes('ALL-NBA SECOND TEAM')) breakdown.allNbaSecond += 1;
-    if (description.includes('ALL-NBA THIRD TEAM')) breakdown.allNbaThird += 1;
-    if (description.includes('ALL-DEFENSIVE FIRST TEAM')) breakdown.allDefFirst += 1;
-    if (description.includes('ALL-DEFENSIVE SECOND TEAM')) breakdown.allDefSecond += 1;
-    if (description.includes('NBA ALL-STAR')) breakdown.allStar += 1;
-    if (description.includes('NBA SCORING CHAMPION')) breakdown.scoringTitles += 1;
-    if (description.includes('NBA REBOUNDING CHAMPION')) breakdown.reboundingTitles += 1;
-    if (description.includes('NBA ASSISTS LEADER')) breakdown.assistsTitles += 1;
-    if (description.includes('NBA STEALS LEADER')) breakdown.stealsTitles += 1;
-    if (description.includes('NBA BLOCKS LEADER')) breakdown.blocksTitles += 1;
+    if (description.includes('FINALS MOST VALUABLE PLAYER')) {
+      breakdown.finalsMvp += 1;
+    } else if (description.includes('MOST VALUABLE PLAYER') && !description.includes('ALL-STAR')) {
+      breakdown.mvp += 1;
+    }
+
+    if (description.includes('DEFENSIVE PLAYER OF THE YEAR')) {
+      breakdown.dpoy += 1;
+    }
+    if (description.includes('ROOKIE OF THE YEAR')) {
+      breakdown.roy += 1;
+    }
+    if (description.includes('SIXTH MAN OF THE YEAR') || description.includes('SIXTH MAN')) {
+      breakdown.sixthMan += 1;
+    }
+    if (description.includes('MOST IMPROVED PLAYER')) {
+      breakdown.mip += 1;
+    }
+
+    if (description.includes('ALL-NBA') || subtype2 === 'KIANT') {
+      if (teamNumber === 1) {
+        breakdown.allNbaFirst += 1;
+      } else if (teamNumber === 2) {
+        breakdown.allNbaSecond += 1;
+      } else if (teamNumber === 3) {
+        breakdown.allNbaThird += 1;
+      }
+    }
+
+    if (description.includes('ALL-DEFENSIVE') || subtype2 === 'KIADT') {
+      if (teamNumber === 1) {
+        breakdown.allDefFirst += 1;
+      } else if (teamNumber === 2) {
+        breakdown.allDefSecond += 1;
+      }
+    }
+
+    if (description === 'NBA ALL-STAR') {
+      breakdown.allStar += 1;
+    }
+
+    if (description.includes('SCORING CHAMPION') || description.includes('SCORING LEADER')) {
+      breakdown.scoringTitles += 1;
+    }
+    if (description.includes('REBOUNDING CHAMPION') || description.includes('REBOUNDING LEADER')) {
+      breakdown.reboundingTitles += 1;
+    }
+    if (description.includes('ASSISTS LEADER') || description.includes('ASSISTS CHAMPION')) {
+      breakdown.assistsTitles += 1;
+    }
+    if (description.includes('STEALS LEADER')) {
+      breakdown.stealsTitles += 1;
+    }
+    if (description.includes('BLOCKS LEADER')) {
+      breakdown.blocksTitles += 1;
+    }
   }
 
   return breakdown;
@@ -942,8 +1096,15 @@ function normalizeMetric(value: number, values: number[]): number {
 
 function slotList(seed: AllTimeSeedPlayer | null, fromApi: LineupSlot[]): LineupSlot[] {
   const apiLooksGeneric = fromApi.length === LINEUP_SLOTS.length;
+  const seedSlots = (seed?.positions ?? []).filter((slot): slot is LineupSlot =>
+    LINEUP_SLOTS.includes(slot as LineupSlot)
+  );
   const slots =
-    fromApi.length > 0 && !apiLooksGeneric ? fromApi : seed?.positions ?? fromApi ?? [...LINEUP_SLOTS];
+    fromApi.length > 0 && !apiLooksGeneric
+      ? fromApi
+      : seedSlots.length > 0
+        ? seedSlots
+        : [...LINEUP_SLOTS];
   const unique = [...new Set(slots)].filter((slot): slot is LineupSlot =>
     LINEUP_SLOTS.includes(slot as LineupSlot)
   );
@@ -1292,6 +1453,79 @@ async function buildTeamSeed(
   return seedPlayers.slice(0, 15);
 }
 
+async function refreshZeroAccoladesPlayersForTeam(team: Team, teamId: string): Promise<AllTimeSeedPlayer[]> {
+  const fallback = (fallbackSeedByTeam[team.abbr] ?? []).slice(0, 15);
+  if (fallback.length === 0) {
+    return fallback;
+  }
+
+  let franchiseRows: FranchisePlayerRow[] = [];
+  try {
+    franchiseRows = await fetchFranchisePlayers(teamId);
+  } catch (error) {
+    console.warn(`Could not fetch franchise players for ${team.abbr}; keeping existing seed.`, error);
+    return fallback;
+  }
+
+  const rowByName = new Map<string, FranchisePlayerRow>();
+  for (const row of franchiseRows) {
+    rowByName.set(normalizeName(row.playerName), row);
+  }
+
+  let targeted = 0;
+  let updated = 0;
+  const refreshed: AllTimeSeedPlayer[] = [];
+
+  for (const player of fallback) {
+    if (!hasZeroAccolades(player.accolades)) {
+      refreshed.push(player);
+      continue;
+    }
+
+    targeted += 1;
+    const row = rowByName.get(normalizeName(player.name));
+    if (!row) {
+      refreshed.push(player);
+      continue;
+    }
+
+    let awards: PlayerAward[] = [];
+    try {
+      awards = await fetchPlayerAwards(row.playerId);
+    } catch (error) {
+      if (DEBUG_SYNC) {
+        console.warn(`Could not refresh awards for ${player.name} (${team.abbr}); leaving existing data.`, error);
+      }
+      refreshed.push(player);
+      continue;
+    }
+
+    const breakdown = buildAwardBreakdown(awards);
+    if (hasZeroAccolades(breakdown)) {
+      refreshed.push(player);
+      continue;
+    }
+
+    const personalAccoladesRaw = rounded(computePlayerAccoladesRaw(awards), 3);
+    const categoryRaw = player.categoryRaw
+      ? {
+          ...player.categoryRaw,
+          playerAccolades: Math.max(player.categoryRaw.playerAccolades, personalAccoladesRaw)
+        }
+      : undefined;
+
+    refreshed.push({
+      ...player,
+      categoryRaw,
+      accolades: breakdown
+    });
+    updated += 1;
+  }
+
+  console.log(`${team.abbr}: player-level accolade refresh updated ${updated}/${targeted} zero-accolade players.`);
+  return refreshed;
+}
+
 async function main() {
   const candidateLimit = Number(process.env.ALL_TIME_CANDIDATE_LIMIT ?? '22');
   const perTeamDelayMs = Number(process.env.ALL_TIME_TEAM_DELAY_MS ?? '80');
@@ -1307,6 +1541,9 @@ async function main() {
   if (!Number.isFinite(playerConcurrency) || playerConcurrency < 1) {
     throw new Error('ALL_TIME_PLAYER_CONCURRENCY must be a number >= 1');
   }
+  if (ZERO_ACCOLADES_PLAYER_LEVEL_ONLY && !SYNC_ZERO_ACCOLADES_ONLY) {
+    throw new Error('ALL_TIME_ZERO_ACCOLADES_PLAYER_LEVEL_ONLY requires ALL_TIME_SYNC_ZERO_ACCOLADES_ONLY=1');
+  }
 
   if (CACHE_ENABLED) {
     await ensureCacheDir();
@@ -1318,6 +1555,9 @@ async function main() {
       `candidateLimit=${candidateLimit}`,
       `playerConcurrency=${playerConcurrency}`,
       `syncMissingOnly=${SYNC_MISSING_ONLY}`,
+      `syncZeroAccoladesOnly=${SYNC_ZERO_ACCOLADES_ONLY}`,
+      `zeroAccoladesPlayerLevelOnly=${ZERO_ACCOLADES_PLAYER_LEVEL_ONLY}`,
+      `refreshAwards=${REFRESH_AWARDS}`,
       `skipAwards=${SKIP_AWARDS}`,
       `cacheEnabled=${CACHE_ENABLED}`,
       `cacheTtlHours=${CACHE_TTL_HOURS}`,
@@ -1338,19 +1578,32 @@ async function main() {
       continue;
     }
 
-    if (SYNC_MISSING_ONLY) {
-      const assessment = assessExistingTeamSeed(team.abbr);
-      if (!assessment.needsSync) {
+    const shouldEvaluateExisting = SYNC_MISSING_ONLY || SYNC_ZERO_ACCOLADES_ONLY;
+    const assessment = shouldEvaluateExisting ? assessExistingTeamSeed(team.abbr) : null;
+    if (assessment) {
+      if (SYNC_ZERO_ACCOLADES_ONLY && assessment.zeroAccoladesPlayers === 0) {
+        seedByTeam[team.abbr] = (fallbackSeedByTeam[team.abbr] ?? []).slice(0, 15);
+        console.log(`Skipping ${team.abbr} (no zero-accolade players in current seed).`);
+        continue;
+      }
+
+      if (SYNC_MISSING_ONLY && !assessment.needsSync) {
         seedByTeam[team.abbr] = (fallbackSeedByTeam[team.abbr] ?? []).slice(0, 15);
         console.log(`Skipping ${team.abbr} (already complete).`);
         continue;
       }
-      console.log(`Syncing all-time roster for ${team.abbr} (missing: ${assessment.reasons.join(', ')})...`);
+
+      const reasonLabel =
+        assessment.reasons.length > 0 ? assessment.reasons.join(', ') : 'selected by sync filter';
+      console.log(`Syncing all-time roster for ${team.abbr} (reason: ${reasonLabel})...`);
     } else {
       console.log(`Syncing all-time roster for ${team.abbr}...`);
     }
 
-    seedByTeam[team.abbr] = await buildTeamSeed(team, teamId, candidateLimit, playerConcurrency);
+    seedByTeam[team.abbr] =
+      ZERO_ACCOLADES_PLAYER_LEVEL_ONLY && SYNC_ZERO_ACCOLADES_ONLY
+        ? await refreshZeroAccoladesPlayersForTeam(team, teamId)
+        : await buildTeamSeed(team, teamId, candidateLimit, playerConcurrency);
     const topNames = seedByTeam[team.abbr].slice(0, 5).map((player) => player.name).join(', ');
     console.log(`Top ${team.abbr}: ${topNames}`);
     await sleep(perTeamDelayMs);
