@@ -10,7 +10,7 @@ import { getPlayerExplanationData, getTeamLogoUrl } from '@/lib/data';
 import { formatDateTime } from '@/lib/format';
 import { getRunBenchmarks, getRunByShareCode } from '@/lib/run-service';
 import { scoreLineup } from '@/lib/scoring';
-import type { ChemistryBreakdown, LineupPick, PlayerExplanationData } from '@/lib/types';
+import type { ChemistryBreakdown, LineupPick } from '@/lib/types';
 
 type ResultPick = {
   id: string;
@@ -89,101 +89,6 @@ function average(values: number[]): number {
   return values.reduce((sum, value) => sum + value, 0) / values.length;
 }
 
-function buildScoreDrivers(pick: ResultPick, explanation: PlayerExplanationData | null): string[] {
-  if (pick.isPenalty) {
-    return [
-      'Shot clock violation auto-filled this slot with 0 contribution.',
-      'No player metrics were applied for this slot.'
-    ];
-  }
-
-  const drivers: string[] = [];
-
-  if (pick.bpm >= 72) {
-    drivers.push(`Player accolades (${pick.bpm.toFixed(1)}) were a strong positive.`);
-  } else if (pick.bpm <= 48) {
-    drivers.push(`Player accolades (${pick.bpm.toFixed(1)}) were below top-tier thresholds.`);
-  }
-
-  if (pick.ws48 >= 70) {
-    drivers.push(`Team accolades/winning context (${pick.ws48.toFixed(1)}) materially boosted value.`);
-  } else if (pick.ws48 <= 46) {
-    drivers.push(`Team accolades/winning context (${pick.ws48.toFixed(1)}) limited this profile.`);
-  }
-
-  if (pick.vorp >= 70) {
-    drivers.push(`PTS/REB/AST/STL/BLK production profile (${pick.vorp.toFixed(1)}) graded as elite.`);
-  } else if (pick.vorp <= 48) {
-    drivers.push(
-      `PTS/REB/AST/STL/BLK production profile (${pick.vorp.toFixed(1)}) was below elite all-time levels.`
-    );
-  }
-
-  if (pick.epm >= 70) {
-    drivers.push(`Advanced winning-impact profile (${pick.epm.toFixed(1)}) strongly lifted this score.`);
-  } else if (pick.epm <= 48) {
-    drivers.push(`Advanced winning-impact profile (${pick.epm.toFixed(1)}) sat below contender-tier impact.`);
-  }
-
-  if (explanation?.personalAccoladeItems?.length) {
-    drivers.push(`Personal accolades: ${explanation.personalAccoladeItems.join(', ')}.`);
-  } else if (explanation?.accolades) {
-    drivers.push('No major personal awards were recorded during this franchise stint.');
-  } else {
-    drivers.push('Detailed personal accolade counts were not available; aggregate signal was used.');
-  }
-
-  if (explanation?.teamAccoladeItems?.length) {
-    drivers.push(`Team accolades/context: ${explanation.teamAccoladeItems.join(', ')}.`);
-  }
-
-  if (explanation?.statsDetailItems?.length) {
-    drivers.push(`Stats detail: ${explanation.statsDetailItems.slice(0, 3).join(', ')}.`);
-  }
-
-  if (explanation?.advancedDetailItems?.length) {
-    drivers.push(`Advanced detail: ${explanation.advancedDetailItems.slice(0, 3).join(', ')}.`);
-  }
-
-  if (explanation?.boxPercentiles) {
-    const boxMetrics = [
-      { label: 'PTS', value: explanation.boxPercentiles.pts },
-      { label: 'REB', value: explanation.boxPercentiles.reb },
-      { label: 'AST', value: explanation.boxPercentiles.ast },
-      { label: 'STL', value: explanation.boxPercentiles.stl },
-      { label: 'BLK', value: explanation.boxPercentiles.blk }
-    ];
-    const strong = boxMetrics
-      .filter((metric) => metric.value >= 68)
-      .map((metric) => `${metric.label} ${metric.value.toFixed(0)}p`);
-    const weak = boxMetrics
-      .filter((metric) => metric.value <= 42)
-      .map((metric) => `${metric.label} ${metric.value.toFixed(0)}p`);
-    if (strong.length > 0) {
-      drivers.push(`Stat strengths vs all players in dataset: ${strong.slice(0, 3).join(', ')}.`);
-    }
-    if (weak.length > 0) {
-      drivers.push(`Stat gaps vs peers: ${weak.slice(0, 3).join(', ')}.`);
-    }
-  } else if (pick.vorp <= 55) {
-    drivers.push('Box-score weakness came from not reaching top-tier franchise production in key counting stats.');
-  }
-
-  if (pick.usedFallback) {
-    drivers.push('Fallback baseline values were used for missing franchise stats.');
-  }
-
-  if (pick.contribution >= 80) {
-    drivers.push('Overall profile graded as elite for this draft context.');
-  } else if (pick.contribution < 55) {
-    drivers.push('Overall profile graded as below average for this draft context.');
-  }
-
-  return drivers.length > 0
-    ? drivers
-    : ['This score came from a balanced, middle-tier profile across all 4 categories.'];
-}
-
 function computeRunCategoryAverages(picks: ResultPick[]): RunCategoryAverages {
   return {
     personal: roundToOneDecimal(average(picks.map((pick) => pick.bpm))),
@@ -198,18 +103,6 @@ function formatSignedDelta(value: number): string {
   const rounded = roundToOneDecimal(value);
   const prefix = rounded > 0 ? '+' : '';
   return `${prefix}${rounded.toFixed(1)}`;
-}
-
-function deltaClassName(value: number): string {
-  if (value >= 2) {
-    return 'text-emerald-700';
-  }
-
-  if (value <= -2) {
-    return 'text-rose-700';
-  }
-
-  return 'text-slate-600';
 }
 
 function getPercentileBadgeStyle(value: number): PercentileBadgeStyle {
@@ -408,23 +301,9 @@ export default async function ResultsPage({
     chemistry: chemistryBreakdown,
     deltas
   });
-  const benchmarkLabel =
-    benchmarks.scope === 'group' && run.groupCode
-      ? `${run.groupCode} group average`
-      : 'global average';
-
   const prefillUserName = run.userName ?? '';
   const prefillGroupCode = run.groupCode ?? '';
   const prefillSeed = run.seed ?? '';
-
-  const scorecardMetrics = [
-    { label: 'Team Score', value: run.teamScore, delta: deltas.teamScore },
-    { label: 'Chemistry', value: chemistryScore, delta: deltas.chemistry },
-    { label: 'Personal', value: runCategoryAverages.personal, delta: deltas.personal },
-    { label: 'Team', value: runCategoryAverages.team, delta: deltas.team },
-    { label: 'Stats', value: runCategoryAverages.stats, delta: deltas.stats },
-    { label: 'Advanced', value: runCategoryAverages.advanced, delta: deltas.advanced }
-  ];
 
   return (
     <div className="space-y-4 pb-28 md:pb-24">
@@ -435,9 +314,6 @@ export default async function ResultsPage({
             <h1 className="text-4xl font-bold text-slate-900" data-testid="team-score">
               {run.teamScore.toFixed(1)}
             </h1>
-            <p className="mt-1 text-sm text-slate-600">
-              Base {baseTeamScore.toFixed(1)} x Chemistry {chemistryMultiplier.toFixed(2)}x
-            </p>
             <p className="text-sm text-slate-600">Created {formatDateTime(run.createdAt)}</p>
           </div>
 
@@ -486,66 +362,10 @@ export default async function ResultsPage({
           </div>
         </div>
 
-        <div className="mt-4 rounded-lg border border-slate-200 bg-slate-50 p-3">
-          <div className="flex flex-wrap items-center justify-between gap-2">
-            <p className="text-sm font-semibold text-slate-900">Scorecard vs average run</p>
-            <p className="text-xs text-slate-600">
-              {benchmarkLabel} ({benchmarks.sampleSize} runs)
-            </p>
-          </div>
-          <div className="mt-3 grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
-            {scorecardMetrics.map((metric) => (
-              <div key={metric.label} className="rounded-lg border border-slate-200 bg-white px-3 py-2">
-                <p className="text-[11px] font-semibold uppercase tracking-wide text-slate-500">{metric.label}</p>
-                <p className="text-lg font-bold text-slate-900">{metric.value.toFixed(1)}</p>
-                <p className={cn('text-xs font-semibold', deltaClassName(metric.delta))}>
-                  {formatSignedDelta(metric.delta)} vs avg
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <div className="mt-4 rounded-lg border border-slate-200 bg-slate-50 p-3 text-xs text-slate-700">
-          <p className="font-semibold text-slate-900">Chemistry breakdown</p>
-          <p className="mt-1 text-slate-600">Tap each item for a simple explanation.</p>
-          <div className="mt-3 grid gap-3 lg:grid-cols-[auto_1fr] lg:items-start">
-            <ChemistryRadar
-              breakdown={{
-                roleCoverage: chemistryBreakdown.roleCoverage,
-                complementarity: chemistryBreakdown.complementarity,
-                usageBalance: chemistryBreakdown.usageBalance,
-                twoWayBalance: chemistryBreakdown.twoWayBalance,
-                culture: chemistryBreakdown.culture
-              }}
-            />
-            <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
-              {CHEMISTRY_EXPLANATIONS.map((item) => (
-                <details key={item.key} className="rounded-lg border border-slate-200 bg-white p-2">
-                  <summary className="cursor-pointer font-semibold text-slate-900">
-                    {item.label}: {chemistryBreakdown[item.key].toFixed(1)}
-                  </summary>
-                  <p className="mt-1 text-[11px] text-slate-600">{item.explanation}</p>
-                </details>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        <div className="mt-4 rounded-lg border border-indigo-200 bg-indigo-50 p-3">
-          <p className="text-sm font-semibold text-indigo-900">What would improve this lineup most?</p>
-          <ul className="mt-2 list-disc space-y-1 pl-4 text-xs text-indigo-900/90">
-            {improvementTips.map((tip) => (
-              <li key={tip}>{tip}</li>
-            ))}
-          </ul>
-        </div>
-
         <div className="mt-6 grid gap-2 sm:grid-cols-2 lg:grid-cols-5">
           {run.picks.map((pick) => {
             const teamLogoUrl = getTeamLogoUrl(pick.teamAbbr);
             const explanation = getPlayerExplanationData(pick.teamAbbr, pick.playerName);
-            const drivers = buildScoreDrivers(pick as ResultPick, explanation);
             const badges = [
               { label: 'Personal', value: pick.bpm },
               { label: 'Team', value: pick.ws48 },
@@ -594,11 +414,6 @@ export default async function ResultsPage({
                   <summary className="cursor-pointer text-xs font-semibold text-court-700 hover:underline">
                     Why this score?
                   </summary>
-                  <ul className="mt-1 list-disc space-y-1 pl-4 text-[11px] text-slate-600">
-                    {drivers.map((reason) => (
-                      <li key={reason}>{reason}</li>
-                    ))}
-                  </ul>
                   {!pick.isPenalty && explanation ? (
                     <div className="mt-2 space-y-2 text-[11px] text-slate-700">
                       <div>
@@ -638,6 +453,10 @@ export default async function ResultsPage({
                         </ul>
                       </div>
                     </div>
+                  ) : pick.isPenalty ? (
+                    <p className="mt-2 text-[11px] text-slate-600">
+                      Shot clock violation auto-filled this slot with 0 contribution.
+                    </p>
                   ) : null}
                 </details>
               </div>
@@ -688,6 +507,43 @@ export default async function ResultsPage({
               ))}
             </tbody>
           </table>
+        </div>
+      </section>
+
+      <section className="card space-y-4 p-4">
+        <div className="rounded-lg border border-slate-200 bg-slate-50 p-3 text-xs text-slate-700">
+          <p className="font-semibold text-slate-900">Chemistry breakdown</p>
+          <p className="mt-1 text-slate-600">Tap each item for a simple explanation.</p>
+          <div className="mt-3 grid gap-3 lg:grid-cols-[auto_1fr] lg:items-start">
+            <ChemistryRadar
+              breakdown={{
+                roleCoverage: chemistryBreakdown.roleCoverage,
+                complementarity: chemistryBreakdown.complementarity,
+                usageBalance: chemistryBreakdown.usageBalance,
+                twoWayBalance: chemistryBreakdown.twoWayBalance,
+                culture: chemistryBreakdown.culture
+              }}
+            />
+            <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
+              {CHEMISTRY_EXPLANATIONS.map((item) => (
+                <details key={item.key} className="rounded-lg border border-slate-200 bg-white p-2">
+                  <summary className="cursor-pointer font-semibold text-slate-900">
+                    {item.label}: {chemistryBreakdown[item.key].toFixed(1)}
+                  </summary>
+                  <p className="mt-1 text-[11px] text-slate-600">{item.explanation}</p>
+                </details>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div className="rounded-lg border border-indigo-200 bg-indigo-50 p-3">
+          <p className="text-sm font-semibold text-indigo-900">What would improve this lineup most?</p>
+          <ul className="mt-2 list-disc space-y-1 pl-4 text-xs text-indigo-900/90">
+            {improvementTips.map((tip) => (
+              <li key={tip}>{tip}</li>
+            ))}
+          </ul>
         </div>
       </section>
 
