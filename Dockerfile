@@ -18,6 +18,7 @@ FROM base AS runner
 WORKDIR /app
 ENV NODE_ENV=production
 ENV DATABASE_URL=file:/var/data/dev.db
+RUN mkdir -p /var/data
 COPY --from=builder /app .
 EXPOSE 3000
 CMD ["sh", "-c", "npm run start -- -p ${PORT:-3000}"]
